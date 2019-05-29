@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Camadas\DAL\Clientes.cs" />
     <Compile Include="Camadas\DAL\Conexao.cs" />
+    <Compile Include="Camadas\DAL\Estoque.cs" />
+    <Compile Include="Camadas\DAL\Funcionarios.cs" />
+    <Compile Include="Camadas\DAL\Servicos.cs" />
+    <Compile Include="Camadas\DAL\Usuarios.cs" />
+    <Compile Include="Camadas\DAL\Veiculos.cs" />
+    <Compile Include="Camadas\DAL\Veiculo_Cliente.cs" />
     <Compile Include="Camadas\MODEL\Clientes.cs" />
     <Compile Include="Camadas\MODEL\Enums\TipoPessoa.cs" />
     <Compile Include="Camadas\MODEL\Estoque.cs" />

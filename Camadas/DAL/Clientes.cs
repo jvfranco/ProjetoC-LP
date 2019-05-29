@@ -138,7 +138,7 @@ namespace OficinaMecanica.Camadas.DAL
             }
             catch
             {
-                Console.WriteLine("Deu erro na eclusão de cliente.");
+                Console.WriteLine("Deu erro na remoção de cliente.");
             }
             finally
             {
