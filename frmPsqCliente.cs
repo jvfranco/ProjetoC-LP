@@ -12,6 +12,8 @@ namespace OficinaMecanica
 {
     public partial class frmPsqCliente : Form
     {
+
+        Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
         public frmPsqCliente()
         {
             InitializeComponent();
@@ -20,6 +22,8 @@ namespace OficinaMecanica
         private void FrmPsqCliente_Load(object sender, EventArgs e)
         {
             totSair.SetToolTip(btnSair, "Sair");
+            dgvClientes.DataSource = "";
+            dgvClientes.DataSource = bllCli.Select();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -51,6 +55,11 @@ namespace OficinaMecanica
             txtPesqusia.Visible = false;
             dgvClientes.DataSource = "";
             //terminar
+        }
+
+        private void DgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

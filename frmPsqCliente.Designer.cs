@@ -56,7 +56,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(769, 540);
+            this.groupBox1.Size = new System.Drawing.Size(1292, 540);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa de Clientes";
@@ -65,7 +65,7 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(643, 60);
+            this.button1.Location = new System.Drawing.Point(1166, 62);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 29);
             this.button1.TabIndex = 6;
@@ -75,14 +75,14 @@
             // 
             // txtPesqusia
             // 
-            this.txtPesqusia.Location = new System.Drawing.Point(273, 60);
+            this.txtPesqusia.Location = new System.Drawing.Point(796, 62);
             this.txtPesqusia.Name = "txtPesqusia";
             this.txtPesqusia.Size = new System.Drawing.Size(364, 29);
             this.txtPesqusia.TabIndex = 5;
             // 
             // lblPesquisa
             // 
-            this.lblPesquisa.Location = new System.Drawing.Point(269, 29);
+            this.lblPesquisa.Location = new System.Drawing.Point(792, 29);
             this.lblPesquisa.Name = "lblPesquisa";
             this.lblPesquisa.Size = new System.Drawing.Size(368, 28);
             this.lblPesquisa.TabIndex = 4;
@@ -93,8 +93,9 @@
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(6, 131);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(757, 403);
+            this.dgvClientes.Size = new System.Drawing.Size(1280, 403);
             this.dgvClientes.TabIndex = 3;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvClientes_CellContentClick);
             // 
             // rdbNome
             // 
@@ -137,7 +138,7 @@
             this.btnSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSair.BackgroundImage")));
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Location = new System.Drawing.Point(722, 549);
+            this.btnSair.Location = new System.Drawing.Point(1245, 549);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(50, 50);
             this.btnSair.TabIndex = 7;
@@ -149,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(778, 605);
+            this.ClientSize = new System.Drawing.Size(1298, 605);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
