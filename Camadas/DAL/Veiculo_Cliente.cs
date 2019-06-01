@@ -24,6 +24,7 @@ namespace OficinaMecanica.Camadas.DAL
                 while (dados.Read())
                 {
                     MODEL.Veiculo_Cliente veiCli = new MODEL.Veiculo_Cliente();
+                    veiCli.idVeiCli = Convert.ToInt32(dados["id_veiCli"].ToString());
                     veiCli.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
                     veiCli.idVeiculo = Convert.ToInt32(dados["id_veiculo"].ToString());
                     listaVeiculo_Cliente.Add(veiCli);

@@ -36,9 +36,12 @@ namespace OficinaMecanica
             totSair.SetToolTip(btnSair, "Sair");
             totCancelar.SetToolTip(btnCancelar, "Cancelar");
 
+            lblID.Text = "-1";
+            txtModelo.Focus();
+
             Camadas.BLL.Cliente bllCliente = new Camadas.BLL.Cliente();
             cmbCliente.DisplayMember = "nome";
-            cmbCliente.ValueMember = "id_cliente";
+            cmbCliente.ValueMember = "idCliente";
             cmbCliente.DataSource = bllCliente.Select();
 
         }
@@ -56,14 +59,13 @@ namespace OficinaMecanica
             Camadas.BLL.Veiculo_Cliente bllVeiCli = new Camadas.BLL.Veiculo_Cliente();
             Camadas.MODEL.Veiculo_Cliente veiCli = new Camadas.MODEL.Veiculo_Cliente();
 
-            /veiculo.idVeiculo = Convert.ToInt32(lblID.Text);
+            veiculo.idVeiculo = Convert.ToInt32(lblID.Text);
             veiculo.modelo = txtModelo.Text;
             veiculo.marca = txtMarca.Text;
             veiculo.placa = txtPlaca.Text;
+
             veiCli.idVeiculo = Convert.ToInt32(lblID.Text);
             veiCli.idCliente = Convert.ToInt32(cmbCliente.SelectedValue);
-            bllVeiculo.Insert(veiculo);
-            bllVeiCli.Insert(veiCli);
 
             string msg;
             string titulo;
@@ -78,6 +80,7 @@ namespace OficinaMecanica
             if (resposta == DialogResult.Yes)
             {
                 bllVeiculo.Insert(veiculo);
+                bllVeiCli.Insert(veiCli);
             }
             else
             {
@@ -88,11 +91,11 @@ namespace OficinaMecanica
 
         private void TxtCliente_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                cmbCliente.SelectedValue = Convert.ToInt32(txtCliente.Text);
-            }
-            catch { }
+        }
+
+        private void CmbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtCliente.Text = cmbCliente.SelectedValue.ToString();
         }
     }
 }

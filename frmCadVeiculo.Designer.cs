@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadVeiculo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.txtPlaca = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
-            this.txtCliente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Veículo";
             // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(11, 197);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(100, 29);
+            this.txtCliente.TabIndex = 8;
+            // 
             // label6
             // 
             this.label6.Location = new System.Drawing.Point(7, 165);
@@ -87,6 +94,7 @@
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(623, 32);
             this.cmbCliente.TabIndex = 9;
+            this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.CmbCliente_SelectedIndexChanged);
             // 
             // txtPlaca
             // 
@@ -111,7 +119,7 @@
             // 
             // lblID
             // 
-            this.lblID.BackColor = System.Drawing.Color.White;
+            this.lblID.BackColor = System.Drawing.Color.Transparent;
             this.lblID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblID.Location = new System.Drawing.Point(11, 59);
             this.lblID.Name = "lblID";
@@ -186,13 +194,6 @@
             this.btnSair.TabIndex = 12;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.Location = new System.Drawing.Point(11, 197);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(100, 29);
-            this.txtCliente.TabIndex = 8;
             // 
             // frmCadVeiculo
             // 

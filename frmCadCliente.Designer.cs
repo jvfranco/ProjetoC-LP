@@ -266,7 +266,7 @@
             this.groupBox4.Location = new System.Drawing.Point(584, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(161, 85);
-            this.groupBox4.TabIndex = 14;
+            this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pessoa:";
             // 
