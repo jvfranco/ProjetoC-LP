@@ -16,3 +16,21 @@ D:\Projetos\C#\Oficina\OficinaMecanica\obj\Debug\OficinaMecanica.frmPsqCliente.r
 D:\Projetos\C#\Oficina\OficinaMecanica\obj\Debug\OficinaMecanica.frmCadFuncionario.resources
 D:\Projetos\C#\Oficina\OficinaMecanica\obj\Debug\OficinaMecanica.frmCadUsuario.resources
 D:\Projetos\C#\Oficina\OficinaMecanica\obj\Debug\OficinaMecanica.frmCadServico.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\bin\Debug\OficinaMecanica.exe.config
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\bin\Debug\OficinaMecanica.exe
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\bin\Debug\OficinaMecanica.pdb
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.csprojAssemblyReference.cache
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadCliente.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadFuncionario.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadUsuario.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadVeiculo.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmLogin.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmMenu.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqCliente.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadServico.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmSobre.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.Properties.Resources.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.csproj.GenerateResource.cache
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.csproj.CoreCompileInputs.cache
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.exe
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.pdb

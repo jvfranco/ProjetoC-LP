@@ -56,11 +56,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtpCadastro = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.txtData = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
@@ -326,11 +326,11 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dtpCadastro);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtEmail);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.txtTelefone);
-            this.groupBox3.Controls.Add(this.txtData);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 331);
@@ -339,6 +339,15 @@
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dados Para Contato";
+            // 
+            // dtpCadastro
+            // 
+            this.dtpCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCadastro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpCadastro.Location = new System.Drawing.Point(432, 116);
+            this.dtpCadastro.Name = "dtpCadastro";
+            this.dtpCadastro.Size = new System.Drawing.Size(313, 26);
+            this.dtpCadastro.TabIndex = 16;
             // 
             // label2
             // 
@@ -374,14 +383,6 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(413, 26);
             this.txtTelefone.TabIndex = 15;
-            // 
-            // txtData
-            // 
-            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtData.Location = new System.Drawing.Point(431, 116);
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(314, 26);
-            this.txtData.TabIndex = 16;
             // 
             // label15
             // 
@@ -510,7 +511,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.TextBox txtData;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
@@ -523,5 +523,6 @@
         private System.Windows.Forms.RadioButton rdbFisica;
         private System.Windows.Forms.Button btnCadVeiculo;
         private System.Windows.Forms.ToolTip totCadVeiculo;
+        private System.Windows.Forms.DateTimePicker dtpCadastro;
     }
 }

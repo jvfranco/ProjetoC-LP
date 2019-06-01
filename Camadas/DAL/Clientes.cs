@@ -30,14 +30,14 @@ namespace OficinaMecanica.Camadas.DAL
                     cliente.endereco = dados["endereco"].ToString();
                     cliente.numero = Convert.ToInt32(dados["numero"].ToString());
                     cliente.bairro = dados["bairro"].ToString();
-                    cliente.cep = Convert.ToInt32(dados["cep"].ToString());
+                    cliente.cep = dados["cep"].ToString();
                     cliente.cidade = dados["cidade"].ToString();
                     cliente.estado = dados["estado"].ToString();
-                    cliente.telefone = Convert.ToInt32(dados["telefone"].ToString());
+                    cliente.telefone = dados["telefone"].ToString();
                     cliente.email = dados["email"].ToString();
-                    //cliente.dataCadastro = Convert.ToDateTime(dados["data_cadastro"]).ToString();
-                    cliente.cpf_cnpj = Convert.ToInt32(dados["cpf_cnpj"].ToString());
-                    cliente.rg = Convert.ToInt32(dados["rg"].ToString());
+                    cliente.dataCadastro = Convert.ToDateTime(dados["data_cadastro"].ToString());
+                    cliente.cpf_cnpj = dados["cpf_cnpj"].ToString();
+                    cliente.rg = dados["rg"].ToString();
                     cliente.tipoPessoa = dados["tipo_pessoa"].ToString();
                     listaClientes.Add(cliente);
                 }

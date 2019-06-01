@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Camadas\BLL\Cliente.cs" />
     <Compile Include="Camadas\BLL\Veiculo.cs" />
+    <Compile Include="Camadas\BLL\Veiculo_Cliente.cs" />
     <Compile Include="Camadas\DAL\Clientes.cs" />
     <Compile Include="Camadas\DAL\Conexao.cs" />
     <Compile Include="Camadas\DAL\Estoque.cs" />

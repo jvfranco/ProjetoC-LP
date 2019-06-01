@@ -13,14 +13,14 @@ namespace OficinaMecanica.Camadas.MODEL
         public string endereco { get; set; }
         public int numero { get; set; }
         public string bairro { get; set; }
-        public int cep { get; set; }
+        public string cep { get; set; }
         public string cidade { get; set; }
         public string estado { get; set; }
-        public int telefone { get; set; }
+        public string telefone { get; set; }
         public string email { get; set; }
         public DateTime dataCadastro { get; set; }
-        public int cpf_cnpj { get; set; }
-        public int rg { get; set; }
+        public string cpf_cnpj { get; set; }
+        public string rg { get; set; }
         public string tipoPessoa { get; set; }
     }
 }

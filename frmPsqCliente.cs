@@ -22,6 +22,7 @@ namespace OficinaMecanica
         private void FrmPsqCliente_Load(object sender, EventArgs e)
         {
             totSair.SetToolTip(btnSair, "Sair");
+
             dgvClientes.DataSource = "";
             dgvClientes.DataSource = bllCli.Select();
         }

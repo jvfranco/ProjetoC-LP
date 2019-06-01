@@ -8,27 +8,30 @@ namespace OficinaMecanica.Camadas.BLL
 {
     public class Cliente
     {
-        DAL.Clientes dalCli = new DAL.Clientes();
-
+        
         public List<MODEL.Clientes> Select()
         {
+            DAL.Clientes dalCli = new DAL.Clientes();
             return dalCli.Select();
         }
 
         public void Insert(MODEL.Clientes cliente)
         {
+            DAL.Clientes dalCli = new DAL.Clientes();
             if (cliente.nome != string.Empty)
                 dalCli.Insert(cliente);
         }
 
         public void Update(MODEL.Clientes cliente)
         {
+            DAL.Clientes dalCli = new DAL.Clientes();
             if (cliente.nome != "")
                 dalCli.Update(cliente);
         }
 
         public void Delete(int idCliente)
         {
+            DAL.Clientes dalCli = new DAL.Clientes();
             if (idCliente > 0)
                 dalCli.Delete(idCliente);
 

@@ -27,7 +27,7 @@ namespace OficinaMecanica
             txtEstado.Clear();
             txtEmail.Clear();
             txtTelefone.Clear();
-            txtData.Clear();
+            dtpCadastro.Text = "";
         }
         public frmCadCliente()
         {
@@ -94,14 +94,14 @@ namespace OficinaMecanica
             cliente.endereco = txtEndereco.Text;
             cliente.numero = Convert.ToInt32(txtNumero.Text);
             cliente.bairro = txtBairro.Text;
-            cliente.cep = Convert.ToInt32(txtCep.Text);
+            cliente.cep = txtCep.Text;
             cliente.cidade = txtCidade.Text ;
             cliente.estado = txtEstado.Text;
-            cliente.telefone = Convert.ToInt32(txtTelefone.Text);
+            cliente.telefone = txtTelefone.Text;
             cliente.email = txtEmail.Text;
-            //cliente.dataCadastro = Convert.ToDateTime(dados["data_cadastro"]).ToString();
-            cliente.cpf_cnpj = Convert.ToInt32(txtCpf.Text);
-            cliente.rg = Convert.ToInt32(txtRg.Text);
+            cliente.dataCadastro = Convert.ToDateTime(dtpCadastro.Text);
+            cliente.cpf_cnpj = txtCpf.Text;
+            cliente.rg = txtRg.Text;
             if (rdbFisica.Checked)
             {
                 cliente.tipoPessoa = "Fisica";
@@ -114,7 +114,7 @@ namespace OficinaMecanica
             string msg;
             string titulo;
             
-                msg = "Deseja inserir os dados de Produtos?";
+                msg = "Deseja inserir Cliente?";
                 titulo = "Inserir";
             
             DialogResult resposta;

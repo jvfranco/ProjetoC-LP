@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadVeiculo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.txtPlaca = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,17 +47,19 @@
             this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCliente);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.cmbCliente);
+            this.groupBox1.Controls.Add(this.txtPlaca);
+            this.groupBox1.Controls.Add(this.txtMarca);
+            this.groupBox1.Controls.Add(this.txtModelo);
+            this.groupBox1.Controls.Add(this.lblID);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -78,43 +80,43 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Proprietário:";
             // 
-            // comboBox1
+            // cmbCliente
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(11, 194);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(737, 32);
-            this.comboBox1.TabIndex = 8;
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Location = new System.Drawing.Point(125, 194);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(623, 32);
+            this.cmbCliente.TabIndex = 9;
             // 
-            // textBox3
+            // txtPlaca
             // 
-            this.textBox3.Location = new System.Drawing.Point(468, 124);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(280, 29);
-            this.textBox3.TabIndex = 7;
+            this.txtPlaca.Location = new System.Drawing.Point(468, 124);
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(280, 29);
+            this.txtPlaca.TabIndex = 7;
             // 
-            // textBox2
+            // txtMarca
             // 
-            this.textBox2.Location = new System.Drawing.Point(10, 124);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(452, 29);
-            this.textBox2.TabIndex = 6;
+            this.txtMarca.Location = new System.Drawing.Point(10, 124);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(452, 29);
+            this.txtMarca.TabIndex = 6;
             // 
-            // textBox1
+            // txtModelo
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(623, 29);
-            this.textBox1.TabIndex = 5;
+            this.txtModelo.Location = new System.Drawing.Point(125, 59);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(623, 29);
+            this.txtModelo.TabIndex = 5;
             // 
-            // label5
+            // lblID
             // 
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(11, 59);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 29);
-            this.label5.TabIndex = 4;
+            this.lblID.BackColor = System.Drawing.Color.White;
+            this.lblID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblID.Location = new System.Drawing.Point(11, 59);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(108, 29);
+            this.lblID.TabIndex = 4;
             // 
             // label4
             // 
@@ -158,8 +160,9 @@
             this.btnSalvar.Location = new System.Drawing.Point(223, 261);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 100);
-            this.btnSalvar.TabIndex = 1;
+            this.btnSalvar.TabIndex = 10;
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -169,7 +172,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(338, 260);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 100);
-            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.TabIndex = 11;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnSair
@@ -180,9 +183,16 @@
             this.btnSair.Location = new System.Drawing.Point(456, 261);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(100, 100);
-            this.btnSair.TabIndex = 3;
+            this.btnSair.TabIndex = 12;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(11, 197);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(100, 29);
+            this.txtCliente.TabIndex = 8;
             // 
             // frmCadVeiculo
             // 
@@ -212,11 +222,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.TextBox txtPlaca;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtModelo;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -226,5 +236,6 @@
         private System.Windows.Forms.ToolTip totSalvar;
         private System.Windows.Forms.ToolTip totCancelar;
         private System.Windows.Forms.ToolTip totSair;
+        private System.Windows.Forms.TextBox txtCliente;
     }
 }
