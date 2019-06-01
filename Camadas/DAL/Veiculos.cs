@@ -23,12 +23,14 @@ namespace OficinaMecanica.Camadas.DAL
                 SqlDataReader dados = cmd.ExecuteReader();
                 while (dados.Read())
                 {
-                    MODEL.Veiculos Veiculo = new MODEL.Veiculos();
-                    Veiculo.idVeiculo = Convert.ToInt32(dados["id_veiculo"].ToString());
-                    Veiculo.modelo = dados["modelo"].ToString();
-                    Veiculo.marca = dados["marca"].ToString();
-                    Veiculo.placa = dados["numero"].ToString();
-                    listaVeiculos.Add(Veiculo);
+                    MODEL.Veiculos veiculo = new MODEL.Veiculos();
+                    veiculo.idVeiculo = Convert.ToInt32(dados["id_veiculo"].ToString());
+                    veiculo.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
+                    veiculo.modelo = dados["modelo"].ToString();
+                    veiculo.marca = dados["marca"].ToString();
+                    veiculo.placa = dados["numero"].ToString();
+                    
+                    listaVeiculos.Add(veiculo);
                 }
             }
             catch
@@ -43,14 +45,16 @@ namespace OficinaMecanica.Camadas.DAL
             return listaVeiculos;
         }
 
-        public void Insert(Camadas.MODEL.Veiculos Veiculo)
+        public void Insert(Camadas.MODEL.Veiculos veiculo)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Insert into Veiculos values (@modelo, @marca, @placa);";
+            string sql = "Insert into Veiculos values (@id_cliente, @modelo, @marca, @placa);";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@modelo", Veiculo.modelo);
-            cmd.Parameters.AddWithValue("@marca", Veiculo.marca);
-            cmd.Parameters.AddWithValue("@placa", Veiculo.placa);
+            cmd.Parameters.AddWithValue("@id_cliente", veiculo.idCliente);
+            cmd.Parameters.AddWithValue("@modelo", veiculo.modelo);
+            cmd.Parameters.AddWithValue("@marca", veiculo.marca);
+            cmd.Parameters.AddWithValue("@placa", veiculo.placa);
+            
             try
             {
                 conexao.Open();
@@ -66,16 +70,17 @@ namespace OficinaMecanica.Camadas.DAL
             }
         }
 
-        public void Update(Camadas.MODEL.Veiculos Veiculo)
+        public void Update(Camadas.MODEL.Veiculos veiculo)
         {
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "Update Veiculos set modelo=@modelo, marca=@marca, ";
-            sql += "placa=@placa where idVeiculo=@id_veiculo; ";
+            sql += "placa=@placa, idCliente=@id_cliente where idVeiculo=@id_veiculo; ";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_veiculo", Veiculo.idVeiculo);
-            cmd.Parameters.AddWithValue("@modelo", Veiculo.modelo);
-            cmd.Parameters.AddWithValue("@marca", Veiculo.marca);
-            cmd.Parameters.AddWithValue("@placa", Veiculo.placa);
+            cmd.Parameters.AddWithValue("@id_veiculo", veiculo.idVeiculo);
+            cmd.Parameters.AddWithValue("@modelo", veiculo.modelo);
+            cmd.Parameters.AddWithValue("@marca", veiculo.marca);
+            cmd.Parameters.AddWithValue("@placa", veiculo.placa);
+            cmd.Parameters.AddWithValue("@id_cliente", veiculo.idCliente);
             try
             {
                 conexao.Open();

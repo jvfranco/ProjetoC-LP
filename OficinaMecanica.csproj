@@ -47,8 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camadas\BLL\Cliente.cs" />
+    <Compile Include="Camadas\BLL\Estoque.cs" />
+    <Compile Include="Camadas\BLL\Funcionario.cs" />
+    <Compile Include="Camadas\BLL\Servico.cs" />
+    <Compile Include="Camadas\BLL\Usuario.cs" />
     <Compile Include="Camadas\BLL\Veiculo.cs" />
-    <Compile Include="Camadas\BLL\Veiculo_Cliente.cs" />
     <Compile Include="Camadas\DAL\Clientes.cs" />
     <Compile Include="Camadas\DAL\Conexao.cs" />
     <Compile Include="Camadas\DAL\Estoque.cs" />
@@ -56,7 +59,6 @@
     <Compile Include="Camadas\DAL\Servicos.cs" />
     <Compile Include="Camadas\DAL\Usuarios.cs" />
     <Compile Include="Camadas\DAL\Veiculos.cs" />
-    <Compile Include="Camadas\DAL\Veiculo_Cliente.cs" />
     <Compile Include="Camadas\MODEL\Clientes.cs" />
     <Compile Include="Camadas\MODEL\Enums\TipoPessoa.cs" />
     <Compile Include="Camadas\MODEL\Estoque.cs" />
@@ -66,12 +68,17 @@
     <Compile Include="Camadas\MODEL\Servicos.cs" />
     <Compile Include="Camadas\MODEL\Usuarios.cs" />
     <Compile Include="Camadas\MODEL\Veiculos.cs" />
-    <Compile Include="Camadas\MODEL\Veiculo_Cliente.cs" />
     <Compile Include="frmCadCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCadCliente.Designer.cs">
       <DependentUpon>frmCadCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadEstoque.Designer.cs">
+      <DependentUpon>frmCadEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCadFuncionario.cs">
       <SubType>Form</SubType>
@@ -125,6 +132,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadCliente.resx">
       <DependentUpon>frmCadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadEstoque.resx">
+      <DependentUpon>frmCadEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadFuncionario.resx">
       <DependentUpon>frmCadFuncionario.cs</DependentUpon>

@@ -12,5 +12,7 @@ namespace OficinaMecanica.Camadas.MODEL
         public string modelo { get; set; }
         public string marca { get; set; }
         public string placa { get; set; }
+
+        public int idCliente { get; set; }
     }
 }

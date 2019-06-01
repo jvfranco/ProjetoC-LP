@@ -12,6 +12,7 @@ namespace OficinaMecanica.Camadas.MODEL
         public int idCliente { get; set; }
         public int idFuncionario { get; set; }
         public int idServico { get; set; }
+        public int idVeiculo { get; set; }
         public int kmAtual { get; set; }
         public DateTime dataRevisao { get; set; }
         public DateTime horario { get; set; }

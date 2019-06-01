@@ -56,16 +56,11 @@ namespace OficinaMecanica
             Camadas.BLL.Veiculo bllVeiculo = new Camadas.BLL.Veiculo();
             Camadas.MODEL.Veiculos veiculo = new Camadas.MODEL.Veiculos();
             
-            Camadas.BLL.Veiculo_Cliente bllVeiCli = new Camadas.BLL.Veiculo_Cliente();
-            Camadas.MODEL.Veiculo_Cliente veiCli = new Camadas.MODEL.Veiculo_Cliente();
-
             veiculo.idVeiculo = Convert.ToInt32(lblID.Text);
+            veiculo.idCliente = Convert.ToInt32(txtCliente.Text);
             veiculo.modelo = txtModelo.Text;
             veiculo.marca = txtMarca.Text;
             veiculo.placa = txtPlaca.Text;
-
-            veiCli.idVeiculo = Convert.ToInt32(lblID.Text);
-            veiCli.idCliente = Convert.ToInt32(cmbCliente.SelectedValue);
 
             string msg;
             string titulo;
@@ -80,7 +75,6 @@ namespace OficinaMecanica
             if (resposta == DialogResult.Yes)
             {
                 bllVeiculo.Insert(veiculo);
-                bllVeiCli.Insert(veiCli);
             }
             else
             {

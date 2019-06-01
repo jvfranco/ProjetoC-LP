@@ -15,7 +15,7 @@ namespace OficinaMecanica.Camadas.DAL
         {
             List<MODEL.Funcionarios> listaFuncionarios = new List<MODEL.Funcionarios>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from Funcionarios";
+            string sql = "Select * from Funcionario";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             try
             {
@@ -26,7 +26,7 @@ namespace OficinaMecanica.Camadas.DAL
                     MODEL.Funcionarios Funcionario = new MODEL.Funcionarios();
                     Funcionario.idFuncionario = Convert.ToInt32(dados["id_funcionario"].ToString());
                     Funcionario.nome = dados["nome"].ToString();
-                    Funcionario.cpf = Convert.ToInt32(dados["cpf"].ToString());
+                    Funcionario.cpf = dados["cpf"].ToString();
                     listaFuncionarios.Add(Funcionario);
                 }
             }
@@ -45,7 +45,7 @@ namespace OficinaMecanica.Camadas.DAL
         public void Insert(Camadas.MODEL.Funcionarios Funcionario)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Insert into Funcionarios values (@nome, @cpf);";
+            string sql = "Insert into Funcionario values (@nome, @cpf);";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@nome", Funcionario.nome);
             cmd.Parameters.AddWithValue("@cpf", Funcionario.cpf);
@@ -67,7 +67,7 @@ namespace OficinaMecanica.Camadas.DAL
         public void Update(Camadas.MODEL.Funcionarios Funcionario)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Update Funcionarios set nome=@nome, cpf=@cpf, ";
+            string sql = "Update Funcionario set nome=@nome, cpf=@cpf, ";
             sql += "where idFuncionario=@id_funcionario; ";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_funcionario", Funcionario.idFuncionario);
@@ -91,7 +91,7 @@ namespace OficinaMecanica.Camadas.DAL
         public void Delete(int idFuncionario)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Delete from Funcionarios where idFuncionario=@id_funcionario;";
+            string sql = "Delete from Funcionario where idFuncionario=@id_funcionario;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_funcionario", idFuncionario);
             try

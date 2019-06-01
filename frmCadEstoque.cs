@@ -10,18 +10,14 @@ using System.Windows.Forms;
 
 namespace OficinaMecanica
 {
-    public partial class frmCadUsuario : Form
+    public partial class frmCadEstoque : Form
     {
-        public frmCadUsuario()
+        public frmCadEstoque()
         {
             InitializeComponent();
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void FrmCadUsuario_Load(object sender, EventArgs e)
+        private void FrmCadEstoque_Load(object sender, EventArgs e)
         {
             lblID.Text = "-1";
         }
@@ -29,8 +25,9 @@ namespace OficinaMecanica
         private void limparCampos()
         {
             lblID.Text = "-1";
-            txtLogin.Text = "";
-            txtSenha.Text = "";
+            txtDescricao.Text = "";
+            txtQuantidade.Text = "";
+            txtValor.Text = "";
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
@@ -38,19 +35,26 @@ namespace OficinaMecanica
             this.Close();
         }
 
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+            txtDescricao.Focus();
+        }
+
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
+            Camadas.BLL.Estoque bllEst = new Camadas.BLL.Estoque();
 
-            Camadas.MODEL.Usuarios user = new Camadas.MODEL.Usuarios();
-            user.idUsuario = Convert.ToInt32(lblID.Text);
-            user.login = txtLogin.Text;
-            user.senha = txtSenha.Text;
+            Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
+            produto.idProduto = Convert.ToInt32(lblID.Text);
+            produto.descricao = txtDescricao.Text;
+            produto.quantidade = Convert.ToSingle(txtQuantidade.Text);
+            produto.valor = Convert.ToSingle(txtValor.Text);
 
             string msg;
             string titulo;
 
-            msg = "Deseja inserir Usuario?";
+            msg = "Deseja inserir Produto?";
             titulo = "Inserir";
 
             DialogResult resposta;
@@ -58,13 +62,11 @@ namespace OficinaMecanica
                                MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
             if (resposta == DialogResult.Yes)
-                if (user.idUsuario == -1)
-                    bllUser.Insert(user);
+                if (produto.idProduto == -1)
+                    bllEst.Insert(produto);
                 else limparCampos();
 
             limparCampos();
         }
-
-        
     }
 }

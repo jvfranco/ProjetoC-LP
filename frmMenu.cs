@@ -62,5 +62,12 @@ namespace OficinaMecanica
             frmSer.MdiParent = this;
             frmSer.Show();
         }
+
+        private void PeçasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadEstoque frmEst = new frmCadEstoque();
+            frmEst.MdiParent = this;
+            frmEst.Show();
+        }
     }
 }
