@@ -25,6 +25,7 @@ namespace OficinaMecanica.Camadas.DAL
                 {
                     MODEL.Usuarios Usuario = new MODEL.Usuarios();
                     Usuario.idUsuario = Convert.ToInt32(dados["id_usuario"].ToString());
+                    Usuario.idFuncionario = Convert.ToInt32(dados["id_funcionario"].ToString());
                     Usuario.login = dados["login"].ToString();
                     Usuario.senha = dados["senha"].ToString();
                     listaUsuarios.Add(Usuario);
@@ -45,8 +46,9 @@ namespace OficinaMecanica.Camadas.DAL
         public void Insert(Camadas.MODEL.Usuarios Usuario)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Insert into Usuarios values (@login, @senha);";
+            string sql = "Insert into Usuarios values (@id_funcionario, @login, @senha);";
             SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id_funcionario", Usuario.idFuncionario);
             cmd.Parameters.AddWithValue("@login", Usuario.login);
             cmd.Parameters.AddWithValue("@senha", Usuario.senha);
             try
@@ -67,10 +69,11 @@ namespace OficinaMecanica.Camadas.DAL
         public void Update(Camadas.MODEL.Usuarios Usuario)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Update Usuarios set login=@login, senha=@senha, ";
+            string sql = "Update Usuarios set idFuncionario=@id_funcionario, login=@login, senha=@senha, ";
             sql += "where idUsuario=@id_usuario; ";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_usuario", Usuario.idUsuario);
+            cmd.Parameters.AddWithValue("@id_funcionario", Usuario.idFuncionario);
             cmd.Parameters.AddWithValue("@login", Usuario.login);
             cmd.Parameters.AddWithValue("@senha", Usuario.senha);
             try

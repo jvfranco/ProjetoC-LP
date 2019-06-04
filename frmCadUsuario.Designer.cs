@@ -39,11 +39,15 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbFuncionario = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbFuncionario);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtSenha);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -60,14 +64,14 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(16, 116);
+            this.txtSenha.Location = new System.Drawing.Point(457, 113);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(266, 29);
-            this.txtSenha.TabIndex = 5;
+            this.txtSenha.Size = new System.Drawing.Size(295, 29);
+            this.txtSenha.TabIndex = 4;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(12, 91);
+            this.label4.Location = new System.Drawing.Point(453, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 26);
             this.label4.TabIndex = 4;
@@ -75,9 +79,9 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(126, 29);
+            this.label3.Location = new System.Drawing.Point(12, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 26);
+            this.label3.Size = new System.Drawing.Size(131, 26);
             this.label3.TabIndex = 3;
             this.label3.Text = "Login:";
             // 
@@ -88,14 +92,14 @@
             this.lblID.Location = new System.Drawing.Point(16, 55);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(104, 29);
-            this.lblID.TabIndex = 2;
+            this.lblID.TabIndex = 1;
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(130, 55);
+            this.txtLogin.Location = new System.Drawing.Point(16, 113);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(622, 29);
-            this.txtLogin.TabIndex = 1;
+            this.txtLogin.Size = new System.Drawing.Size(435, 29);
+            this.txtLogin.TabIndex = 3;
             // 
             // label1
             // 
@@ -114,7 +118,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(341, 164);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 100);
-            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnSair
@@ -125,7 +129,7 @@
             this.btnSair.Location = new System.Drawing.Point(457, 164);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(100, 100);
-            this.btnSair.TabIndex = 3;
+            this.btnSair.TabIndex = 7;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
@@ -137,9 +141,25 @@
             this.btnSalvar.Location = new System.Drawing.Point(226, 164);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 100);
-            this.btnSalvar.TabIndex = 1;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(126, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 26);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Funcionário";
+            // 
+            // cmbFuncionario
+            // 
+            this.cmbFuncionario.FormattingEnabled = true;
+            this.cmbFuncionario.Location = new System.Drawing.Point(126, 52);
+            this.cmbFuncionario.Name = "cmbFuncionario";
+            this.cmbFuncionario.Size = new System.Drawing.Size(622, 32);
+            this.cmbFuncionario.TabIndex = 2;
             // 
             // frmCadUsuario
             // 
@@ -175,5 +195,7 @@
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.ComboBox cmbFuncionario;
+        private System.Windows.Forms.Label label2;
     }
 }

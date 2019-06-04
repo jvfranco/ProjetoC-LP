@@ -40,6 +40,7 @@
             this.rdbTodos = new System.Windows.Forms.RadioButton();
             this.btnSair = new System.Windows.Forms.Button();
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
+            this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -135,22 +136,34 @@
             // 
             // btnSair
             // 
-            this.btnSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSair.BackgroundImage")));
+            this.btnSair.BackgroundImage = global::OficinaMecanica.Properties.Resources.icons8_sair_filled_100;
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Location = new System.Drawing.Point(1245, 549);
+            this.btnSair.Location = new System.Drawing.Point(681, 549);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(50, 50);
-            this.btnSair.TabIndex = 7;
+            this.btnSair.Size = new System.Drawing.Size(100, 100);
+            this.btnSair.TabIndex = 2;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Location = new System.Drawing.Point(517, 549);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(100, 100);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // frmPsqCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1298, 605);
+            this.ClientSize = new System.Drawing.Size(1298, 655);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -179,5 +192,6 @@
         private System.Windows.Forms.RadioButton rdbTodos;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.ToolTip totSair;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

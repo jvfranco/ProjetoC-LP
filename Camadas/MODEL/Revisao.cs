@@ -18,5 +18,6 @@ namespace OficinaMecanica.Camadas.MODEL
         public DateTime horario { get; set; }
         public string observacao { get; set; }
         public float valor_total { get; set; }
+        public string forma_pagto { get; set; }
     }
 }

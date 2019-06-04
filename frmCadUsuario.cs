@@ -24,6 +24,11 @@ namespace OficinaMecanica
         private void FrmCadUsuario_Load(object sender, EventArgs e)
         {
             lblID.Text = "-1";
+
+            Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
+            cmbFuncionario.DisplayMember = "nome";
+            cmbFuncionario.ValueMember = "idFuncionario";
+            cmbFuncionario.DataSource = bllFunc.Select();
         }
 
         private void limparCampos()

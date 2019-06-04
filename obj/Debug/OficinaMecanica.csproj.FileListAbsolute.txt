@@ -52,3 +52,4 @@ D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.csproj.GenerateReso
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.csproj.CoreCompileInputs.cache
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.exe
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.pdb
+D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.csprojAssemblyReference.cache
