@@ -128,5 +128,10 @@ namespace OficinaMecanica
 
             limpaCampos();
         }
+
+        private void ToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

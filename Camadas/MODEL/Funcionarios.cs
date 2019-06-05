@@ -11,5 +11,6 @@ namespace OficinaMecanica.Camadas.MODEL
         public int idFuncionario { get; set; }
         public string nome { get; set; }
         public string cpf { get; set; }
+        public string cargo { get; set; }
     }
 }

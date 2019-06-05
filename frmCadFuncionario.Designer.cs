@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFuncionario));
             this.gpbFuncionarios = new System.Windows.Forms.GroupBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,11 +43,17 @@
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
+            this.totAddUser = new System.Windows.Forms.ToolTip(this.components);
+            this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
+            this.totSair = new System.Windows.Forms.ToolTip(this.components);
             this.gpbFuncionarios.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbFuncionarios
             // 
+            this.gpbFuncionarios.Controls.Add(this.txtCargo);
+            this.gpbFuncionarios.Controls.Add(this.label2);
             this.gpbFuncionarios.Controls.Add(this.txtCpf);
             this.gpbFuncionarios.Controls.Add(this.txtNome);
             this.gpbFuncionarios.Controls.Add(this.label4);
@@ -58,6 +67,21 @@
             this.gpbFuncionarios.TabIndex = 0;
             this.gpbFuncionarios.TabStop = false;
             this.gpbFuncionarios.Text = "Cadastro de Funcionários";
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.Location = new System.Drawing.Point(261, 126);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(503, 29);
+            this.txtCargo.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(262, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 24);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Cargo:";
             // 
             // txtCpf
             // 
@@ -190,5 +214,11 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip totSalvar;
+        private System.Windows.Forms.ToolTip totAddUser;
+        private System.Windows.Forms.ToolTip totCancelar;
+        private System.Windows.Forms.ToolTip totSair;
     }
 }

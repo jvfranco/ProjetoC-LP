@@ -27,6 +27,7 @@ namespace OficinaMecanica.Camadas.DAL
                     Funcionario.idFuncionario = Convert.ToInt32(dados["id_funcionario"].ToString());
                     Funcionario.nome = dados["nome"].ToString();
                     Funcionario.cpf = dados["cpf"].ToString();
+                    Funcionario.cargo = dados["cargo"].ToString();
                     listaFuncionarios.Add(Funcionario);
                 }
             }
@@ -45,10 +46,11 @@ namespace OficinaMecanica.Camadas.DAL
         public void Insert(Camadas.MODEL.Funcionarios Funcionario)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Insert into Funcionario values (@nome, @cpf);";
+            string sql = "Insert into Funcionario values (@nome, @cpf, @cargo);";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@nome", Funcionario.nome);
             cmd.Parameters.AddWithValue("@cpf", Funcionario.cpf);
+            cmd.Parameters.AddWithValue("@cargo", Funcionario.cargo);
             try
             {
                 conexao.Open();
@@ -67,12 +69,13 @@ namespace OficinaMecanica.Camadas.DAL
         public void Update(Camadas.MODEL.Funcionarios Funcionario)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Update Funcionario set nome=@nome, cpf=@cpf, ";
+            string sql = "Update Funcionario set nome=@nome, cpf=@cpf, cargo=@cargo";
             sql += "where idFuncionario=@id_funcionario; ";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_funcionario", Funcionario.idFuncionario);
             cmd.Parameters.AddWithValue("@nome", Funcionario.nome);
             cmd.Parameters.AddWithValue("@cpf", Funcionario.cpf);
+            cmd.Parameters.AddWithValue("@cargo", Funcionario.cargo);
             try
             {
                 conexao.Open();

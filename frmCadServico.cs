@@ -20,6 +20,9 @@ namespace OficinaMecanica
         private void FrmCadServico_Load(object sender, EventArgs e)
         {
             lblID.Text = "-1";
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
         }
 
         private void limparCampos()
@@ -60,6 +63,11 @@ namespace OficinaMecanica
                 else limparCampos();
 
             limparCampos();
+        }
+
+        private void ToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

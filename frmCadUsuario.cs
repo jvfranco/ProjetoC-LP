@@ -25,6 +25,9 @@ namespace OficinaMecanica
         {
             lblID.Text = "-1";
             txtLogin.Focus();
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
 
             Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
             cmbFuncionario.DisplayMember = "nome";

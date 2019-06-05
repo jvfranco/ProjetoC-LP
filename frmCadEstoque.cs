@@ -20,6 +20,9 @@ namespace OficinaMecanica
         private void FrmCadEstoque_Load(object sender, EventArgs e)
         {
             lblID.Text = "-1";
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
         }
 
         private void limparCampos()

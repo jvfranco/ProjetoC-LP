@@ -13,7 +13,7 @@ namespace OficinaMecanica
     public partial class frmPsqCliente : Form
     {
 
-        Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
+        
         public frmPsqCliente()
         {
             InitializeComponent();
@@ -22,9 +22,7 @@ namespace OficinaMecanica
         private void FrmPsqCliente_Load(object sender, EventArgs e)
         {
             totSair.SetToolTip(btnSair, "Sair");
-
-            dgvClientes.DataSource = "";
-            dgvClientes.DataSource = bllCli.Select();
+            totEditar.SetToolTip(btnEditar, "Editar");
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -35,32 +33,52 @@ namespace OficinaMecanica
         private void RdbID_CheckedChanged(object sender, EventArgs e)
         {
             lblPesquisa.Visible = true;
-            txtPesqusia.Visible = true;
+            txtPesquisa.Visible = true;
             lblPesquisa.Text = "Informe o ID:";
-            txtPesqusia.Text = "";
-            txtPesqusia.Focus();
+            txtPesquisa.Text = "";
+            txtPesquisa.Focus();
         }
 
         private void RdbNome_CheckedChanged(object sender, EventArgs e)
         {
             lblPesquisa.Visible = true;
-            txtPesqusia.Visible = true;
+            txtPesquisa.Visible = true;
             lblPesquisa.Text = "Informe o Nome:";
-            txtPesqusia.Text = "";
-            txtPesqusia.Focus();
+            txtPesquisa.Text = "";
+            txtPesquisa.Focus();
         }
 
         private void RdbTodos_CheckedChanged(object sender, EventArgs e)
         {
             lblPesquisa.Visible = false;
-            txtPesqusia.Visible = false;
-            dgvClientes.DataSource = "";
-            //terminar
+            txtPesquisa.Visible = false;
         }
 
         private void DgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void BtnFiltrar_Click(object sender, EventArgs e)
+        {
+            List<Camadas.MODEL.Clientes> lstClientes = new List<Camadas.MODEL.Clientes>();
+            Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
+
+            if (rdbTodos.Checked)
+            {
+                lstClientes = bllCli.Select();
+            }
+            else if (rdbID.Checked)
+            {
+                int idCliente = (txtPesquisa.Text != "") ? Convert.ToInt32(txtPesquisa.Text) : 0;
+                lstClientes = bllCli.SelectByID(idCliente);
+            }
+            else if (rdbNome.Checked)
+            {
+                lstClientes = bllCli.SelectByNome(txtPesquisa.Text);
+            }
+            dgvClientes.DataSource = "";
+            dgvClientes.DataSource = lstClientes;
         }
     }
 }

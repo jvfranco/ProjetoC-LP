@@ -39,12 +39,101 @@ namespace OficinaMecanica.Camadas.DAL
                     cliente.cpf_cnpj = dados["cpf_cnpj"].ToString();
                     cliente.rg = dados["rg"].ToString();
                     cliente.tipoPessoa = dados["tipo_pessoa"].ToString();
+
                     listaClientes.Add(cliente);
                 }
             }
             catch
             {
                 Console.WriteLine("Deu erro na consulta de clientes.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return listaClientes;
+        }
+
+        public List<MODEL.Clientes> SelectByID(int idCliente)
+        {
+            List<MODEL.Clientes> listaClientes = new List<MODEL.Clientes>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Clientes where idCliente=@id_cliente";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id_cliente", idCliente);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    MODEL.Clientes cliente = new MODEL.Clientes();
+                    cliente.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
+                    cliente.nome = dados["nome"].ToString();
+                    cliente.endereco = dados["endereco"].ToString();
+                    cliente.numero = Convert.ToInt32(dados["numero"].ToString());
+                    cliente.bairro = dados["bairro"].ToString();
+                    cliente.cep = dados["cep"].ToString();
+                    cliente.cidade = dados["cidade"].ToString();
+                    cliente.estado = dados["estado"].ToString();
+                    cliente.telefone = dados["telefone"].ToString();
+                    cliente.email = dados["email"].ToString();
+                    cliente.dataCadastro = Convert.ToDateTime(dados["data_cadastro"].ToString());
+                    cliente.cpf_cnpj = dados["cpf_cnpj"].ToString();
+                    cliente.rg = dados["rg"].ToString();
+                    cliente.tipoPessoa = dados["tipo_pessoa"].ToString();
+
+                    listaClientes.Add(cliente);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de clientes por ID.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return listaClientes;
+        }
+
+        public List<MODEL.Clientes> SelectByNome(string nomeCliente)
+        {
+            List<MODEL.Clientes> listaClientes = new List<MODEL.Clientes>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Clientes where (nomeCliente like @nome)";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@nome", "%" + nomeCliente + "%");
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    MODEL.Clientes cliente = new MODEL.Clientes();
+                    cliente.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
+                    cliente.nome = dados["nome"].ToString();
+                    cliente.endereco = dados["endereco"].ToString();
+                    cliente.numero = Convert.ToInt32(dados["numero"].ToString());
+                    cliente.bairro = dados["bairro"].ToString();
+                    cliente.cep = dados["cep"].ToString();
+                    cliente.cidade = dados["cidade"].ToString();
+                    cliente.estado = dados["estado"].ToString();
+                    cliente.telefone = dados["telefone"].ToString();
+                    cliente.email = dados["email"].ToString();
+                    cliente.dataCadastro = Convert.ToDateTime(dados["data_cadastro"].ToString());
+                    cliente.cpf_cnpj = dados["cpf_cnpj"].ToString();
+                    cliente.rg = dados["rg"].ToString();
+                    cliente.tipoPessoa = dados["tipo_pessoa"].ToString();
+
+                    listaClientes.Add(cliente);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de clientes por Nome.");
             }
             finally
             {

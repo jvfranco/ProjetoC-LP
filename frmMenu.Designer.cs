@@ -42,12 +42,11 @@
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviçosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revisõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agendarServiçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.finalizarServiçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.finalizarServiçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.revisõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,20 +156,25 @@
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
             this.usuariosToolStripMenuItem.Text = "Usuários";
             // 
+            // revisõesToolStripMenuItem
+            // 
+            this.revisõesToolStripMenuItem.Name = "revisõesToolStripMenuItem";
+            this.revisõesToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
+            this.revisõesToolStripMenuItem.Text = "Revisões";
+            // 
             // agendamentosToolStripMenuItem
             // 
             this.agendamentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agendarServiçoToolStripMenuItem,
             this.finalizarServiçoToolStripMenuItem});
             this.agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
             this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
             this.agendamentosToolStripMenuItem.Text = "&Revisões";
             // 
-            // agendarServiçoToolStripMenuItem
+            // finalizarServiçoToolStripMenuItem
             // 
-            this.agendarServiçoToolStripMenuItem.Name = "agendarServiçoToolStripMenuItem";
-            this.agendarServiçoToolStripMenuItem.Size = new System.Drawing.Size(222, 30);
-            this.agendarServiçoToolStripMenuItem.Text = "Agendar Serviço";
+            this.finalizarServiçoToolStripMenuItem.Name = "finalizarServiçoToolStripMenuItem";
+            this.finalizarServiçoToolStripMenuItem.Size = new System.Drawing.Size(221, 30);
+            this.finalizarServiçoToolStripMenuItem.Text = "Finalizar Serviço";
             // 
             // sobreToolStripMenuItem
             // 
@@ -185,18 +189,6 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(56, 29);
             this.sairToolStripMenuItem.Text = "S&air";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
-            // 
-            // finalizarServiçoToolStripMenuItem
-            // 
-            this.finalizarServiçoToolStripMenuItem.Name = "finalizarServiçoToolStripMenuItem";
-            this.finalizarServiçoToolStripMenuItem.Size = new System.Drawing.Size(222, 30);
-            this.finalizarServiçoToolStripMenuItem.Text = "Finalizar Serviço";
-            // 
-            // revisõesToolStripMenuItem
-            // 
-            this.revisõesToolStripMenuItem.Name = "revisõesToolStripMenuItem";
-            this.revisõesToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
-            this.revisõesToolStripMenuItem.Text = "Revisões";
             // 
             // frmMenu
             // 
@@ -239,7 +231,6 @@
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem serviçosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agendarServiçoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem revisõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem finalizarServiçoToolStripMenuItem;
     }

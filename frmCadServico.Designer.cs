@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadServico));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -39,6 +40,9 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
+            this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
+            this.totSair = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,5 +179,8 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.ToolTip totSalvar;
+        private System.Windows.Forms.ToolTip totCancelar;
+        private System.Windows.Forms.ToolTip totSair;
     }
 }

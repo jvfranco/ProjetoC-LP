@@ -19,6 +19,10 @@ namespace OficinaMecanica
         private void FrmCadFuncionario_Load(object sender, EventArgs e)
         {
             lblID.Text = "-1";
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totAddUser.SetToolTip(btnAddUser, "Adicionar Usuário");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
         }
 
         private void limparCampos()
@@ -26,6 +30,7 @@ namespace OficinaMecanica
             lblID.Text = "";
             txtNome.Text = "";
             txtCpf.Text = "";
+            txtCargo.Text = "";
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
@@ -48,6 +53,7 @@ namespace OficinaMecanica
             funcionario.idFuncionario = Convert.ToInt32(lblID.Text);
             funcionario.nome = txtNome.Text;
             funcionario.cpf = txtCpf.Text;
+            funcionario.cargo = txtCargo.Text;
 
             string msg;
             string titulo;

@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPsqCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtPesqusia = new System.Windows.Forms.TextBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.rdbNome = new System.Windows.Forms.RadioButton();
@@ -41,14 +41,15 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
             this.btnEditar = new System.Windows.Forms.Button();
+            this.totEditar = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txtPesqusia);
+            this.groupBox1.Controls.Add(this.btnFiltrar);
+            this.groupBox1.Controls.Add(this.txtPesquisa);
             this.groupBox1.Controls.Add(this.lblPesquisa);
             this.groupBox1.Controls.Add(this.dgvClientes);
             this.groupBox1.Controls.Add(this.rdbNome);
@@ -62,24 +63,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa de Clientes";
             // 
-            // button1
+            // btnFiltrar
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1166, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 29);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Pesquisar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
+            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltrar.Location = new System.Drawing.Point(1201, 62);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(85, 29);
+            this.btnFiltrar.TabIndex = 6;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
             // 
-            // txtPesqusia
+            // txtPesquisa
             // 
-            this.txtPesqusia.Location = new System.Drawing.Point(796, 62);
-            this.txtPesqusia.Name = "txtPesqusia";
-            this.txtPesqusia.Size = new System.Drawing.Size(364, 29);
-            this.txtPesqusia.TabIndex = 5;
+            this.txtPesquisa.Location = new System.Drawing.Point(796, 62);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(399, 29);
+            this.txtPesquisa.TabIndex = 5;
             // 
             // lblPesquisa
             // 
@@ -183,8 +185,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtPesqusia;
+        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label lblPesquisa;
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.RadioButton rdbNome;
@@ -193,5 +195,6 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.ToolTip totSair;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.ToolTip totEditar;
     }
 }
