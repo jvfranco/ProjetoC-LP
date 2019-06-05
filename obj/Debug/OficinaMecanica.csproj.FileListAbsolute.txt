@@ -53,3 +53,5 @@ D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.csproj.CoreCompileI
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.exe
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.pdb
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.csprojAssemblyReference.cache
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadEstoque.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmRevisao.resources

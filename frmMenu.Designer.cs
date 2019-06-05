@@ -38,16 +38,16 @@
             this.peçasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.agendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviçosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agendamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendarServiçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.finalizarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.finalizarServiçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revisõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,6 @@
             this.cadastrosToolStripMenuItem,
             this.consultasToolStripMenuItem,
             this.agendamentosToolStripMenuItem,
-            this.vendasToolStripMenuItem,
             this.sobreToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -121,7 +120,8 @@
             this.funcionáriosToolStripMenuItem1,
             this.estoqueToolStripMenuItem,
             this.serviçosToolStripMenuItem1,
-            this.usuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem,
+            this.revisõesToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(106, 29);
             this.consultasToolStripMenuItem.Text = "C&onsultas";
@@ -132,36 +132,6 @@
             this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(192, 30);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.ClientesToolStripMenuItem1_Click);
-            // 
-            // agendamentosToolStripMenuItem
-            // 
-            this.agendamentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agendarServiçoToolStripMenuItem});
-            this.agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
-            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(151, 29);
-            this.agendamentosToolStripMenuItem.Text = "&Agendamentos";
-            // 
-            // vendasToolStripMenuItem
-            // 
-            this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.finalizarVendaToolStripMenuItem});
-            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
-            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
-            this.vendasToolStripMenuItem.Text = "&Vendas";
-            // 
-            // sobreToolStripMenuItem
-            // 
-            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
-            this.sobreToolStripMenuItem.Text = "&Sobre";
-            this.sobreToolStripMenuItem.Click += new System.EventHandler(this.SobreToolStripMenuItem_Click);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(56, 29);
-            this.sairToolStripMenuItem.Text = "S&air";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem1
             // 
@@ -187,17 +157,46 @@
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
             this.usuariosToolStripMenuItem.Text = "Usuários";
             // 
+            // agendamentosToolStripMenuItem
+            // 
+            this.agendamentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agendarServiçoToolStripMenuItem,
+            this.finalizarServiçoToolStripMenuItem});
+            this.agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
+            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
+            this.agendamentosToolStripMenuItem.Text = "&Revisões";
+            // 
             // agendarServiçoToolStripMenuItem
             // 
             this.agendarServiçoToolStripMenuItem.Name = "agendarServiçoToolStripMenuItem";
             this.agendarServiçoToolStripMenuItem.Size = new System.Drawing.Size(222, 30);
             this.agendarServiçoToolStripMenuItem.Text = "Agendar Serviço";
             // 
-            // finalizarVendaToolStripMenuItem
+            // sobreToolStripMenuItem
             // 
-            this.finalizarVendaToolStripMenuItem.Name = "finalizarVendaToolStripMenuItem";
-            this.finalizarVendaToolStripMenuItem.Size = new System.Drawing.Size(213, 30);
-            this.finalizarVendaToolStripMenuItem.Text = "Finalizar Venda";
+            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
+            this.sobreToolStripMenuItem.Text = "&Sobre";
+            this.sobreToolStripMenuItem.Click += new System.EventHandler(this.SobreToolStripMenuItem_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(56, 29);
+            this.sairToolStripMenuItem.Text = "S&air";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
+            // 
+            // finalizarServiçoToolStripMenuItem
+            // 
+            this.finalizarServiçoToolStripMenuItem.Name = "finalizarServiçoToolStripMenuItem";
+            this.finalizarServiçoToolStripMenuItem.Size = new System.Drawing.Size(222, 30);
+            this.finalizarServiçoToolStripMenuItem.Text = "Finalizar Serviço";
+            // 
+            // revisõesToolStripMenuItem
+            // 
+            this.revisõesToolStripMenuItem.Name = "revisõesToolStripMenuItem";
+            this.revisõesToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
+            this.revisõesToolStripMenuItem.Text = "Revisões";
             // 
             // frmMenu
             // 
@@ -227,7 +226,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agendamentosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
@@ -242,6 +240,7 @@
         private System.Windows.Forms.ToolStripMenuItem serviçosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agendarServiçoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem finalizarVendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem revisõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem finalizarServiçoToolStripMenuItem;
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadUsuario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbFuncionario = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,8 +41,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbFuncionario = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,12 +62,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Usuários";
             // 
+            // cmbFuncionario
+            // 
+            this.cmbFuncionario.FormattingEnabled = true;
+            this.cmbFuncionario.Location = new System.Drawing.Point(126, 52);
+            this.cmbFuncionario.Name = "cmbFuncionario";
+            this.cmbFuncionario.Size = new System.Drawing.Size(622, 32);
+            this.cmbFuncionario.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(126, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 26);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Funcionário";
+            // 
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(457, 113);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(295, 29);
-            this.txtSenha.TabIndex = 4;
+            this.txtSenha.TabIndex = 5;
             // 
             // label4
             // 
@@ -99,7 +115,7 @@
             this.txtLogin.Location = new System.Drawing.Point(16, 113);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(435, 29);
-            this.txtLogin.TabIndex = 3;
+            this.txtLogin.TabIndex = 4;
             // 
             // label1
             // 
@@ -144,22 +160,6 @@
             this.btnSalvar.TabIndex = 5;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(126, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 26);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Funcionário";
-            // 
-            // cmbFuncionario
-            // 
-            this.cmbFuncionario.FormattingEnabled = true;
-            this.cmbFuncionario.Location = new System.Drawing.Point(126, 52);
-            this.cmbFuncionario.Name = "cmbFuncionario";
-            this.cmbFuncionario.Size = new System.Drawing.Size(622, 32);
-            this.cmbFuncionario.TabIndex = 2;
             // 
             // frmCadUsuario
             // 

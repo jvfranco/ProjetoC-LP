@@ -19,7 +19,7 @@ namespace OficinaMecanica
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            pnlLogin.Location = new Point((this.Width / 2) - 200, (this.Height / 2) - 200);
+            
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -46,6 +46,11 @@ namespace OficinaMecanica
             frmMenu menu = new frmMenu();
             this.Hide();
             menu.Show();
+        }
+
+        private void PnlLogin_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

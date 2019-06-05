@@ -24,6 +24,7 @@ namespace OficinaMecanica
         private void FrmCadUsuario_Load(object sender, EventArgs e)
         {
             lblID.Text = "-1";
+            txtLogin.Focus();
 
             Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
             cmbFuncionario.DisplayMember = "nome";
@@ -49,6 +50,7 @@ namespace OficinaMecanica
 
             Camadas.MODEL.Usuarios user = new Camadas.MODEL.Usuarios();
             user.idUsuario = Convert.ToInt32(lblID.Text);
+            user.idFuncionario = Convert.ToInt32(cmbFuncionario.SelectedValue);
             user.login = txtLogin.Text;
             user.senha = txtSenha.Text;
 
