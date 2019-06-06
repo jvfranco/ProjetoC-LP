@@ -91,5 +91,12 @@ namespace OficinaMecanica
         {
             txtCliente.Text = cmbCliente.SelectedValue.ToString();
         }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.limparCampos();
+            lblID.Text = "-1";
+            txtModelo.Focus();
+        }
     }
 }

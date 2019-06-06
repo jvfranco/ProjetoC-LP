@@ -160,21 +160,22 @@
             // 
             this.revisõesToolStripMenuItem.Name = "revisõesToolStripMenuItem";
             this.revisõesToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
-            this.revisõesToolStripMenuItem.Text = "Revisões";
+            this.revisõesToolStripMenuItem.Text = "Serviços";
             // 
             // agendamentosToolStripMenuItem
             // 
             this.agendamentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.finalizarServiçoToolStripMenuItem});
             this.agendamentosToolStripMenuItem.Name = "agendamentosToolStripMenuItem";
-            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
-            this.agendamentosToolStripMenuItem.Text = "&Revisões";
+            this.agendamentosToolStripMenuItem.Size = new System.Drawing.Size(174, 29);
+            this.agendamentosToolStripMenuItem.Text = "&Ordem de Serviço";
             // 
             // finalizarServiçoToolStripMenuItem
             // 
             this.finalizarServiçoToolStripMenuItem.Name = "finalizarServiçoToolStripMenuItem";
             this.finalizarServiçoToolStripMenuItem.Size = new System.Drawing.Size(221, 30);
             this.finalizarServiçoToolStripMenuItem.Text = "Finalizar Serviço";
+            this.finalizarServiçoToolStripMenuItem.Click += new System.EventHandler(this.FinalizarServiçoToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem
             // 

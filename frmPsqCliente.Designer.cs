@@ -138,12 +138,12 @@
             // 
             // btnSair
             // 
-            this.btnSair.BackgroundImage = global::OficinaMecanica.Properties.Resources.icons8_sair_filled_100;
+            this.btnSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSair.BackgroundImage")));
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Location = new System.Drawing.Point(681, 549);
+            this.btnSair.Location = new System.Drawing.Point(1239, 549);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(100, 100);
+            this.btnSair.Size = new System.Drawing.Size(50, 50);
             this.btnSair.TabIndex = 2;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.Button2_Click);
@@ -153,9 +153,9 @@
             this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(517, 549);
+            this.btnEditar.Location = new System.Drawing.Point(1183, 549);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(100, 100);
+            this.btnEditar.Size = new System.Drawing.Size(50, 50);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
@@ -164,7 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1298, 655);
+            this.ClientSize = new System.Drawing.Size(1298, 604);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.groupBox1);

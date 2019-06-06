@@ -41,6 +41,7 @@ namespace OficinaMecanica
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             limparCampos();
+            lblID.Text = "-1";
             txtDescricao.Focus();
         }
 

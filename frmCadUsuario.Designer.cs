@@ -134,21 +134,22 @@
             // 
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Image = global::OficinaMecanica.Properties.Resources.icons8_cancelar_filled_100;
-            this.btnCancelar.Location = new System.Drawing.Point(341, 164);
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(658, 160);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 100);
+            this.btnCancelar.Size = new System.Drawing.Size(50, 50);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // btnSair
             // 
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Image = global::OficinaMecanica.Properties.Resources.icons8_sair_filled_100;
-            this.btnSair.Location = new System.Drawing.Point(457, 164);
+            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
+            this.btnSair.Location = new System.Drawing.Point(714, 160);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(100, 100);
+            this.btnSair.Size = new System.Drawing.Size(50, 50);
             this.btnSair.TabIndex = 7;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
@@ -157,10 +158,10 @@
             // 
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Image = global::OficinaMecanica.Properties.Resources.icons8_salvar_filled_100;
-            this.btnSalvar.Location = new System.Drawing.Point(226, 164);
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.Location = new System.Drawing.Point(602, 160);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(100, 100);
+            this.btnSalvar.Size = new System.Drawing.Size(50, 50);
             this.btnSalvar.TabIndex = 5;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
@@ -170,7 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(782, 272);
+            this.ClientSize = new System.Drawing.Size(782, 213);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);

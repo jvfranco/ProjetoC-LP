@@ -69,5 +69,12 @@ namespace OficinaMecanica
             frmEst.MdiParent = this;
             frmEst.Show();
         }
+
+        private void FinalizarServiçoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRevisao frmRev = new frmRevisao();
+            frmRev.MdiParent = this;
+            frmRev.Show();
+        }
     }
 }

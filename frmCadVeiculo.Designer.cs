@@ -119,7 +119,7 @@
             // 
             // lblID
             // 
-            this.lblID.BackColor = System.Drawing.Color.Transparent;
+            this.lblID.BackColor = System.Drawing.Color.White;
             this.lblID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblID.Location = new System.Drawing.Point(11, 59);
             this.lblID.Name = "lblID";
@@ -165,9 +165,9 @@
             this.btnSalvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalvar.BackgroundImage")));
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(223, 261);
+            this.btnSalvar.Location = new System.Drawing.Point(598, 261);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(100, 100);
+            this.btnSalvar.Size = new System.Drawing.Size(50, 50);
             this.btnSalvar.TabIndex = 10;
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
@@ -177,20 +177,21 @@
             this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(338, 260);
+            this.btnCancelar.Location = new System.Drawing.Point(654, 261);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 100);
+            this.btnCancelar.Size = new System.Drawing.Size(50, 50);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // btnSair
             // 
-            this.btnSair.BackgroundImage = global::OficinaMecanica.Properties.Resources.icons8_sair_filled_100;
+            this.btnSair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSair.BackgroundImage")));
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Location = new System.Drawing.Point(456, 261);
+            this.btnSair.Location = new System.Drawing.Point(710, 261);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(100, 100);
+            this.btnSair.Size = new System.Drawing.Size(50, 50);
             this.btnSair.TabIndex = 12;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
@@ -200,7 +201,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(778, 365);
+            this.ClientSize = new System.Drawing.Size(778, 316);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);

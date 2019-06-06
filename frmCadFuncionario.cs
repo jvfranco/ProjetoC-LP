@@ -73,6 +73,11 @@ namespace OficinaMecanica
             limparCampos();
         }
 
-        
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.limparCampos();
+            lblID.Text = "-1";
+            txtNome.Focus();
+        }
     }
 }

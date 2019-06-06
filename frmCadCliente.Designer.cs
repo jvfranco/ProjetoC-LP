@@ -70,7 +70,6 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -401,12 +400,12 @@
             // btnCadVeiculo
             // 
             this.btnCadVeiculo.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadVeiculo.BackgroundImage = global::OficinaMecanica.Properties.Resources.icons8_carro_filled_100;
+            this.btnCadVeiculo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCadVeiculo.BackgroundImage")));
             this.btnCadVeiculo.FlatAppearance.BorderSize = 0;
             this.btnCadVeiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadVeiculo.Location = new System.Drawing.Point(271, 499);
+            this.btnCadVeiculo.Location = new System.Drawing.Point(603, 492);
             this.btnCadVeiculo.Name = "btnCadVeiculo";
-            this.btnCadVeiculo.Size = new System.Drawing.Size(100, 100);
+            this.btnCadVeiculo.Size = new System.Drawing.Size(50, 50);
             this.btnCadVeiculo.TabIndex = 25;
             this.btnCadVeiculo.UseVisualStyleBackColor = false;
             this.btnCadVeiculo.Click += new System.EventHandler(this.BtnCadVeiculo_Click);
@@ -418,9 +417,9 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSair.Location = new System.Drawing.Point(531, 499);
+            this.btnSair.Location = new System.Drawing.Point(715, 492);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(100, 100);
+            this.btnSair.Size = new System.Drawing.Size(50, 50);
             this.btnSair.TabIndex = 24;
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
@@ -431,9 +430,9 @@
             this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(401, 499);
+            this.btnCancelar.Location = new System.Drawing.Point(659, 492);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 100);
+            this.btnCancelar.Size = new System.Drawing.Size(50, 50);
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -444,29 +443,19 @@
             this.btnSalvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalvar.BackgroundImage")));
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(141, 499);
+            this.btnSalvar.Location = new System.Drawing.Point(547, 492);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(100, 100);
+            this.btnSalvar.Size = new System.Drawing.Size(50, 50);
             this.btnSalvar.TabIndex = 22;
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(778, 25);
-            this.toolStrip1.TabIndex = 26;
-            this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolStrip1_ItemClicked);
             // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(778, 611);
-            this.Controls.Add(this.toolStrip1);
+            this.ClientSize = new System.Drawing.Size(778, 549);
             this.Controls.Add(this.btnCadVeiculo);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCancelar);
@@ -490,7 +479,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -536,6 +524,5 @@
         private System.Windows.Forms.Button btnCadVeiculo;
         private System.Windows.Forms.ToolTip totCadVeiculo;
         private System.Windows.Forms.DateTimePicker dtpCadastro;
-        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

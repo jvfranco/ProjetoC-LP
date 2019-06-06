@@ -36,8 +36,6 @@ namespace OficinaMecanica
             this.Close();
         }
 
-        
-
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
@@ -68,6 +66,13 @@ namespace OficinaMecanica
         private void ToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.limparCampos();
+            lblID.Text = "-1";
+            txtDescricao.Focus();
         }
     }
 }

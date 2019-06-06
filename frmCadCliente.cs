@@ -58,8 +58,10 @@ namespace OficinaMecanica
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+            this.limpaCampos();
+            lblID.Text = "-1";
+            txtNome.Focus();       
+        } 
 
         private void TotSalvar_Popup(object sender, PopupEventArgs e)
         {
