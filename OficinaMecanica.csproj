@@ -122,6 +122,12 @@
     <Compile Include="frmCadServico.Designer.cs">
       <DependentUpon>frmCadServico.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPsqFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPsqFuncionario.Designer.cs">
+      <DependentUpon>frmPsqFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSobre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadServico.resx">
       <DependentUpon>frmCadServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPsqFuncionario.resx">
+      <DependentUpon>frmPsqFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSobre.resx">
       <DependentUpon>frmSobre.cs</DependentUpon>

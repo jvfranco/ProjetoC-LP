@@ -137,6 +137,7 @@
             this.funcionáriosToolStripMenuItem1.Name = "funcionáriosToolStripMenuItem1";
             this.funcionáriosToolStripMenuItem1.Size = new System.Drawing.Size(192, 30);
             this.funcionáriosToolStripMenuItem1.Text = "Funcionários";
+            this.funcionáriosToolStripMenuItem1.Click += new System.EventHandler(this.FuncionáriosToolStripMenuItem1_Click);
             // 
             // estoqueToolStripMenuItem
             // 
