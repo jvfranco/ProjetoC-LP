@@ -28,8 +28,78 @@ namespace OficinaMecanica.Camadas.DAL
                     veiculo.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
                     veiculo.modelo = dados["modelo"].ToString();
                     veiculo.marca = dados["marca"].ToString();
-                    veiculo.placa = dados["numero"].ToString();
+                    veiculo.placa = dados["placa"].ToString();
                     
+                    listaVeiculos.Add(veiculo);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de Veiculos.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return listaVeiculos;
+        }
+
+        public List<MODEL.Veiculos> SelectByIdCliente(string idCliente)
+        {
+            List<MODEL.Veiculos> listaVeiculos = new List<MODEL.Veiculos>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Veiculos where idCliente = @id_cliente";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id_cliente", idCliente);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    MODEL.Veiculos veiculo = new MODEL.Veiculos();
+                    veiculo.idVeiculo = Convert.ToInt32(dados["id_veiculo"].ToString());
+                    veiculo.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
+                    veiculo.modelo = dados["modelo"].ToString();
+                    veiculo.marca = dados["marca"].ToString();
+                    veiculo.placa = dados["placa"].ToString();
+
+                    listaVeiculos.Add(veiculo);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de Veiculos.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return listaVeiculos;
+        }
+
+        public List<MODEL.Veiculos> SelectByModelo(string modelo)
+        {
+            List<MODEL.Veiculos> listaVeiculos = new List<MODEL.Veiculos>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Veiculos where (modelo like @modelo)";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@modelo", "%" + modelo + "%");
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    MODEL.Veiculos veiculo = new MODEL.Veiculos();
+                    veiculo.idVeiculo = Convert.ToInt32(dados["id_veiculo"].ToString());
+                    veiculo.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
+                    veiculo.modelo = dados["modelo"].ToString();
+                    veiculo.marca = dados["marca"].ToString();
+                    veiculo.placa = dados["placa"].ToString();
+
                     listaVeiculos.Add(veiculo);
                 }
             }

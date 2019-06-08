@@ -14,6 +14,18 @@ namespace OficinaMecanica.Camadas.BLL
             return dalEst.Select();
         }
 
+        public MODEL.Estoque SelectById(int id)
+        {
+            DAL.Estoque dalEst = new DAL.Estoque();
+            return dalEst.SelectById(id);
+        }
+
+        public List<MODEL.Estoque> SelectByDescricao(string descricao)
+        {
+            DAL.Estoque dalEst = new DAL.Estoque();
+            return dalEst.SelectByDescricao(descricao);
+        }
+
         public void Insert(MODEL.Estoque produto)
         {
             DAL.Estoque dalEst = new DAL.Estoque();

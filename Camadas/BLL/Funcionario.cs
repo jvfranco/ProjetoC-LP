@@ -13,7 +13,16 @@ namespace OficinaMecanica.Camadas.BLL
             DAL.Funcionarios dalFunc = new DAL.Funcionarios();
             return dalFunc.Select();
         }
-
+        public List<MODEL.Funcionarios> SelectById(int id)
+        {
+            DAL.Funcionarios dalFunc = new DAL.Funcionarios();
+            return dalFunc.SelectById(id);
+        }
+        public List<MODEL.Funcionarios> SelectByNome(string nome)
+        {
+            DAL.Funcionarios dalFunc = new DAL.Funcionarios();
+            return dalFunc.SelectByNome(nome);
+        }
         public void Insert(MODEL.Funcionarios funcionario)
         {
             DAL.Funcionarios dalFunc = new DAL.Funcionarios();

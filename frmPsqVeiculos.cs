@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace OficinaMecanica
 {
-    public partial class frmPsqFuncionario : Form
+    public partial class frmPsqVeiculos : Form
     {
-        public frmPsqFuncionario()
+        public frmPsqVeiculos()
         {
             InitializeComponent();
         }
 
-        private void BtnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FrmPsqFuncionario_Load(object sender, EventArgs e)
+        private void FrmPsqVeiculos_Load(object sender, EventArgs e)
         {
             totSair.SetToolTip(btnSair, "Sair");
             totEditar.SetToolTip(btnEditar, "Editar");
@@ -37,16 +32,16 @@ namespace OficinaMecanica
         private void RdbID_CheckedChanged(object sender, EventArgs e)
         {
             lblPesquisa.Visible = true;
-            lblPesquisa.Text = "Informe o ID:";
+            lblPesquisa.Text = "Informe o ID do Cliente:";
             txtPesquisa.Visible = true;
             txtPesquisa.Text = "";
             txtPesquisa.Focus();
         }
 
-        private void RdbNome_CheckedChanged(object sender, EventArgs e)
+        private void RdbModelo_CheckedChanged(object sender, EventArgs e)
         {
             lblPesquisa.Visible = true;
-            lblPesquisa.Text = "Informe o nome:";
+            lblPesquisa.Text = "Informe o Modelo:";
             txtPesquisa.Visible = true;
             txtPesquisa.Text = "";
             txtPesquisa.Focus();
@@ -54,25 +49,29 @@ namespace OficinaMecanica
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
-            List<Camadas.MODEL.Funcionarios> lstFuncionarios = new List<Camadas.MODEL.Funcionarios>();
+            Camadas.BLL.Veiculo bllVei = new Camadas.BLL.Veiculo();
+            List<Camadas.MODEL.Veiculos> lstVeiculos = new List<Camadas.MODEL.Veiculos>();
 
             if (rdbTodos.Checked)
             {
-                lstFuncionarios = bllFunc.Select();
+                lstVeiculos = bllVei.Select();
             }
             else if (rdbID.Checked)
-            {
-                int id = Convert.ToInt32(txtPesquisa.Text);
-                lstFuncionarios = bllFunc.SelectById(id);
+            { 
+                lstVeiculos = bllVei.SelectByIdCliente(Convert.ToInt32(txtPesquisa.Text));
             }
-            else if (rdbNome.Checked)
+            else if (rdbModelo.Checked)
             {
-                string nome = txtPesquisa.Text;
-                lstFuncionarios = bllFunc.SelectByNome(nome);
+                lstVeiculos = bllVei.SelectByModelo(txtPesquisa.Text);
             }
-            dgvFuncionarios.DataSource = "";
-            dgvFuncionarios.DataSource = lstFuncionarios;
+
+            dgvVeiculos.DataSource = "";
+            dgvVeiculos.DataSource = lstVeiculos;
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

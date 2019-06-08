@@ -72,7 +72,7 @@ namespace OficinaMecanica
 
         private void FinalizarServiçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmRevisao frmRev = new frmRevisao();
+            frmCadRevisao frmRev = new frmCadRevisao();
             frmRev.MdiParent = this;
             frmRev.Show();
         }
@@ -82,6 +82,41 @@ namespace OficinaMecanica
             frmPsqFuncionario frmFunc = new frmPsqFuncionario();
             frmFunc.MdiParent = this;
             frmFunc.Show();
+        }
+
+        private void EstoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPsqEstoque frmEst = new frmPsqEstoque();
+            frmEst.MdiParent = this;
+            frmEst.Show();
+        }
+
+        private void ServiçosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmPsqServicos frmServ = new frmPsqServicos();
+            frmServ.MdiParent = this;
+            frmServ.Show();
+        }
+
+        private void UsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPsqUsuarios frmUser = new frmPsqUsuarios();
+            frmUser.MdiParent = this;
+            frmUser.Show();
+        }
+
+        private void RevisõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPsqOS frmOS = new frmPsqOS();
+            frmOS.MdiParent = this;
+            frmOS.Show();
+        }
+
+        private void VeículosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmPsqVeiculos frmVeic = new frmPsqVeiculos();
+            frmVeic.MdiParent = this;
+            frmVeic.Show();
         }
     }
 }

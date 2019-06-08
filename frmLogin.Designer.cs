@@ -57,7 +57,6 @@
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(400, 400);
             this.pnlLogin.TabIndex = 0;
-            this.pnlLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlLogin_Paint);
             // 
             // label1
             // 

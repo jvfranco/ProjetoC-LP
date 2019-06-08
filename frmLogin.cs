@@ -17,6 +17,8 @@ namespace OficinaMecanica
             InitializeComponent();
         }
 
+        private Camadas.MODEL.Usuarios User = new Camadas.MODEL.Usuarios();
+        
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             
@@ -24,6 +26,9 @@ namespace OficinaMecanica
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
+            User = bllUser.SelectByLogin(txtLogin.Text);
+
             if (txtLogin.Text == "" && txtSenha.Text == "")
             {
                 MessageBox.Show("Preencha usuário e senha");
@@ -42,15 +47,19 @@ namespace OficinaMecanica
                 txtLogin.Focus();
                 return;
             }
-
-            frmMenu menu = new frmMenu();
-            this.Hide();
-            menu.Show();
-        }
-
-        private void PnlLogin_Paint(object sender, PaintEventArgs e)
-        {
-
+            else if (txtLogin.Text != User.login || txtSenha.Text != User.senha)
+            {
+                MessageBox.Show("Usuário ou senha inválidos!");
+                txtLogin.Focus();
+                return;
+            }
+            else if (txtLogin.Text == User.login || txtSenha.Text == User.senha)
+            {
+                frmMenu menu = new frmMenu();
+                this.Hide();
+                menu.Show();
+            }
+            
         }
     }
 }

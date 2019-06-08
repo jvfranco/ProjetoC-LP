@@ -50,8 +50,9 @@ namespace OficinaMecanica
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
             Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
-
             Camadas.MODEL.Usuarios user = new Camadas.MODEL.Usuarios();
+            Camadas.MODEL.Usuarios usuario = new Camadas.MODEL.Usuarios();
+
             user.idUsuario = Convert.ToInt32(lblID.Text);
             user.idFuncionario = Convert.ToInt32(cmbFuncionario.SelectedValue);
             user.login = txtLogin.Text;
@@ -68,11 +69,21 @@ namespace OficinaMecanica
                                MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
             if (resposta == DialogResult.Yes)
-                if (user.idUsuario == -1)
+            {
+                usuario = bllUser.SelectByLogin(user.login);
+                if (usuario.login != user.login && user.idUsuario == -1)
+                {
                     bllUser.Insert(user);
-                else limparCampos();
-
-            limparCampos();
+                    limparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Usuário já existe!");
+                    limparCampos();
+                    txtLogin.Focus();
+                    return;
+                }
+            }          
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

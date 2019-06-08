@@ -13,6 +13,17 @@ namespace OficinaMecanica.Camadas.BLL
             DAL.Usuarios dalUser = new DAL.Usuarios();
             return dalUser.Select();
         }
+        public List<MODEL.Usuarios> SelectByIdFunc(int id)
+        {
+            DAL.Usuarios dalUser = new DAL.Usuarios();
+            return dalUser.SelectByIdFunc(id);
+        }
+
+        public MODEL.Usuarios SelectByLogin(string login)
+        {
+            DAL.Usuarios dalUser = new DAL.Usuarios();
+            return dalUser.SelectByLogin(login);
+        }
 
         public void Insert(MODEL.Usuarios usuario)
         {

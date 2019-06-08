@@ -98,7 +98,6 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(1280, 403);
             this.dgvClientes.TabIndex = 3;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvClientes_CellContentClick);
             // 
             // rdbNome
             // 

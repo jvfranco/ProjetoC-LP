@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OficinaMecanica
 {
-    public partial class frmRevisao : Form
+    public partial class frmCadRevisao : Form
     {
-        public frmRevisao()
+        public frmCadRevisao()
         {
             InitializeComponent();
         }
@@ -73,6 +73,23 @@ namespace OficinaMecanica
         private void BtnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnAddSer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAddPecas_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(cmbPecas.SelectedValue.ToString());
+            Camadas.BLL.Estoque bllProd = new Camadas.BLL.Estoque();
+            Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
+
+            produto = bllProd.SelectById(id);
+            float valorPeca = Convert.ToSingle(txtQuantidade.Text) * produto.valor;
+
+            dgvVenda.Rows.Add(produto.idProduto.ToString(), produto.descricao.ToString(), txtQuantidade.Text, valorPeca.ToString());          
         }
     }
 }

@@ -26,7 +26,7 @@ namespace OficinaMecanica.Camadas.DAL
                     MODEL.Servicos Servico = new MODEL.Servicos();
                     Servico.idServico = Convert.ToInt32(dados["id_servico"].ToString());
                     Servico.descricao = dados["descricao"].ToString();
-                    Servico.valMaoObra = Convert.ToSingle(dados["marca"].ToString());
+                    Servico.valMaoObra = Convert.ToSingle(dados["val_mao_obra"].ToString());
                     listaServicos.Add(Servico);
                 }
             }
@@ -41,7 +41,68 @@ namespace OficinaMecanica.Camadas.DAL
 
             return listaServicos;
         }
+        public List<MODEL.Servicos> SelectById(int id)
+        {
+            List<MODEL.Servicos> listaServicos = new List<MODEL.Servicos>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Servicos where id = @id_servico";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id_servico", id);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    MODEL.Servicos Servico = new MODEL.Servicos();
+                    Servico.idServico = Convert.ToInt32(dados["id_servico"].ToString());
+                    Servico.descricao = dados["descricao"].ToString();
+                    Servico.valMaoObra = Convert.ToSingle(dados["val_mao_obra"].ToString());
+                    listaServicos.Add(Servico);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de Servicos.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
 
+            return listaServicos;
+        }
+        public List<MODEL.Servicos> SelectByDescricao(string descricao)
+        {
+            List<MODEL.Servicos> listaServicos = new List<MODEL.Servicos>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Servicos where (descricao like @descricao)";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@descricao", "%" + descricao + "%");
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    MODEL.Servicos Servico = new MODEL.Servicos();
+                    Servico.idServico = Convert.ToInt32(dados["id_servico"].ToString());
+                    Servico.descricao = dados["descricao"].ToString();
+                    Servico.valMaoObra = Convert.ToSingle(dados["val_mao_obra"].ToString());
+                    listaServicos.Add(Servico);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de Servicos.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return listaServicos;
+        }
         public void Insert(Camadas.MODEL.Servicos Servico)
         {
             SqlConnection conexao = new SqlConnection(strCon);

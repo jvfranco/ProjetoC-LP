@@ -43,6 +43,71 @@ namespace OficinaMecanica.Camadas.DAL
             return listaUsuarios;
         }
 
+        public List<MODEL.Usuarios> SelectByIdFunc(int idFunc)
+        {
+            List<MODEL.Usuarios> listaUsuarios = new List<MODEL.Usuarios>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Usuarios where idFunc= @ id_funcionario";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id_funcionario", idFunc);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    MODEL.Usuarios Usuario = new MODEL.Usuarios();
+                    Usuario.idUsuario = Convert.ToInt32(dados["id_usuario"].ToString());
+                    Usuario.idFuncionario = Convert.ToInt32(dados["id_funcionario"].ToString());
+                    Usuario.login = dados["login"].ToString();
+                    Usuario.senha = dados["senha"].ToString();
+                    listaUsuarios.Add(Usuario);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de Usuarios.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return listaUsuarios;
+        }
+
+        public MODEL.Usuarios SelectByLogin(string login)
+        {
+            MODEL.Usuarios usuario = new MODEL.Usuarios();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Usuarios where (login like @login)";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@login", login);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    usuario.idUsuario = Convert.ToInt32(dados["id_usuario"].ToString());
+                    usuario.idFuncionario = Convert.ToInt32(dados["id_funcionario"].ToString());
+                    usuario.login = dados["login"].ToString();
+                    usuario.senha = dados["senha"].ToString();
+                    
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de Usuarios.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return usuario;
+        }
+
         public void Insert(Camadas.MODEL.Usuarios Usuario)
         {
             SqlConnection conexao = new SqlConnection(strCon);

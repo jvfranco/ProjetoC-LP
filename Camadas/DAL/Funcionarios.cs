@@ -76,6 +76,39 @@ namespace OficinaMecanica.Camadas.DAL
             return listaFuncionarios;
         }
 
+        public List<MODEL.Funcionarios> SelectByNome(string nome)
+        {
+            List<MODEL.Funcionarios> listaFuncionarios = new List<MODEL.Funcionarios>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Funcionario where (nome like @nome)";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    MODEL.Funcionarios Funcionario = new MODEL.Funcionarios();
+                    Funcionario.idFuncionario = Convert.ToInt32(dados["id_funcionario"].ToString());
+                    Funcionario.nome = dados["nome"].ToString();
+                    Funcionario.cpf = dados["cpf"].ToString();
+                    Funcionario.cargo = dados["cargo"].ToString();
+                    listaFuncionarios.Add(Funcionario);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de Funcionarios.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return listaFuncionarios;
+        }
+
         public void Insert(Camadas.MODEL.Funcionarios Funcionario)
         {
             SqlConnection conexao = new SqlConnection(strCon);

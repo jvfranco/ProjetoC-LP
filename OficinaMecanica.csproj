@@ -56,11 +56,11 @@
     <Compile Include="Camadas\DAL\Conexao.cs" />
     <Compile Include="Camadas\DAL\Estoque.cs" />
     <Compile Include="Camadas\DAL\Funcionarios.cs" />
+    <Compile Include="Camadas\DAL\Revisao.cs" />
     <Compile Include="Camadas\DAL\Servicos.cs" />
     <Compile Include="Camadas\DAL\Usuarios.cs" />
     <Compile Include="Camadas\DAL\Veiculos.cs" />
     <Compile Include="Camadas\MODEL\Clientes.cs" />
-    <Compile Include="Camadas\MODEL\Enums\TipoPessoa.cs" />
     <Compile Include="Camadas\MODEL\Estoque.cs" />
     <Compile Include="Camadas\MODEL\Funcionarios.cs" />
     <Compile Include="Camadas\MODEL\Revisao.cs" />
@@ -122,11 +122,41 @@
     <Compile Include="frmCadServico.Designer.cs">
       <DependentUpon>frmCadServico.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPsqEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPsqEstoque.Designer.cs">
+      <DependentUpon>frmPsqEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPsqFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPsqFuncionario.Designer.cs">
       <DependentUpon>frmPsqFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPsqOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPsqOS.Designer.cs">
+      <DependentUpon>frmPsqOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPsqServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPsqServicos.Designer.cs">
+      <DependentUpon>frmPsqServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPsqUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPsqUsuarios.Designer.cs">
+      <DependentUpon>frmPsqUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPsqVeiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPsqVeiculos.Designer.cs">
+      <DependentUpon>frmPsqVeiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSobre.cs">
       <SubType>Form</SubType>
@@ -134,11 +164,11 @@
     <Compile Include="frmSobre.Designer.cs">
       <DependentUpon>frmSobre.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRevisao.cs">
+    <Compile Include="frmCadRevisao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRevisao.Designer.cs">
-      <DependentUpon>frmRevisao.cs</DependentUpon>
+    <Compile Include="frmCadRevisao.Designer.cs">
+      <DependentUpon>frmCadRevisao.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,14 +199,29 @@
     <EmbeddedResource Include="frmCadServico.resx">
       <DependentUpon>frmCadServico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPsqEstoque.resx">
+      <DependentUpon>frmPsqEstoque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPsqFuncionario.resx">
       <DependentUpon>frmPsqFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPsqOS.resx">
+      <DependentUpon>frmPsqOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPsqServicos.resx">
+      <DependentUpon>frmPsqServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPsqUsuarios.resx">
+      <DependentUpon>frmPsqUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPsqVeiculos.resx">
+      <DependentUpon>frmPsqVeiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSobre.resx">
       <DependentUpon>frmSobre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRevisao.resx">
-      <DependentUpon>frmRevisao.cs</DependentUpon>
+    <EmbeddedResource Include="frmCadRevisao.resx">
+      <DependentUpon>frmCadRevisao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

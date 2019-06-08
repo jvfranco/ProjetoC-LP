@@ -1,6 +1,6 @@
 ﻿namespace OficinaMecanica
 {
-    partial class frmRevisao
+    partial class frmCadRevisao
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRevisao));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadRevisao));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblValorFinal = new System.Windows.Forms.Label();
+            this.lblValorTotal = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtFormaPagto = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtObservações = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDesconto = new System.Windows.Forms.TextBox();
+            this.txtKM = new System.Windows.Forms.TextBox();
+            this.cmbVeiculo = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.dgvVenda = new System.Windows.Forms.DataGridView();
             this.btnAddPecas = new System.Windows.Forms.Button();
             this.cmbPecas = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnAddSer = new System.Windows.Forms.Button();
             this.cmbServico = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbFuncionario = new System.Windows.Forms.ComboBox();
@@ -46,32 +59,26 @@
             this.lblID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbVeiculo = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtKM = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtObservações = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtDesconto = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtFormaPagto = new System.Windows.Forms.TextBox();
-            this.lblValorTotal = new System.Windows.Forms.Label();
-            this.lblValorFinal = new System.Windows.Forms.Label();
             this.btnGravar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txtQuantidade);
             this.groupBox1.Controls.Add(this.lblValorFinal);
             this.groupBox1.Controls.Add(this.lblValorTotal);
             this.groupBox1.Controls.Add(this.label13);
@@ -92,7 +99,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dtpData);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.btnAddSer);
             this.groupBox1.Controls.Add(this.cmbServico);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cmbFuncionario);
@@ -109,30 +115,147 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ordem de Serviço";
             // 
+            // lblValorFinal
+            // 
+            this.lblValorFinal.BackColor = System.Drawing.Color.White;
+            this.lblValorFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblValorFinal.Location = new System.Drawing.Point(503, 604);
+            this.lblValorFinal.Name = "lblValorFinal";
+            this.lblValorFinal.Size = new System.Drawing.Size(240, 29);
+            this.lblValorFinal.TabIndex = 14;
+            // 
+            // lblValorTotal
+            // 
+            this.lblValorTotal.BackColor = System.Drawing.Color.White;
+            this.lblValorTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblValorTotal.Location = new System.Drawing.Point(7, 604);
+            this.lblValorTotal.Name = "lblValorTotal";
+            this.lblValorTotal.Size = new System.Drawing.Size(240, 29);
+            this.lblValorTotal.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(749, 578);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(216, 26);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Forma de Pagamento:";
+            // 
+            // txtFormaPagto
+            // 
+            this.txtFormaPagto.Location = new System.Drawing.Point(751, 604);
+            this.txtFormaPagto.Name = "txtFormaPagto";
+            this.txtFormaPagto.Size = new System.Drawing.Size(240, 29);
+            this.txtFormaPagto.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(4, 578);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(123, 26);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Valor Total:";
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(7, 453);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(142, 26);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Observações:";
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(501, 578);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(123, 26);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Valor Final:";
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(253, 578);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(123, 26);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Desconto:";
+            // 
+            // txtObservações
+            // 
+            this.txtObservações.Location = new System.Drawing.Point(6, 478);
+            this.txtObservações.Multiline = true;
+            this.txtObservações.Name = "txtObservações";
+            this.txtObservações.Size = new System.Drawing.Size(983, 93);
+            this.txtObservações.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(343, 92);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(123, 26);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "KM Atual:";
+            // 
+            // txtDesconto
+            // 
+            this.txtDesconto.Location = new System.Drawing.Point(255, 604);
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.Size = new System.Drawing.Size(240, 29);
+            this.txtDesconto.TabIndex = 13;
+            // 
+            // txtKM
+            // 
+            this.txtKM.Location = new System.Drawing.Point(347, 118);
+            this.txtKM.Name = "txtKM";
+            this.txtKM.Size = new System.Drawing.Size(175, 29);
+            this.txtKM.TabIndex = 5;
+            // 
+            // cmbVeiculo
+            // 
+            this.cmbVeiculo.FormattingEnabled = true;
+            this.cmbVeiculo.Location = new System.Drawing.Point(11, 118);
+            this.cmbVeiculo.Name = "cmbVeiculo";
+            this.cmbVeiculo.Size = new System.Drawing.Size(326, 32);
+            this.cmbVeiculo.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(11, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 26);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Veículo:";
+            // 
             // dgvVenda
             // 
             this.dgvVenda.BackgroundColor = System.Drawing.Color.White;
             this.dgvVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCodigo,
+            this.colDescricao,
+            this.colQuantidade,
+            this.colValor});
             this.dgvVenda.Location = new System.Drawing.Point(6, 229);
             this.dgvVenda.Name = "dgvVenda";
-            this.dgvVenda.Size = new System.Drawing.Size(987, 221);
+            this.dgvVenda.Size = new System.Drawing.Size(984, 221);
             this.dgvVenda.TabIndex = 10;
             // 
             // btnAddPecas
             // 
-            this.btnAddPecas.Location = new System.Drawing.Point(960, 180);
+            this.btnAddPecas.Location = new System.Drawing.Point(957, 179);
             this.btnAddPecas.Name = "btnAddPecas";
             this.btnAddPecas.Size = new System.Drawing.Size(33, 32);
             this.btnAddPecas.TabIndex = 9;
             this.btnAddPecas.Text = "+";
             this.btnAddPecas.UseVisualStyleBackColor = true;
+            this.btnAddPecas.Click += new System.EventHandler(this.BtnAddPecas_Click);
             // 
             // cmbPecas
             // 
             this.cmbPecas.FormattingEnabled = true;
             this.cmbPecas.Location = new System.Drawing.Point(11, 181);
             this.cmbPecas.Name = "cmbPecas";
-            this.cmbPecas.Size = new System.Drawing.Size(943, 32);
+            this.cmbPecas.Size = new System.Drawing.Size(680, 32);
             this.cmbPecas.TabIndex = 8;
             // 
             // label3
@@ -159,21 +282,12 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Data:";
             // 
-            // btnAddSer
-            // 
-            this.btnAddSer.Location = new System.Drawing.Point(960, 116);
-            this.btnAddSer.Name = "btnAddSer";
-            this.btnAddSer.Size = new System.Drawing.Size(33, 32);
-            this.btnAddSer.TabIndex = 7;
-            this.btnAddSer.Text = "+";
-            this.btnAddSer.UseVisualStyleBackColor = true;
-            // 
             // cmbServico
             // 
             this.cmbServico.FormattingEnabled = true;
             this.cmbServico.Location = new System.Drawing.Point(529, 117);
             this.cmbServico.Name = "cmbServico";
-            this.cmbServico.Size = new System.Drawing.Size(425, 32);
+            this.cmbServico.Size = new System.Drawing.Size(461, 32);
             this.cmbServico.TabIndex = 6;
             // 
             // label5
@@ -233,117 +347,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nº da Revisão";
             // 
-            // cmbVeiculo
-            // 
-            this.cmbVeiculo.FormattingEnabled = true;
-            this.cmbVeiculo.Location = new System.Drawing.Point(11, 118);
-            this.cmbVeiculo.Name = "cmbVeiculo";
-            this.cmbVeiculo.Size = new System.Drawing.Size(326, 32);
-            this.cmbVeiculo.TabIndex = 4;
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(11, 92);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 26);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Veículo:";
-            // 
-            // txtKM
-            // 
-            this.txtKM.Location = new System.Drawing.Point(347, 118);
-            this.txtKM.Name = "txtKM";
-            this.txtKM.Size = new System.Drawing.Size(175, 29);
-            this.txtKM.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(343, 92);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 26);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "KM Atual:";
-            // 
-            // txtObservações
-            // 
-            this.txtObservações.Location = new System.Drawing.Point(6, 478);
-            this.txtObservações.Multiline = true;
-            this.txtObservações.Name = "txtObservações";
-            this.txtObservações.Size = new System.Drawing.Size(983, 93);
-            this.txtObservações.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(7, 453);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 26);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Observações:";
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(4, 578);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 26);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Valor Total:";
-            // 
-            // label11
-            // 
-            this.label11.Location = new System.Drawing.Point(253, 578);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 26);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Desconto:";
-            // 
-            // txtDesconto
-            // 
-            this.txtDesconto.Location = new System.Drawing.Point(255, 604);
-            this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(240, 29);
-            this.txtDesconto.TabIndex = 13;
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(501, 578);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(123, 26);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Valor Final:";
-            // 
-            // label13
-            // 
-            this.label13.Location = new System.Drawing.Point(749, 578);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(216, 26);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Forma de Pagamento:";
-            // 
-            // txtFormaPagto
-            // 
-            this.txtFormaPagto.Location = new System.Drawing.Point(751, 604);
-            this.txtFormaPagto.Name = "txtFormaPagto";
-            this.txtFormaPagto.Size = new System.Drawing.Size(240, 29);
-            this.txtFormaPagto.TabIndex = 15;
-            // 
-            // lblValorTotal
-            // 
-            this.lblValorTotal.BackColor = System.Drawing.Color.White;
-            this.lblValorTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblValorTotal.Location = new System.Drawing.Point(7, 604);
-            this.lblValorTotal.Name = "lblValorTotal";
-            this.lblValorTotal.Size = new System.Drawing.Size(240, 29);
-            this.lblValorTotal.TabIndex = 12;
-            // 
-            // lblValorFinal
-            // 
-            this.lblValorFinal.BackColor = System.Drawing.Color.White;
-            this.lblValorFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblValorFinal.Location = new System.Drawing.Point(503, 604);
-            this.lblValorFinal.Name = "lblValorFinal";
-            this.lblValorFinal.Size = new System.Drawing.Size(240, 29);
-            this.lblValorFinal.TabIndex = 14;
-            // 
             // btnGravar
             // 
             this.btnGravar.BackColor = System.Drawing.Color.Transparent;
@@ -382,7 +385,48 @@
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
-            // frmRevisao
+            // colCodigo
+            // 
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.HeaderText = "Descrição";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            this.colDescricao.Width = 540;
+            // 
+            // colQuantidade
+            // 
+            this.colQuantidade.HeaderText = "Quantidade";
+            this.colQuantidade.Name = "colQuantidade";
+            this.colQuantidade.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colQuantidade.Width = 200;
+            // 
+            // colValor
+            // 
+            this.colValor.HeaderText = "Valor";
+            this.colValor.Name = "colValor";
+            this.colValor.ReadOnly = true;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(698, 180);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(256, 29);
+            this.txtQuantidade.TabIndex = 30;
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(694, 155);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(138, 26);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Quantidade:";
+            // 
+            // frmCadRevisao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -394,7 +438,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmRevisao";
+            this.Name = "frmCadRevisao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordem de Serviço - Oficina Mecânica";
             this.Load += new System.EventHandler(this.FrmRevisao_Load);
@@ -414,7 +458,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpData;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnAddSer;
         private System.Windows.Forms.ComboBox cmbServico;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbFuncionario;
@@ -443,5 +486,11 @@
         private System.Windows.Forms.ToolTip totSalvar;
         private System.Windows.Forms.ToolTip totCancelar;
         private System.Windows.Forms.ToolTip totSair;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtQuantidade;
     }
 }

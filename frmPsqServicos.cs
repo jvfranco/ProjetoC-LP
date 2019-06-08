@@ -10,22 +10,11 @@ using System.Windows.Forms;
 
 namespace OficinaMecanica
 {
-    public partial class frmPsqFuncionario : Form
+    public partial class frmPsqServicos : Form
     {
-        public frmPsqFuncionario()
+        public frmPsqServicos()
         {
             InitializeComponent();
-        }
-
-        private void BtnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FrmPsqFuncionario_Load(object sender, EventArgs e)
-        {
-            totSair.SetToolTip(btnSair, "Sair");
-            totEditar.SetToolTip(btnEditar, "Editar");
         }
 
         private void RdbTodos_CheckedChanged(object sender, EventArgs e)
@@ -46,7 +35,7 @@ namespace OficinaMecanica
         private void RdbNome_CheckedChanged(object sender, EventArgs e)
         {
             lblPesquisa.Visible = true;
-            lblPesquisa.Text = "Informe o nome:";
+            lblPesquisa.Text = "Informe a Descrição:";
             txtPesquisa.Visible = true;
             txtPesquisa.Text = "";
             txtPesquisa.Focus();
@@ -54,25 +43,37 @@ namespace OficinaMecanica
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
-            List<Camadas.MODEL.Funcionarios> lstFuncionarios = new List<Camadas.MODEL.Funcionarios>();
+            Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
+            List<Camadas.MODEL.Servicos> lstServicos = new List<Camadas.MODEL.Servicos>();
 
             if (rdbTodos.Checked)
             {
-                lstFuncionarios = bllFunc.Select();
+                lstServicos = bllServ.Select();
             }
             else if (rdbID.Checked)
             {
                 int id = Convert.ToInt32(txtPesquisa.Text);
-                lstFuncionarios = bllFunc.SelectById(id);
+                lstServicos = bllServ.SelectById(id);
             }
             else if (rdbNome.Checked)
             {
-                string nome = txtPesquisa.Text;
-                lstFuncionarios = bllFunc.SelectByNome(nome);
+                string descricao = txtPesquisa.Text;
+                lstServicos = bllServ.SelectByDescricao(descricao);
             }
-            dgvFuncionarios.DataSource = "";
-            dgvFuncionarios.DataSource = lstFuncionarios;
+
+            dgvServicos.DataSource = "";
+            dgvServicos.DataSource = lstServicos;
+        }
+
+        private void FrmPsqServicos_Load(object sender, EventArgs e)
+        {
+            totSair.SetToolTip(btnSair, "Sair");
+            totEditar.SetToolTip(btnEditar, "Editar");
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
