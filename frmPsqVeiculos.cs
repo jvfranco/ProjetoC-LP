@@ -19,6 +19,8 @@ namespace OficinaMecanica
 
         private void FrmPsqVeiculos_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'oFICINADataSet6.Veiculos'. Você pode movê-la ou removê-la conforme necessário.
+            this.veiculosTableAdapter.Fill(this.oFICINADataSet6.Veiculos);
             totSair.SetToolTip(btnSair, "Sair");
             totEditar.SetToolTip(btnEditar, "Editar");
         }
@@ -32,7 +34,7 @@ namespace OficinaMecanica
         private void RdbID_CheckedChanged(object sender, EventArgs e)
         {
             lblPesquisa.Visible = true;
-            lblPesquisa.Text = "Informe o ID do Cliente:";
+            lblPesquisa.Text = "Informe o ID:";
             txtPesquisa.Visible = true;
             txtPesquisa.Text = "";
             txtPesquisa.Focus();
@@ -58,7 +60,7 @@ namespace OficinaMecanica
             }
             else if (rdbID.Checked)
             { 
-                lstVeiculos = bllVei.SelectByIdCliente(Convert.ToInt32(txtPesquisa.Text));
+                lstVeiculos = bllVei.SelectById(Convert.ToInt32(txtPesquisa.Text));
             }
             else if (rdbModelo.Checked)
             {

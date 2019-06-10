@@ -20,7 +20,7 @@ namespace OficinaMecanica.Camadas.BLL
             return dalEst.SelectById(id);
         }
 
-        public List<MODEL.Estoque> SelectByDescricao(string descricao)
+        public MODEL.Estoque SelectByDescricao(string descricao)
         {
             DAL.Estoque dalEst = new DAL.Estoque();
             return dalEst.SelectByDescricao(descricao);

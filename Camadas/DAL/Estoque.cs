@@ -73,9 +73,10 @@ namespace OficinaMecanica.Camadas.DAL
             return produto;
         }
 
-        public List<MODEL.Estoque> SelectByDescricao(string descricao)
+        public MODEL.Estoque SelectByDescricao(string descricao)
         {
-            List<MODEL.Estoque> listaEstoque = new List<MODEL.Estoque>();
+            //List<MODEL.Estoque> listaEstoque = new List<MODEL.Estoque>();
+            MODEL.Estoque produto = new MODEL.Estoque();
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "Select * from Estoque where (descricao like @descricao)";
             SqlCommand cmd = new SqlCommand(sql, conexao);
@@ -86,12 +87,12 @@ namespace OficinaMecanica.Camadas.DAL
                 SqlDataReader dados = cmd.ExecuteReader();
                 while (dados.Read())
                 {
-                    MODEL.Estoque Estoque = new MODEL.Estoque();
-                    Estoque.idProduto = Convert.ToInt32(dados["id_produto"].ToString());
-                    Estoque.descricao = dados["descricao"].ToString();
-                    Estoque.quantidade = Convert.ToInt32(dados["quantidade"].ToString());
-                    Estoque.valor = Convert.ToSingle(dados["valor"].ToString());
-                    listaEstoque.Add(Estoque);
+                    
+                    produto.idProduto = Convert.ToInt32(dados["id_produto"].ToString());
+                    produto.descricao = dados["descricao"].ToString();
+                    produto.quantidade = Convert.ToInt32(dados["quantidade"].ToString());
+                    produto.valor = Convert.ToSingle(dados["valor"].ToString());
+                    //listaEstoque.Add(Estoque);
                 }
             }
             catch
@@ -103,7 +104,8 @@ namespace OficinaMecanica.Camadas.DAL
                 conexao.Close();
             }
 
-            return listaEstoque;
+            //return listaEstoque;
+            return produto;
         }
 
         public void Insert(Camadas.MODEL.Estoque Estoque)

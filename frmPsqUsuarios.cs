@@ -58,6 +58,8 @@ namespace OficinaMecanica
 
         private void FrmPsqUsuarios_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'oFICINADataSet5.Usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            this.usuariosTableAdapter.Fill(this.oFICINADataSet5.Usuarios);
             totSair.SetToolTip(btnSair, "Sair");
             totEditar.SetToolTip(btnEditar, "Editar");
         }

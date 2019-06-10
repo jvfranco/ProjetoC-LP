@@ -31,25 +31,25 @@ namespace OficinaMecanica
 
             if (txtLogin.Text == "" && txtSenha.Text == "")
             {
-                MessageBox.Show("Preencha usuário e senha");
+                MessageBox.Show("Preencha usuário e senha", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtLogin.Focus();
                 return;
             }
             else if (txtSenha.Text == "")
             {
-                MessageBox.Show("Preencha a senha");
+                MessageBox.Show("Preencha a senha", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtSenha.Focus();
                 return;
             }
             else if (txtLogin.Text == "")
             {
-                MessageBox.Show("Preencha o usuário");
+                MessageBox.Show("Preencha o usuário", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtLogin.Focus();
                 return;
             }
             else if (txtLogin.Text != User.login || txtSenha.Text != User.senha)
             {
-                MessageBox.Show("Usuário ou senha inválidos!");
+                MessageBox.Show("Usuário ou senha inválidos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtLogin.Focus();
                 return;
             }

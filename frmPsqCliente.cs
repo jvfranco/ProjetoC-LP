@@ -57,23 +57,29 @@ namespace OficinaMecanica
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
             List<Camadas.MODEL.Clientes> lstClientes = new List<Camadas.MODEL.Clientes>();
+            Camadas.MODEL.Clientes cliente = new Camadas.MODEL.Clientes();
             Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
 
             if (rdbTodos.Checked)
             {
                 lstClientes = bllCli.Select();
+                dgvClientes.DataSource = "";
+                dgvClientes.DataSource = lstClientes;
             }
             else if (rdbID.Checked)
             {
                 int idCliente = Convert.ToInt32(txtPesquisa.Text);
-                lstClientes = bllCli.SelectByID(idCliente);
+                cliente = bllCli.SelectByID(idCliente);
+                dgvClientes.DataSource = "";
+                dgvClientes.DataSource = cliente;
             }
             else if (rdbNome.Checked)
             {
                 lstClientes = bllCli.SelectByNome(txtPesquisa.Text);
+                dgvClientes.DataSource = "";
+                dgvClientes.DataSource = lstClientes;
             }
-            dgvClientes.DataSource = "";
-            dgvClientes.DataSource = lstClientes;
+            
         }
     }
 }

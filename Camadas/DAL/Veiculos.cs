@@ -45,13 +45,13 @@ namespace OficinaMecanica.Camadas.DAL
             return listaVeiculos;
         }
 
-        public List<MODEL.Veiculos> SelectByIdCliente(string idCliente)
+        public List<MODEL.Veiculos> SelectById(int id)
         {
             List<MODEL.Veiculos> listaVeiculos = new List<MODEL.Veiculos>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from Veiculos where idCliente = @id_cliente";
+            string sql = "Select * from Veiculos where id=@id_veiculo";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_cliente", idCliente);
+            cmd.Parameters.AddWithValue("@id_veiculo", id);
             try
             {
                 conexao.Open();

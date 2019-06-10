@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPsqEstoque));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
@@ -39,11 +40,27 @@
             this.rdbTodos = new System.Windows.Forms.RadioButton();
             this.totEditar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
-            this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.oFICINADataSet = new OficinaMecanica.OFICINADataSet();
+            this.oFICINADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oFICINADataSet1 = new OficinaMecanica.OFICINADataSet1();
+            this.oFICINADataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oFICINADataSet2 = new OficinaMecanica.OFICINADataSet2();
+            this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.estoqueTableAdapter = new OficinaMecanica.OFICINADataSet2TableAdapters.EstoqueTableAdapter();
+            this.idprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -63,6 +80,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa de Produtos";
             // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
+            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltrar.Location = new System.Drawing.Point(749, 63);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(85, 29);
+            this.btnFiltrar.TabIndex = 6;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
+            // 
             // txtPesquisa
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(344, 63);
@@ -79,8 +109,15 @@
             // 
             // dgvProdutos
             // 
+            this.dgvProdutos.AutoGenerateColumns = false;
             this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idprodutoDataGridViewTextBoxColumn,
+            this.descricaoDataGridViewTextBoxColumn,
+            this.quantidadeDataGridViewTextBoxColumn,
+            this.valorDataGridViewTextBoxColumn});
+            this.dgvProdutos.DataSource = this.estoqueBindingSource;
             this.dgvProdutos.Location = new System.Drawing.Point(6, 130);
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.Size = new System.Drawing.Size(828, 253);
@@ -122,19 +159,6 @@
             this.rdbTodos.UseVisualStyleBackColor = true;
             this.rdbTodos.CheckedChanged += new System.EventHandler(this.RdbTodos_CheckedChanged);
             // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
-            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltrar.Location = new System.Drawing.Point(749, 63);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(85, 29);
-            this.btnFiltrar.TabIndex = 6;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            this.btnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
-            // 
             // btnEditar
             // 
             this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
@@ -158,6 +182,67 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // oFICINADataSet
+            // 
+            this.oFICINADataSet.DataSetName = "OFICINADataSet";
+            this.oFICINADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // oFICINADataSetBindingSource
+            // 
+            this.oFICINADataSetBindingSource.DataSource = this.oFICINADataSet;
+            this.oFICINADataSetBindingSource.Position = 0;
+            // 
+            // oFICINADataSet1
+            // 
+            this.oFICINADataSet1.DataSetName = "OFICINADataSet1";
+            this.oFICINADataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // oFICINADataSet1BindingSource
+            // 
+            this.oFICINADataSet1BindingSource.DataSource = this.oFICINADataSet1;
+            this.oFICINADataSet1BindingSource.Position = 0;
+            // 
+            // oFICINADataSet2
+            // 
+            this.oFICINADataSet2.DataSetName = "OFICINADataSet2";
+            this.oFICINADataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // estoqueBindingSource
+            // 
+            this.estoqueBindingSource.DataMember = "Estoque";
+            this.estoqueBindingSource.DataSource = this.oFICINADataSet2;
+            // 
+            // estoqueTableAdapter
+            // 
+            this.estoqueTableAdapter.ClearBeforeFill = true;
+            // 
+            // idprodutoDataGridViewTextBoxColumn
+            // 
+            this.idprodutoDataGridViewTextBoxColumn.DataPropertyName = "id_produto";
+            this.idprodutoDataGridViewTextBoxColumn.HeaderText = "Código";
+            this.idprodutoDataGridViewTextBoxColumn.Name = "idprodutoDataGridViewTextBoxColumn";
+            this.idprodutoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descrição";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.Width = 430;
+            // 
+            // quantidadeDataGridViewTextBoxColumn
+            // 
+            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            this.quantidadeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            // 
             // frmPsqEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +261,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -194,5 +285,16 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.ToolTip totEditar;
         private System.Windows.Forms.ToolTip totSair;
+        private System.Windows.Forms.BindingSource oFICINADataSetBindingSource;
+        private OFICINADataSet oFICINADataSet;
+        private OFICINADataSet1 oFICINADataSet1;
+        private System.Windows.Forms.BindingSource oFICINADataSet1BindingSource;
+        private OFICINADataSet2 oFICINADataSet2;
+        private System.Windows.Forms.BindingSource estoqueBindingSource;
+        private OFICINADataSet2TableAdapters.EstoqueTableAdapter estoqueTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idprodutoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
     }
 }

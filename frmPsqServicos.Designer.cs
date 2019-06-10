@@ -42,8 +42,16 @@
             this.totEditar = new System.Windows.Forms.ToolTip(this.components);
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.oFICINADataSet4 = new OficinaMecanica.OFICINADataSet4();
+            this.servicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.servicosTableAdapter = new OficinaMecanica.OFICINADataSet4TableAdapters.ServicosTableAdapter();
+            this.idservicoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valmaoobraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -92,8 +100,14 @@
             // 
             // dgvServicos
             // 
+            this.dgvServicos.AutoGenerateColumns = false;
             this.dgvServicos.BackgroundColor = System.Drawing.Color.White;
             this.dgvServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idservicoDataGridViewTextBoxColumn,
+            this.descricaoDataGridViewTextBoxColumn,
+            this.valmaoobraDataGridViewTextBoxColumn});
+            this.dgvServicos.DataSource = this.servicosBindingSource;
             this.dgvServicos.Location = new System.Drawing.Point(6, 132);
             this.dgvServicos.Name = "dgvServicos";
             this.dgvServicos.Size = new System.Drawing.Size(828, 253);
@@ -158,6 +172,41 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // oFICINADataSet4
+            // 
+            this.oFICINADataSet4.DataSetName = "OFICINADataSet4";
+            this.oFICINADataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // servicosBindingSource
+            // 
+            this.servicosBindingSource.DataMember = "Servicos";
+            this.servicosBindingSource.DataSource = this.oFICINADataSet4;
+            // 
+            // servicosTableAdapter
+            // 
+            this.servicosTableAdapter.ClearBeforeFill = true;
+            // 
+            // idservicoDataGridViewTextBoxColumn
+            // 
+            this.idservicoDataGridViewTextBoxColumn.DataPropertyName = "id_servico";
+            this.idservicoDataGridViewTextBoxColumn.HeaderText = "Código";
+            this.idservicoDataGridViewTextBoxColumn.Name = "idservicoDataGridViewTextBoxColumn";
+            this.idservicoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descrição";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.Width = 460;
+            // 
+            // valmaoobraDataGridViewTextBoxColumn
+            // 
+            this.valmaoobraDataGridViewTextBoxColumn.DataPropertyName = "val_mao_obra";
+            this.valmaoobraDataGridViewTextBoxColumn.HeaderText = "Valor da Mão de Obra";
+            this.valmaoobraDataGridViewTextBoxColumn.Name = "valmaoobraDataGridViewTextBoxColumn";
+            this.valmaoobraDataGridViewTextBoxColumn.Width = 220;
+            // 
             // frmPsqServicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +225,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -194,5 +245,11 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.ToolTip totSair;
         private System.Windows.Forms.ToolTip totEditar;
+        private OFICINADataSet4 oFICINADataSet4;
+        private System.Windows.Forms.BindingSource servicosBindingSource;
+        private OFICINADataSet4TableAdapters.ServicosTableAdapter servicosTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idservicoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valmaoobraDataGridViewTextBoxColumn;
     }
 }

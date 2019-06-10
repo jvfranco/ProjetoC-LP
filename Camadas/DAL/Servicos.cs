@@ -72,9 +72,10 @@ namespace OficinaMecanica.Camadas.DAL
 
             return listaServicos;
         }
-        public List<MODEL.Servicos> SelectByDescricao(string descricao)
+        public MODEL.Servicos SelectByDescricao(string descricao)
         {
-            List<MODEL.Servicos> listaServicos = new List<MODEL.Servicos>();
+            //List<MODEL.Servicos> listaServicos = new List<MODEL.Servicos>();
+            MODEL.Servicos Servico = new MODEL.Servicos();
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "Select * from Servicos where (descricao like @descricao)";
             SqlCommand cmd = new SqlCommand(sql, conexao);
@@ -85,11 +86,11 @@ namespace OficinaMecanica.Camadas.DAL
                 SqlDataReader dados = cmd.ExecuteReader();
                 while (dados.Read())
                 {
-                    MODEL.Servicos Servico = new MODEL.Servicos();
+                    //MODEL.Servicos Servico = new MODEL.Servicos();
                     Servico.idServico = Convert.ToInt32(dados["id_servico"].ToString());
                     Servico.descricao = dados["descricao"].ToString();
                     Servico.valMaoObra = Convert.ToSingle(dados["val_mao_obra"].ToString());
-                    listaServicos.Add(Servico);
+                    //listaServicos.Add(Servico);
                 }
             }
             catch
@@ -101,7 +102,8 @@ namespace OficinaMecanica.Camadas.DAL
                 conexao.Close();
             }
 
-            return listaServicos;
+            //return listaServicos;
+            return Servico;
         }
         public void Insert(Camadas.MODEL.Servicos Servico)
         {

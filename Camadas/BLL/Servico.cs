@@ -18,7 +18,12 @@ namespace OficinaMecanica.Camadas.BLL
             DAL.Servicos dalServ = new DAL.Servicos();
             return dalServ.SelectById(id);
         }
-        public List<MODEL.Servicos> SelectByDescricao(string descricao)
+        //public List<MODEL.Servicos> SelectByDescricao(string descricao)
+        //{
+        //    DAL.Servicos dalServ = new DAL.Servicos();
+        //    return dalServ.SelectByDescricao(descricao);
+        //}
+        public MODEL.Servicos SelectByDescricao(string descricao)
         {
             DAL.Servicos dalServ = new DAL.Servicos();
             return dalServ.SelectByDescricao(descricao);

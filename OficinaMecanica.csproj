@@ -49,6 +49,7 @@
     <Compile Include="Camadas\BLL\Cliente.cs" />
     <Compile Include="Camadas\BLL\Estoque.cs" />
     <Compile Include="Camadas\BLL\Funcionario.cs" />
+    <Compile Include="Camadas\BLL\Revisao.cs" />
     <Compile Include="Camadas\BLL\Servico.cs" />
     <Compile Include="Camadas\BLL\Usuario.cs" />
     <Compile Include="Camadas\BLL\Veiculo.cs" />
@@ -170,6 +171,41 @@
     <Compile Include="frmCadRevisao.Designer.cs">
       <DependentUpon>frmCadRevisao.cs</DependentUpon>
     </Compile>
+    <Compile Include="OFICINADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OFICINADataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OFICINADataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OFICINADataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OFICINADataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OFICINADataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OFICINADataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OFICINADataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OFICINADataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OFICINADataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OFICINADataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OFICINADataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OFICINADataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OFICINADataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadCliente.resx">
@@ -233,6 +269,83 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="OFICINADataSet.xsc">
+      <DependentUpon>OFICINADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OFICINADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OFICINADataSet.xss">
+      <DependentUpon>OFICINADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet1.xsc">
+      <DependentUpon>OFICINADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OFICINADataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OFICINADataSet1.xss">
+      <DependentUpon>OFICINADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet2.xsc">
+      <DependentUpon>OFICINADataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OFICINADataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OFICINADataSet2.xss">
+      <DependentUpon>OFICINADataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet3.xsc">
+      <DependentUpon>OFICINADataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OFICINADataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OFICINADataSet3.xss">
+      <DependentUpon>OFICINADataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet4.xsc">
+      <DependentUpon>OFICINADataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OFICINADataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OFICINADataSet4.xss">
+      <DependentUpon>OFICINADataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet5.xsc">
+      <DependentUpon>OFICINADataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OFICINADataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OFICINADataSet5.xss">
+      <DependentUpon>OFICINADataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet6.xsc">
+      <DependentUpon>OFICINADataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OFICINADataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OFICINADataSet6.xss">
+      <DependentUpon>OFICINADataSet6.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

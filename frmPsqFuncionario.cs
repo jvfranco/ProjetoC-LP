@@ -24,6 +24,8 @@ namespace OficinaMecanica
 
         private void FrmPsqFuncionario_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'oFICINADataSet3.Funcionario'. Você pode movê-la ou removê-la conforme necessário.
+            this.funcionarioTableAdapter.Fill(this.oFICINADataSet3.Funcionario);
             totSair.SetToolTip(btnSair, "Sair");
             totEditar.SetToolTip(btnEditar, "Editar");
         }

@@ -42,8 +42,17 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.totEditar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
+            this.oFICINADataSet3 = new OficinaMecanica.OFICINADataSet3();
+            this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.funcionarioTableAdapter = new OficinaMecanica.OFICINADataSet3TableAdapters.FuncionarioTableAdapter();
+            this.idfuncionarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -65,8 +74,15 @@
             // 
             // dgvFuncionarios
             // 
+            this.dgvFuncionarios.AutoGenerateColumns = false;
             this.dgvFuncionarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncionarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idfuncionarioDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.cpfDataGridViewTextBoxColumn,
+            this.cargoDataGridViewTextBoxColumn});
+            this.dgvFuncionarios.DataSource = this.funcionarioBindingSource;
             this.dgvFuncionarios.Location = new System.Drawing.Point(6, 120);
             this.dgvFuncionarios.Name = "dgvFuncionarios";
             this.dgvFuncionarios.Size = new System.Drawing.Size(781, 244);
@@ -157,6 +173,48 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // oFICINADataSet3
+            // 
+            this.oFICINADataSet3.DataSetName = "OFICINADataSet3";
+            this.oFICINADataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // funcionarioBindingSource
+            // 
+            this.funcionarioBindingSource.DataMember = "Funcionario";
+            this.funcionarioBindingSource.DataSource = this.oFICINADataSet3;
+            // 
+            // funcionarioTableAdapter
+            // 
+            this.funcionarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // idfuncionarioDataGridViewTextBoxColumn
+            // 
+            this.idfuncionarioDataGridViewTextBoxColumn.DataPropertyName = "id_funcionario";
+            this.idfuncionarioDataGridViewTextBoxColumn.HeaderText = "Código";
+            this.idfuncionarioDataGridViewTextBoxColumn.Name = "idfuncionarioDataGridViewTextBoxColumn";
+            this.idfuncionarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.Width = 350;
+            // 
+            // cpfDataGridViewTextBoxColumn
+            // 
+            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
+            this.cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
+            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
+            this.cpfDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // cargoDataGridViewTextBoxColumn
+            // 
+            this.cargoDataGridViewTextBoxColumn.DataPropertyName = "cargo";
+            this.cargoDataGridViewTextBoxColumn.HeaderText = "Cargo";
+            this.cargoDataGridViewTextBoxColumn.Name = "cargoDataGridViewTextBoxColumn";
+            this.cargoDataGridViewTextBoxColumn.Width = 140;
+            // 
             // frmPsqFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +233,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,5 +253,12 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.ToolTip totEditar;
         private System.Windows.Forms.ToolTip totSair;
+        private OFICINADataSet3 oFICINADataSet3;
+        private System.Windows.Forms.BindingSource funcionarioBindingSource;
+        private OFICINADataSet3TableAdapters.FuncionarioTableAdapter funcionarioTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idfuncionarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cpfDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cargoDataGridViewTextBoxColumn;
     }
 }

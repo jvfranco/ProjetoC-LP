@@ -15,10 +15,10 @@ namespace OficinaMecanica.Camadas.BLL
             return dalVei.Select();
         }
 
-        public List<MODEL.Veiculos> SelectByIdCliente(int id)
+        public List<MODEL.Veiculos> SelectById(int id)
         {
             DAL.Veiculos dalVei = new DAL.Veiculos();
-            return dalVei.Select();
+            return dalVei.SelectById(id);
         }
         public List<MODEL.Veiculos> SelectByModelo(string modelo)
         {

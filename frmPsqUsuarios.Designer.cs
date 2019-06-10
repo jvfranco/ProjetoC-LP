@@ -41,8 +41,17 @@
             this.totEditar = new System.Windows.Forms.ToolTip(this.components);
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.oFICINADataSet5 = new OficinaMecanica.OFICINADataSet5();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosTableAdapter = new OficinaMecanica.OFICINADataSet5TableAdapters.UsuariosTableAdapter();
+            this.idusuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idfuncionarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -90,8 +99,15 @@
             // 
             // dgvUsuarios
             // 
+            this.dgvUsuarios.AutoGenerateColumns = false;
             this.dgvUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idusuarioDataGridViewTextBoxColumn,
+            this.idfuncionarioDataGridViewTextBoxColumn,
+            this.loginDataGridViewTextBoxColumn,
+            this.senhaDataGridViewTextBoxColumn});
+            this.dgvUsuarios.DataSource = this.usuariosBindingSource;
             this.dgvUsuarios.Location = new System.Drawing.Point(6, 130);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(828, 253);
@@ -144,6 +160,48 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // oFICINADataSet5
+            // 
+            this.oFICINADataSet5.DataSetName = "OFICINADataSet5";
+            this.oFICINADataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.oFICINADataSet5;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // idusuarioDataGridViewTextBoxColumn
+            // 
+            this.idusuarioDataGridViewTextBoxColumn.DataPropertyName = "id_usuario";
+            this.idusuarioDataGridViewTextBoxColumn.HeaderText = "Código";
+            this.idusuarioDataGridViewTextBoxColumn.Name = "idusuarioDataGridViewTextBoxColumn";
+            this.idusuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idfuncionarioDataGridViewTextBoxColumn
+            // 
+            this.idfuncionarioDataGridViewTextBoxColumn.DataPropertyName = "id_funcionario";
+            this.idfuncionarioDataGridViewTextBoxColumn.HeaderText = "Código Funcionário";
+            this.idfuncionarioDataGridViewTextBoxColumn.Name = "idfuncionarioDataGridViewTextBoxColumn";
+            this.idfuncionarioDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Login";
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // senhaDataGridViewTextBoxColumn
+            // 
+            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "senha";
+            this.senhaDataGridViewTextBoxColumn.HeaderText = "Senha";
+            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
+            this.senhaDataGridViewTextBoxColumn.Width = 200;
+            // 
             // frmPsqUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +219,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +238,12 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.ToolTip totSair;
         private System.Windows.Forms.ToolTip totEditar;
+        private OFICINADataSet5 oFICINADataSet5;
+        private System.Windows.Forms.BindingSource usuariosBindingSource;
+        private OFICINADataSet5TableAdapters.UsuariosTableAdapter usuariosTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idusuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idfuncionarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
     }
 }

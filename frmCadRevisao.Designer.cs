@@ -31,21 +31,23 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadRevisao));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblValorFinal = new System.Windows.Forms.Label();
-            this.lblValorTotal = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtFormaPagto = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtObservações = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtDesconto = new System.Windows.Forms.TextBox();
             this.txtKM = new System.Windows.Forms.TextBox();
             this.cmbVeiculo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvVenda = new System.Windows.Forms.DataGridView();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddPecas = new System.Windows.Forms.Button();
             this.cmbPecas = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,22 +67,27 @@
             this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.totCalcular = new System.Windows.Forms.ToolTip(this.components);
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtFormaPagto = new System.Windows.Forms.TextBox();
+            this.txtDesconto = new System.Windows.Forms.TextBox();
+            this.txtValServ = new System.Windows.Forms.TextBox();
+            this.txtValorTotal = new System.Windows.Forms.TextBox();
+            this.txtValorFinal = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtValorFinal);
+            this.groupBox1.Controls.Add(this.txtValorTotal);
+            this.groupBox1.Controls.Add(this.txtValServ);
+            this.groupBox1.Controls.Add(this.txtDesconto);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtQuantidade);
-            this.groupBox1.Controls.Add(this.lblValorFinal);
-            this.groupBox1.Controls.Add(this.lblValorTotal);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtFormaPagto);
             this.groupBox1.Controls.Add(this.label10);
@@ -89,7 +96,6 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtObservações);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtDesconto);
             this.groupBox1.Controls.Add(this.txtKM);
             this.groupBox1.Controls.Add(this.cmbVeiculo);
             this.groupBox1.Controls.Add(this.label7);
@@ -115,23 +121,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ordem de Serviço";
             // 
-            // lblValorFinal
+            // label14
             // 
-            this.lblValorFinal.BackColor = System.Drawing.Color.White;
-            this.lblValorFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblValorFinal.Location = new System.Drawing.Point(503, 604);
-            this.lblValorFinal.Name = "lblValorFinal";
-            this.lblValorFinal.Size = new System.Drawing.Size(240, 29);
-            this.lblValorFinal.TabIndex = 14;
+            this.label14.Location = new System.Drawing.Point(694, 155);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(138, 26);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Quantidade:";
             // 
-            // lblValorTotal
+            // txtQuantidade
             // 
-            this.lblValorTotal.BackColor = System.Drawing.Color.White;
-            this.lblValorTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblValorTotal.Location = new System.Drawing.Point(7, 604);
-            this.lblValorTotal.Name = "lblValorTotal";
-            this.lblValorTotal.Size = new System.Drawing.Size(240, 29);
-            this.lblValorTotal.TabIndex = 12;
+            this.txtQuantidade.Location = new System.Drawing.Point(698, 180);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(256, 29);
+            this.txtQuantidade.TabIndex = 30;
             // 
             // label13
             // 
@@ -141,20 +144,13 @@
             this.label13.TabIndex = 29;
             this.label13.Text = "Forma de Pagamento:";
             // 
-            // txtFormaPagto
-            // 
-            this.txtFormaPagto.Location = new System.Drawing.Point(751, 604);
-            this.txtFormaPagto.Name = "txtFormaPagto";
-            this.txtFormaPagto.Size = new System.Drawing.Size(240, 29);
-            this.txtFormaPagto.TabIndex = 15;
-            // 
             // label10
             // 
             this.label10.Location = new System.Drawing.Point(4, 578);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 26);
+            this.label10.Size = new System.Drawing.Size(145, 26);
             this.label10.TabIndex = 23;
-            this.label10.Text = "Valor Total:";
+            this.label10.Text = "Valor Total R$:";
             // 
             // label9
             // 
@@ -168,17 +164,17 @@
             // 
             this.label12.Location = new System.Drawing.Point(501, 578);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(123, 26);
+            this.label12.Size = new System.Drawing.Size(150, 26);
             this.label12.TabIndex = 27;
-            this.label12.Text = "Valor Final:";
+            this.label12.Text = "Valor Final R$: ";
             // 
             // label11
             // 
             this.label11.Location = new System.Drawing.Point(253, 578);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 26);
+            this.label11.Size = new System.Drawing.Size(147, 26);
             this.label11.TabIndex = 25;
-            this.label11.Text = "Desconto:";
+            this.label11.Text = "Desconto (%):";
             // 
             // txtObservações
             // 
@@ -195,13 +191,6 @@
             this.label8.Size = new System.Drawing.Size(123, 26);
             this.label8.TabIndex = 19;
             this.label8.Text = "KM Atual:";
-            // 
-            // txtDesconto
-            // 
-            this.txtDesconto.Location = new System.Drawing.Point(255, 604);
-            this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(240, 29);
-            this.txtDesconto.TabIndex = 13;
             // 
             // txtKM
             // 
@@ -239,6 +228,32 @@
             this.dgvVenda.Name = "dgvVenda";
             this.dgvVenda.Size = new System.Drawing.Size(984, 221);
             this.dgvVenda.TabIndex = 10;
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.HeaderText = "Descrição";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            this.colDescricao.Width = 540;
+            // 
+            // colQuantidade
+            // 
+            this.colQuantidade.HeaderText = "Quantidade";
+            this.colQuantidade.Name = "colQuantidade";
+            this.colQuantidade.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colQuantidade.Width = 200;
+            // 
+            // colValor
+            // 
+            this.colValor.HeaderText = "Valor";
+            this.colValor.Name = "colValor";
+            this.colValor.ReadOnly = true;
             // 
             // btnAddPecas
             // 
@@ -287,7 +302,7 @@
             this.cmbServico.FormattingEnabled = true;
             this.cmbServico.Location = new System.Drawing.Point(529, 117);
             this.cmbServico.Name = "cmbServico";
-            this.cmbServico.Size = new System.Drawing.Size(461, 32);
+            this.cmbServico.Size = new System.Drawing.Size(301, 32);
             this.cmbServico.TabIndex = 6;
             // 
             // label5
@@ -385,46 +400,63 @@
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
-            // colCodigo
+            // btnCalcular
             // 
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.ReadOnly = true;
+            this.btnCalcular.BackColor = System.Drawing.Color.Transparent;
+            this.btnCalcular.FlatAppearance.BorderSize = 0;
+            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcular.Image = ((System.Drawing.Image)(resources.GetObject("btnCalcular.Image")));
+            this.btnCalcular.Location = new System.Drawing.Point(784, 650);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(50, 50);
+            this.btnCalcular.TabIndex = 19;
+            this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
-            // colDescricao
+            // label15
             // 
-            this.colDescricao.HeaderText = "Descrição";
-            this.colDescricao.Name = "colDescricao";
-            this.colDescricao.ReadOnly = true;
-            this.colDescricao.Width = 540;
+            this.label15.Location = new System.Drawing.Point(832, 92);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(161, 26);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Valor Serviço R$:";
             // 
-            // colQuantidade
+            // txtFormaPagto
             // 
-            this.colQuantidade.HeaderText = "Quantidade";
-            this.colQuantidade.Name = "colQuantidade";
-            this.colQuantidade.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colQuantidade.Width = 200;
+            this.txtFormaPagto.Location = new System.Drawing.Point(751, 604);
+            this.txtFormaPagto.Name = "txtFormaPagto";
+            this.txtFormaPagto.Size = new System.Drawing.Size(240, 29);
+            this.txtFormaPagto.TabIndex = 15;
             // 
-            // colValor
+            // txtDesconto
             // 
-            this.colValor.HeaderText = "Valor";
-            this.colValor.Name = "colValor";
-            this.colValor.ReadOnly = true;
+            this.txtDesconto.Location = new System.Drawing.Point(257, 604);
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.Size = new System.Drawing.Size(240, 29);
+            this.txtDesconto.TabIndex = 36;
             // 
-            // txtQuantidade
+            // txtValServ
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(698, 180);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(256, 29);
-            this.txtQuantidade.TabIndex = 30;
+            this.txtValServ.Location = new System.Drawing.Point(836, 118);
+            this.txtValServ.Name = "txtValServ";
+            this.txtValServ.Size = new System.Drawing.Size(154, 29);
+            this.txtValServ.TabIndex = 37;
             // 
-            // label14
+            // txtValorTotal
             // 
-            this.label14.Location = new System.Drawing.Point(694, 155);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(138, 26);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Quantidade:";
+            this.txtValorTotal.Enabled = false;
+            this.txtValorTotal.Location = new System.Drawing.Point(6, 604);
+            this.txtValorTotal.Name = "txtValorTotal";
+            this.txtValorTotal.Size = new System.Drawing.Size(240, 29);
+            this.txtValorTotal.TabIndex = 38;
+            // 
+            // txtValorFinal
+            // 
+            this.txtValorFinal.Enabled = false;
+            this.txtValorFinal.Location = new System.Drawing.Point(503, 604);
+            this.txtValorFinal.Name = "txtValorFinal";
+            this.txtValorFinal.Size = new System.Drawing.Size(240, 29);
+            this.txtValorFinal.TabIndex = 39;
             // 
             // frmCadRevisao
             // 
@@ -432,6 +464,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1004, 704);
+            this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGravar);
@@ -467,19 +500,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtFormaPagto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtObservações;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtDesconto;
         private System.Windows.Forms.TextBox txtKM;
         private System.Windows.Forms.ComboBox cmbVeiculo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblValorFinal;
-        private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSair;
@@ -492,5 +521,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtQuantidade;
+        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.ToolTip totCalcular;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtFormaPagto;
+        private System.Windows.Forms.TextBox txtDesconto;
+        private System.Windows.Forms.TextBox txtValorFinal;
+        private System.Windows.Forms.TextBox txtValorTotal;
+        private System.Windows.Forms.TextBox txtValServ;
     }
 }

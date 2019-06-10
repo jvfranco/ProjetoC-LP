@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -55,20 +56,19 @@ namespace OficinaMecanica.Camadas.DAL
             return listaClientes;
         }
 
-        public List<MODEL.Clientes> SelectByID(int idCliente)
+        public MODEL.Clientes SelectByID(int id_cliente)
         {
-            List<MODEL.Clientes> listaClientes = new List<MODEL.Clientes>();
+            MODEL.Clientes cliente = new MODEL.Clientes();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from Clientes where idCliente=@id_cliente";
+            string sql = "Select * from Clientes where id_cliente=@id_cliente";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_cliente", idCliente);
+            cmd.Parameters.AddWithValue("@id_cliente", id_cliente);
             try
             {
                 conexao.Open();
                 SqlDataReader dados = cmd.ExecuteReader();
                 while (dados.Read())
-                {
-                    MODEL.Clientes cliente = new MODEL.Clientes();
+                {                    
                     cliente.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
                     cliente.nome = dados["nome"].ToString();
                     cliente.endereco = dados["endereco"].ToString();
@@ -83,8 +83,7 @@ namespace OficinaMecanica.Camadas.DAL
                     cliente.cpf_cnpj = dados["cpf_cnpj"].ToString();
                     cliente.rg = dados["rg"].ToString();
                     cliente.tipoPessoa = dados["tipo_pessoa"].ToString();
-
-                    listaClientes.Add(cliente);
+                    
                 }
             }
             catch
@@ -95,17 +94,17 @@ namespace OficinaMecanica.Camadas.DAL
             {
                 conexao.Close();
             }
+            return cliente;
 
-            return listaClientes;
         }
 
-        public List<MODEL.Clientes> SelectByNome(string nomeCliente)
+        public List<MODEL.Clientes> SelectByNome(string nome)
         {
             List<MODEL.Clientes> listaClientes = new List<MODEL.Clientes>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from Clientes where (nomeCliente like @nome)";
+            string sql = "Select * from Clientes where (nome like @nome)";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@nome", "%" + nomeCliente + "%");
+            cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
             try
             {
                 conexao.Open();

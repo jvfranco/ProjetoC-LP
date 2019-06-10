@@ -24,6 +24,8 @@ namespace OficinaMecanica
 
         private void FrmPsqEstoque_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'oFICINADataSet2.Estoque'. Você pode movê-la ou removê-la conforme necessário.
+            this.estoqueTableAdapter.Fill(this.oFICINADataSet2.Estoque);
             totSair.SetToolTip(btnSair, "Sair");
             totEditar.SetToolTip(btnEditar, "Editar");
         }
@@ -64,12 +66,12 @@ namespace OficinaMecanica
             else if (rdbID.Checked)
             {
                 int id = Convert.ToInt32(txtPesquisa.Text);
-                lstProdutos = bllEst.SelectById(id);
+                //lstProdutos = bllEst.SelectById(id);
             }
             else if (rdbNome.Checked)
             {
                 string descricao = txtPesquisa.Text;
-                lstProdutos = bllEst.SelectByDescricao(descricao);
+                //lstProdutos = bllEst.SelectByDescricao(descricao);
             }
             dgvProdutos.DataSource = "";
             dgvProdutos.DataSource = lstProdutos;

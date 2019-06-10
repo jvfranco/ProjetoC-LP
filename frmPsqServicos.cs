@@ -53,12 +53,12 @@ namespace OficinaMecanica
             else if (rdbID.Checked)
             {
                 int id = Convert.ToInt32(txtPesquisa.Text);
-                lstServicos = bllServ.SelectById(id);
+                //lstServicos = bllServ.SelectById(id);
             }
             else if (rdbNome.Checked)
             {
                 string descricao = txtPesquisa.Text;
-                lstServicos = bllServ.SelectByDescricao(descricao);
+               // lstServicos = bllServ.SelectByDescricao(descricao);
             }
 
             dgvServicos.DataSource = "";
@@ -67,6 +67,8 @@ namespace OficinaMecanica
 
         private void FrmPsqServicos_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'oFICINADataSet4.Servicos'. Você pode movê-la ou removê-la conforme necessário.
+            this.servicosTableAdapter.Fill(this.oFICINADataSet4.Servicos);
             totSair.SetToolTip(btnSair, "Sair");
             totEditar.SetToolTip(btnEditar, "Editar");
         }
