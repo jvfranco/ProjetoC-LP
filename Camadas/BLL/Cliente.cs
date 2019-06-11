@@ -9,7 +9,7 @@ namespace OficinaMecanica.Camadas.BLL
     public class Cliente
     {
 
-        public MODEL.Clientes SelectByID(int idCliente)
+        public List<MODEL.Clientes> SelectByID(int idCliente)
         {
             DAL.Clientes dalCli = new DAL.Clientes();
             return dalCli.SelectByID(idCliente);

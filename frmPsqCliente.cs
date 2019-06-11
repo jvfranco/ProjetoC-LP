@@ -21,6 +21,8 @@ namespace OficinaMecanica
 
         private void FrmPsqCliente_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'oFICINADataSet8.Clientes'. Você pode movê-la ou removê-la conforme necessário.
+            this.clientesTableAdapter2.Fill(this.oFICINADataSet8.Clientes);
             totSair.SetToolTip(btnSair, "Sair");
             totEditar.SetToolTip(btnEditar, "Editar");
         }
@@ -57,7 +59,6 @@ namespace OficinaMecanica
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
             List<Camadas.MODEL.Clientes> lstClientes = new List<Camadas.MODEL.Clientes>();
-            Camadas.MODEL.Clientes cliente = new Camadas.MODEL.Clientes();
             Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
 
             if (rdbTodos.Checked)
@@ -68,10 +69,9 @@ namespace OficinaMecanica
             }
             else if (rdbID.Checked)
             {
-                int idCliente = Convert.ToInt32(txtPesquisa.Text);
-                cliente = bllCli.SelectByID(idCliente);
+                lstClientes = bllCli.SelectByID(Convert.ToInt32(txtPesquisa.Text));
                 dgvClientes.DataSource = "";
-                dgvClientes.DataSource = cliente;
+                dgvClientes.DataSource = lstClientes;
             }
             else if (rdbNome.Checked)
             {

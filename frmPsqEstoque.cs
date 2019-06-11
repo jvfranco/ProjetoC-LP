@@ -58,23 +58,27 @@ namespace OficinaMecanica
         {
             Camadas.BLL.Estoque bllEst = new Camadas.BLL.Estoque();
             List<Camadas.MODEL.Estoque> lstProdutos = new List<Camadas.MODEL.Estoque>();
+            Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
 
             if (rdbTodos.Checked)
             {
                 lstProdutos = bllEst.Select();
+                dgvProdutos.DataSource = "";
+                dgvProdutos.DataSource = lstProdutos;
             }
             else if (rdbID.Checked)
             {
-                int id = Convert.ToInt32(txtPesquisa.Text);
-                //lstProdutos = bllEst.SelectById(id);
+                produto = bllEst.SelectById(Convert.ToInt32(txtPesquisa.Text));
+                dgvProdutos.DataSource = "";
+                dgvProdutos.DataSource = produto;
             }
             else if (rdbNome.Checked)
-            {
-                string descricao = txtPesquisa.Text;
-                //lstProdutos = bllEst.SelectByDescricao(descricao);
+            { 
+                lstProdutos = bllEst.SelectByDescricao(txtPesquisa.Text);
+                dgvProdutos.DataSource = "";
+                dgvProdutos.DataSource = lstProdutos;
             }
-            dgvProdutos.DataSource = "";
-            dgvProdutos.DataSource = lstProdutos;
+            
         }
     }
 }

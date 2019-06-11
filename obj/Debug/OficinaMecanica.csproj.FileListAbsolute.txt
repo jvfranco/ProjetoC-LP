@@ -62,4 +62,3 @@ D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqServicos.reso
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqUsuarios.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqVeiculos.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadRevisao.resources
-D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.csprojAssemblyReference.cache

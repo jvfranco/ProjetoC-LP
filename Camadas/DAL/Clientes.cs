@@ -26,7 +26,7 @@ namespace OficinaMecanica.Camadas.DAL
                 while (dados.Read())
                 {
                     MODEL.Clientes cliente = new MODEL.Clientes();
-                    cliente.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
+                    cliente.idCliente = Convert.ToInt32(dados["id"].ToString());
                     cliente.nome = dados["nome"].ToString();
                     cliente.endereco = dados["endereco"].ToString();
                     cliente.numero = Convert.ToInt32(dados["numero"].ToString());
@@ -56,20 +56,21 @@ namespace OficinaMecanica.Camadas.DAL
             return listaClientes;
         }
 
-        public MODEL.Clientes SelectByID(int id_cliente)
+        public List<MODEL.Clientes> SelectByID(int id)
         {
-            MODEL.Clientes cliente = new MODEL.Clientes();
+            List<MODEL.Clientes> lstClientes = new List<MODEL.Clientes>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from Clientes where id_cliente=@id_cliente";
+            string sql = "Select * from Clientes where id=@id";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_cliente", id_cliente);
+            cmd.Parameters.AddWithValue("@id", id);
             try
             {
                 conexao.Open();
                 SqlDataReader dados = cmd.ExecuteReader();
                 while (dados.Read())
-                {                    
-                    cliente.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
+                {
+                    MODEL.Clientes cliente = new MODEL.Clientes();
+                    cliente.idCliente = Convert.ToInt32(dados["id"].ToString());
                     cliente.nome = dados["nome"].ToString();
                     cliente.endereco = dados["endereco"].ToString();
                     cliente.numero = Convert.ToInt32(dados["numero"].ToString());
@@ -83,7 +84,7 @@ namespace OficinaMecanica.Camadas.DAL
                     cliente.cpf_cnpj = dados["cpf_cnpj"].ToString();
                     cliente.rg = dados["rg"].ToString();
                     cliente.tipoPessoa = dados["tipo_pessoa"].ToString();
-                    
+                    lstClientes.Add(cliente);
                 }
             }
             catch
@@ -94,7 +95,7 @@ namespace OficinaMecanica.Camadas.DAL
             {
                 conexao.Close();
             }
-            return cliente;
+            return lstClientes;
 
         }
 
@@ -112,7 +113,7 @@ namespace OficinaMecanica.Camadas.DAL
                 while (dados.Read())
                 {
                     MODEL.Clientes cliente = new MODEL.Clientes();
-                    cliente.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
+                    cliente.idCliente = Convert.ToInt32(dados["id"].ToString());
                     cliente.nome = dados["nome"].ToString();
                     cliente.endereco = dados["endereco"].ToString();
                     cliente.numero = Convert.ToInt32(dados["numero"].ToString());
@@ -147,6 +148,7 @@ namespace OficinaMecanica.Camadas.DAL
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "Insert into Clientes values (@nome, @endereco, @numero, @bairro, @cep, @cidade, @estado, @telefone, @email, @data_cadastro, @cpf_cnpj, @rg, @tipo_pessoa);";
             SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id", cliente.idCliente);
             cmd.Parameters.AddWithValue("@nome", cliente.nome);
             cmd.Parameters.AddWithValue("@endereco", cliente.endereco);
             cmd.Parameters.AddWithValue("@numero", cliente.numero);
@@ -182,9 +184,9 @@ namespace OficinaMecanica.Camadas.DAL
             sql += "numero=@numero, bairro=@bairro, cep=@cep, ";
             sql += "cidade=@cidade, estado=@estado, telefone=@telefone, ";
             sql += "email=@email, dataCadastro=@data_cadastro, cpf_cnpj=@cpf_cnpj, ";
-            sql += "rg=@rg tipoPessoa=@tipo_pessoa where idCliente=@id_cliente; ";
+            sql += "rg=@rg tipoPessoa=@tipo_pessoa where idCliente=@id; ";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_cliente", cliente.idCliente);
+            cmd.Parameters.AddWithValue("@id", cliente.idCliente);
             cmd.Parameters.AddWithValue("@nome", cliente.nome);
             cmd.Parameters.AddWithValue("@endereco", cliente.endereco);
             cmd.Parameters.AddWithValue("@numero", cliente.numero);
@@ -216,9 +218,9 @@ namespace OficinaMecanica.Camadas.DAL
         public void Delete(int idCliente)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Delete from Clientes where idCliente=@id_cliente;";
+            string sql = "Delete from Clientes where idCliente=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_cliente", idCliente);
+            cmd.Parameters.AddWithValue("@id", idCliente);
             try
             {
                 conexao.Open();
