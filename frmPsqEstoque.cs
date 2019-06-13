@@ -74,9 +74,10 @@ namespace OficinaMecanica
             }
             else if (rdbNome.Checked)
             { 
-                lstProdutos = bllEst.SelectByDescricao(txtPesquisa.Text);
+                //lstProdutos = bllEst.SelectByDescricao(txtPesquisa.Text);
+                produto = bllEst.SelectByDescricao(txtPesquisa.Text);
                 dgvProdutos.DataSource = "";
-                dgvProdutos.DataSource = lstProdutos;
+                dgvProdutos.DataSource = produto;
             }
             
         }

@@ -45,7 +45,6 @@ namespace OficinaMecanica.Camadas.DAL
 
         public MODEL.Estoque SelectById(int id)
         {
-            //List<MODEL.Estoque> lstEstoque = new List<MODEL.Estoque>();
             MODEL.Estoque produto = new MODEL.Estoque();
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "Select * from Estoque where id=@id_produto";
@@ -57,12 +56,10 @@ namespace OficinaMecanica.Camadas.DAL
                 SqlDataReader dados = cmd.ExecuteReader();
                 while (dados.Read())
                 {
-                    //MODEL.Estoque produto = new MODEL.Estoque();
                     produto.idProduto = Convert.ToInt32(dados["id_produto"].ToString());
                     produto.descricao = dados["descricao"].ToString();
                     produto.quantidade = Convert.ToInt32(dados["quantidade"].ToString());
                     produto.valor = Convert.ToSingle(dados["valor"].ToString());
-                    //lstEstoque.Add(produto);
                 }
             }
             catch
@@ -73,10 +70,9 @@ namespace OficinaMecanica.Camadas.DAL
             {
                 conexao.Close();
             }
-            //return lstEstoque;
             return produto;
         }
-
+        /*
         public List<MODEL.Estoque> SelectByDescricao(string descricao)
         {
             List<MODEL.Estoque> listaEstoque = new List<MODEL.Estoque>();
@@ -108,6 +104,41 @@ namespace OficinaMecanica.Camadas.DAL
             }
 
             return listaEstoque;
+
+        }
+        */
+
+        public MODEL.Estoque SelectByDescricao(string descricao)
+        {
+            MODEL.Estoque produto = new MODEL.Estoque();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Estoque where (descricao like @descricao)";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@descricao", "%" + descricao + "%");
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    
+                    produto.idProduto = Convert.ToInt32(dados["id_produto"].ToString());
+                    produto.descricao = dados["descricao"].ToString();
+                    produto.quantidade = Convert.ToInt32(dados["quantidade"].ToString());
+                    produto.valor = Convert.ToSingle(dados["valor"].ToString());
+                    
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de Produtos.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return produto;
 
         }
 

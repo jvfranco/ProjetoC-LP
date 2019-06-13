@@ -67,7 +67,6 @@
             this.clientesTableAdapter = new OficinaMecanica.OFICINADataSet1TableAdapters.ClientesTableAdapter();
             this.clientesTableAdapter1 = new OficinaMecanica.OFICINADataSet7TableAdapters.ClientesTableAdapter();
             this.clientesTableAdapter2 = new OficinaMecanica.OFICINADataSet8TableAdapters.ClientesTableAdapter();
-            this.txtTeste = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).BeginInit();
@@ -82,7 +81,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtTeste);
             this.groupBox1.Controls.Add(this.dgvClientes);
             this.groupBox1.Controls.Add(this.btnFiltrar);
             this.groupBox1.Controls.Add(this.txtPesquisa);
@@ -347,13 +345,6 @@
             // 
             this.clientesTableAdapter2.ClearBeforeFill = true;
             // 
-            // txtTeste
-            // 
-            this.txtTeste.Location = new System.Drawing.Point(454, 75);
-            this.txtTeste.Name = "txtTeste";
-            this.txtTeste.Size = new System.Drawing.Size(129, 29);
-            this.txtTeste.TabIndex = 8;
-            // 
             // frmPsqCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,6 +415,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cpfcnpjDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rgDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipopessoaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txtTeste;
     }
 }

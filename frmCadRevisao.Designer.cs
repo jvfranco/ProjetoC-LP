@@ -31,9 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadRevisao));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtValorFinal = new System.Windows.Forms.TextBox();
+            this.txtValorTotal = new System.Windows.Forms.TextBox();
+            this.txtValServ = new System.Windows.Forms.TextBox();
+            this.txtDesconto = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.txtFormaPagto = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -69,18 +75,15 @@
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
             this.btnCalcular = new System.Windows.Forms.Button();
             this.totCalcular = new System.Windows.Forms.ToolTip(this.components);
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtFormaPagto = new System.Windows.Forms.TextBox();
-            this.txtDesconto = new System.Windows.Forms.TextBox();
-            this.txtValServ = new System.Windows.Forms.TextBox();
-            this.txtValorTotal = new System.Windows.Forms.TextBox();
-            this.txtValorFinal = new System.Windows.Forms.TextBox();
+            this.txtTeste = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTeste);
             this.groupBox1.Controls.Add(this.txtValorFinal);
             this.groupBox1.Controls.Add(this.txtValorTotal);
             this.groupBox1.Controls.Add(this.txtValServ);
@@ -121,6 +124,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ordem de Serviço";
             // 
+            // txtValorFinal
+            // 
+            this.txtValorFinal.Enabled = false;
+            this.txtValorFinal.Location = new System.Drawing.Point(503, 604);
+            this.txtValorFinal.Name = "txtValorFinal";
+            this.txtValorFinal.Size = new System.Drawing.Size(240, 29);
+            this.txtValorFinal.TabIndex = 39;
+            // 
+            // txtValorTotal
+            // 
+            this.txtValorTotal.Enabled = false;
+            this.txtValorTotal.Location = new System.Drawing.Point(6, 604);
+            this.txtValorTotal.Name = "txtValorTotal";
+            this.txtValorTotal.Size = new System.Drawing.Size(240, 29);
+            this.txtValorTotal.TabIndex = 38;
+            // 
+            // txtValServ
+            // 
+            this.txtValServ.Location = new System.Drawing.Point(836, 118);
+            this.txtValServ.Name = "txtValServ";
+            this.txtValServ.Size = new System.Drawing.Size(154, 29);
+            this.txtValServ.TabIndex = 37;
+            // 
+            // txtDesconto
+            // 
+            this.txtDesconto.Location = new System.Drawing.Point(257, 604);
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.Size = new System.Drawing.Size(240, 29);
+            this.txtDesconto.TabIndex = 36;
+            // 
+            // label15
+            // 
+            this.label15.Location = new System.Drawing.Point(832, 92);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(161, 26);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Valor Serviço R$:";
+            // 
             // label14
             // 
             this.label14.Location = new System.Drawing.Point(694, 155);
@@ -143,6 +184,13 @@
             this.label13.Size = new System.Drawing.Size(216, 26);
             this.label13.TabIndex = 29;
             this.label13.Text = "Forma de Pagamento:";
+            // 
+            // txtFormaPagto
+            // 
+            this.txtFormaPagto.Location = new System.Drawing.Point(751, 604);
+            this.txtFormaPagto.Name = "txtFormaPagto";
+            this.txtFormaPagto.Size = new System.Drawing.Size(240, 29);
+            this.txtFormaPagto.TabIndex = 15;
             // 
             // label10
             // 
@@ -413,50 +461,17 @@
             this.btnCalcular.UseVisualStyleBackColor = false;
             this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
-            // label15
+            // txtTeste
             // 
-            this.label15.Location = new System.Drawing.Point(832, 92);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(161, 26);
-            this.label15.TabIndex = 32;
-            this.label15.Text = "Valor Serviço R$:";
+            this.txtTeste.Location = new System.Drawing.Point(347, 146);
+            this.txtTeste.Name = "txtTeste";
+            this.txtTeste.Size = new System.Drawing.Size(304, 29);
+            this.txtTeste.TabIndex = 40;
             // 
-            // txtFormaPagto
+            // contextMenuStrip1
             // 
-            this.txtFormaPagto.Location = new System.Drawing.Point(751, 604);
-            this.txtFormaPagto.Name = "txtFormaPagto";
-            this.txtFormaPagto.Size = new System.Drawing.Size(240, 29);
-            this.txtFormaPagto.TabIndex = 15;
-            // 
-            // txtDesconto
-            // 
-            this.txtDesconto.Location = new System.Drawing.Point(257, 604);
-            this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(240, 29);
-            this.txtDesconto.TabIndex = 36;
-            // 
-            // txtValServ
-            // 
-            this.txtValServ.Location = new System.Drawing.Point(836, 118);
-            this.txtValServ.Name = "txtValServ";
-            this.txtValServ.Size = new System.Drawing.Size(154, 29);
-            this.txtValServ.TabIndex = 37;
-            // 
-            // txtValorTotal
-            // 
-            this.txtValorTotal.Enabled = false;
-            this.txtValorTotal.Location = new System.Drawing.Point(6, 604);
-            this.txtValorTotal.Name = "txtValorTotal";
-            this.txtValorTotal.Size = new System.Drawing.Size(240, 29);
-            this.txtValorTotal.TabIndex = 38;
-            // 
-            // txtValorFinal
-            // 
-            this.txtValorFinal.Enabled = false;
-            this.txtValorFinal.Location = new System.Drawing.Point(503, 604);
-            this.txtValorFinal.Name = "txtValorFinal";
-            this.txtValorFinal.Size = new System.Drawing.Size(240, 29);
-            this.txtValorFinal.TabIndex = 39;
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // frmCadRevisao
             // 
@@ -529,5 +544,7 @@
         private System.Windows.Forms.TextBox txtValorFinal;
         private System.Windows.Forms.TextBox txtValorTotal;
         private System.Windows.Forms.TextBox txtValServ;
+        private System.Windows.Forms.TextBox txtTeste;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

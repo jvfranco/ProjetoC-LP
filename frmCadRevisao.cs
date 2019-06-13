@@ -70,7 +70,8 @@ namespace OficinaMecanica
 
             Camadas.BLL.Estoque bllProd = new Camadas.BLL.Estoque();
             cmbPecas.DisplayMember = "descricao";
-            cmbPecas.ValueMember = "id_produto";
+            //cmbPecas.ValueMember = "idProduto";
+            cmbPecas.ValueMember = "descricao";
             cmbPecas.DataSource = bllProd.Select();
         }
 
@@ -87,14 +88,17 @@ namespace OficinaMecanica
 
         private void BtnAddPecas_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(cmbPecas.SelectedValue.ToString());
+
             
+            //int id = Convert.ToInt32(cmbPecas.SelectedValue.ToString());
+
 
             Camadas.BLL.Estoque bllProd = new Camadas.BLL.Estoque();
 
-            Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
-           
-            produto = bllProd.SelectById(id);
+           Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
+
+            //produto = bllProd.SelectById(id);
+            produto = bllProd.SelectByDescricao(cmbPecas.SelectedValue.ToString());
             
             float valorPeca = Convert.ToSingle(txtQuantidade.Text) * produto.valor;
             
