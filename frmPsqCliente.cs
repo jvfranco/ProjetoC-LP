@@ -64,22 +64,27 @@ namespace OficinaMecanica
             if (rdbTodos.Checked)
             {
                 lstClientes = bllCli.Select();
-                dgvClientes.DataSource = "";
-                dgvClientes.DataSource = lstClientes;
             }
             else if (rdbID.Checked)
             {
                 lstClientes = bllCli.SelectByID(Convert.ToInt32(txtPesquisa.Text));
-                dgvClientes.DataSource = "";
-                dgvClientes.DataSource = lstClientes;
             }
             else if (rdbNome.Checked)
             {
                 lstClientes = bllCli.SelectByNome(txtPesquisa.Text);
-                dgvClientes.DataSource = "";
-                dgvClientes.DataSource = lstClientes;
             }
+            dgvClientes.DataSource = "";
+            dgvClientes.DataSource = lstClientes;
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            frmCadCliente frmCli = new frmCadCliente();
+            this.Hide();
+            frmCli.Show();
             
+
+            //lblID.Text = dgvProdutos.SelectedRows[0].Cells["id"].Value.ToString();
         }
     }
 }

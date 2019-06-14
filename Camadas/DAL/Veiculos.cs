@@ -49,7 +49,7 @@ namespace OficinaMecanica.Camadas.DAL
         {
             List<MODEL.Veiculos> listaVeiculos = new List<MODEL.Veiculos>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from Veiculos where id=@id_veiculo";
+            string sql = "Select * from Veiculos where id_veiculo=@id_veiculo";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_veiculo", id);
             try

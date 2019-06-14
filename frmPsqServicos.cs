@@ -53,12 +53,12 @@ namespace OficinaMecanica
             else if (rdbID.Checked)
             {
                 int id = Convert.ToInt32(txtPesquisa.Text);
-                //lstServicos = bllServ.SelectById(id);
+                lstServicos = bllServ.SelectByIdList(id);
             }
             else if (rdbNome.Checked)
             {
                 string descricao = txtPesquisa.Text;
-               // lstServicos = bllServ.SelectByDescricao(descricao);
+                lstServicos = bllServ.SelectByDescricao(descricao);
             }
 
             dgvServicos.DataSource = "";

@@ -43,13 +43,13 @@ namespace OficinaMecanica.Camadas.DAL
             return listaFuncionarios;
         }
 
-        public List<MODEL.Funcionarios> SelectById(int idFuncionario)
+        public List<MODEL.Funcionarios> SelectById(int id)
         {
             List<MODEL.Funcionarios> listaFuncionarios = new List<MODEL.Funcionarios>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from Funcionario where idFuncionario=@id_funcionario";
+            string sql = "Select * from Funcionario where id_funcionario=@id_funcionario";
             SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_funcionario", idFuncionario);
+            cmd.Parameters.AddWithValue("@id_funcionario", id);
             try
             {
                 conexao.Open();

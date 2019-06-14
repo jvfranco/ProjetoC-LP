@@ -75,7 +75,6 @@
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
             this.btnCalcular = new System.Windows.Forms.Button();
             this.totCalcular = new System.Windows.Forms.ToolTip(this.components);
-            this.txtTeste = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
@@ -83,7 +82,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtTeste);
             this.groupBox1.Controls.Add(this.txtValorFinal);
             this.groupBox1.Controls.Add(this.txtValorTotal);
             this.groupBox1.Controls.Add(this.txtValServ);
@@ -164,7 +162,7 @@
             // 
             // label14
             // 
-            this.label14.Location = new System.Drawing.Point(694, 155);
+            this.label14.Location = new System.Drawing.Point(694, 154);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(138, 26);
             this.label14.TabIndex = 31;
@@ -461,13 +459,6 @@
             this.btnCalcular.UseVisualStyleBackColor = false;
             this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
-            // txtTeste
-            // 
-            this.txtTeste.Location = new System.Drawing.Point(347, 146);
-            this.txtTeste.Name = "txtTeste";
-            this.txtTeste.Size = new System.Drawing.Size(304, 29);
-            this.txtTeste.TabIndex = 40;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -544,7 +535,6 @@
         private System.Windows.Forms.TextBox txtValorFinal;
         private System.Windows.Forms.TextBox txtValorTotal;
         private System.Windows.Forms.TextBox txtValServ;
-        private System.Windows.Forms.TextBox txtTeste;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

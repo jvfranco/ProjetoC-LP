@@ -43,11 +43,11 @@ namespace OficinaMecanica.Camadas.DAL
             return listaEstoque;
         }
 
-        public MODEL.Estoque SelectById(int id)
+        public List<MODEL.Estoque> SelectByIdList(int id)
         {
-            MODEL.Estoque produto = new MODEL.Estoque();
+            List<MODEL.Estoque> lstProdutos = new List<MODEL.Estoque>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from Estoque where id=@id_produto";
+            string sql = "Select * from Estoque where id_produto=@id_produto";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_produto", id);
             try
@@ -56,11 +56,43 @@ namespace OficinaMecanica.Camadas.DAL
                 SqlDataReader dados = cmd.ExecuteReader();
                 while (dados.Read())
                 {
+                    MODEL.Estoque produto = new MODEL.Estoque();
                     produto.idProduto = Convert.ToInt32(dados["id_produto"].ToString());
                     produto.descricao = dados["descricao"].ToString();
                     produto.quantidade = Convert.ToInt32(dados["quantidade"].ToString());
                     produto.valor = Convert.ToSingle(dados["valor"].ToString());
+                    lstProdutos.Add(produto);
                 }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta de Produtos.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lstProdutos;
+        }
+
+        public MODEL.Estoque SelectById(int id)
+        {
+            MODEL.Estoque produto = new MODEL.Estoque();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Estoque where id_produto=@id_produto";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@id_produto", id);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {                    
+                    produto.idProduto = Convert.ToInt32(dados["id_produto"].ToString());
+                    produto.descricao = dados["descricao"].ToString();
+                    produto.quantidade = Convert.ToInt32(dados["quantidade"].ToString());
+                    produto.valor = Convert.ToSingle(dados["valor"].ToString());
+                 }
             }
             catch
             {
@@ -72,7 +104,6 @@ namespace OficinaMecanica.Camadas.DAL
             }
             return produto;
         }
-        /*
         public List<MODEL.Estoque> SelectByDescricao(string descricao)
         {
             List<MODEL.Estoque> listaEstoque = new List<MODEL.Estoque>();
@@ -102,44 +133,7 @@ namespace OficinaMecanica.Camadas.DAL
             {
                 conexao.Close();
             }
-
             return listaEstoque;
-
-        }
-        */
-
-        public MODEL.Estoque SelectByDescricao(string descricao)
-        {
-            MODEL.Estoque produto = new MODEL.Estoque();
-            SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from Estoque where (descricao like @descricao)";
-            SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@descricao", "%" + descricao + "%");
-            try
-            {
-                conexao.Open();
-                SqlDataReader dados = cmd.ExecuteReader();
-                while (dados.Read())
-                {
-                    
-                    produto.idProduto = Convert.ToInt32(dados["id_produto"].ToString());
-                    produto.descricao = dados["descricao"].ToString();
-                    produto.quantidade = Convert.ToInt32(dados["quantidade"].ToString());
-                    produto.valor = Convert.ToSingle(dados["valor"].ToString());
-                    
-                }
-            }
-            catch
-            {
-                Console.WriteLine("Deu erro na consulta de Produtos.");
-            }
-            finally
-            {
-                conexao.Close();
-            }
-
-            return produto;
-
         }
 
         public void Insert(Camadas.MODEL.Estoque Estoque)

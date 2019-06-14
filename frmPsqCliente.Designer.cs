@@ -322,6 +322,7 @@
             this.btnEditar.Size = new System.Drawing.Size(50, 50);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // oFICINADataSet
             // 

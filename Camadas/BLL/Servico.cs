@@ -13,21 +13,23 @@ namespace OficinaMecanica.Camadas.BLL
             DAL.Servicos dalServ = new DAL.Servicos();
             return dalServ.Select();
         }
-        public List<MODEL.Servicos> SelectById(int id)
+        public List<MODEL.Servicos> SelectByIdList(int id)
+        {
+            DAL.Servicos dalServ = new DAL.Servicos();
+            return dalServ.SelectByIdList(id);
+        }
+
+        public MODEL.Servicos SelectById(int id)
         {
             DAL.Servicos dalServ = new DAL.Servicos();
             return dalServ.SelectById(id);
         }
-        //public List<MODEL.Servicos> SelectByDescricao(string descricao)
-        //{
-        //    DAL.Servicos dalServ = new DAL.Servicos();
-        //    return dalServ.SelectByDescricao(descricao);
-        //}
-        public MODEL.Servicos SelectByDescricao(string descricao)
+        public List<MODEL.Servicos> SelectByDescricao(string descricao)
         {
             DAL.Servicos dalServ = new DAL.Servicos();
             return dalServ.SelectByDescricao(descricao);
         }
+
 
         public void Insert(MODEL.Servicos servico)
         {

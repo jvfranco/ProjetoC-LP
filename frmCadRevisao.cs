@@ -63,15 +63,14 @@ namespace OficinaMecanica
             Camadas.MODEL.Servicos servico = new Camadas.MODEL.Servicos();
 
             cmbServico.DisplayMember = "descricao";
-            cmbServico.ValueMember = "descricao";
+            cmbServico.ValueMember = "idServico";
             cmbServico.DataSource = bllServ.Select();
-            servico = bllServ.SelectByDescricao(cmbServico.SelectedValue.ToString());
+            servico = bllServ.SelectById(Convert.ToInt32(cmbServico.SelectedValue.ToString()));
             txtValServ.Text = servico.valMaoObra.ToString();
 
             Camadas.BLL.Estoque bllProd = new Camadas.BLL.Estoque();
             cmbPecas.DisplayMember = "descricao";
-            //cmbPecas.ValueMember = "idProduto";
-            cmbPecas.ValueMember = "descricao";
+            cmbPecas.ValueMember = "idProduto";
             cmbPecas.DataSource = bllProd.Select();
         }
 
@@ -87,44 +86,31 @@ namespace OficinaMecanica
         }
 
         private void BtnAddPecas_Click(object sender, EventArgs e)
-        {
-
-            
-            //int id = Convert.ToInt32(cmbPecas.SelectedValue.ToString());
-
-
+        {            
+            int id = Convert.ToInt32(cmbPecas.SelectedValue.ToString());
             Camadas.BLL.Estoque bllProd = new Camadas.BLL.Estoque();
+            Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
 
-           Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
-
-            //produto = bllProd.SelectById(id);
-            produto = bllProd.SelectByDescricao(cmbPecas.SelectedValue.ToString());
-            
-            float valorPeca = Convert.ToSingle(txtQuantidade.Text) * produto.valor;
-            
-
+            produto = bllProd.SelectById(id); 
+            float valorPeca = Convert.ToSingle(txtQuantidade.Text) * produto.valor; 
             dgvVenda.Rows.Add(produto.idProduto.ToString(), produto.descricao.ToString(), txtQuantidade.Text, valorPeca.ToString());
         }
 
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
-            string descricaoServ = cmbServico.SelectedValue.ToString();
+            int idServ = Convert.ToInt32(cmbServico.SelectedValue.ToString());
             float valorTotal = 0;
-
             Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
             Camadas.MODEL.Servicos servico = new Camadas.MODEL.Servicos();
 
-            servico = bllServ.SelectByDescricao(descricaoServ);
-
+            servico = bllServ.SelectById(idServ);
             valorTotal = Convert.ToSingle(servico.valMaoObra);
-
             foreach (DataGridViewRow valor in dgvVenda.Rows)
             {
                 valorTotal += Convert.ToSingle(valor.Cells["colValor"].Value);
             }
 
             txtValorTotal.Text = valorTotal.ToString();
-
             if (txtDesconto.Text != "0")
             {
                 txtValorFinal.Text = (Convert.ToSingle(txtValorTotal.Text) - (Convert.ToSingle(txtValorTotal.Text) * (Convert.ToSingle(txtDesconto.Text) / 100))).ToString();
