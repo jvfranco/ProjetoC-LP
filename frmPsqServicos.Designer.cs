@@ -35,6 +35,8 @@
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.dgvServicos = new System.Windows.Forms.DataGridView();
+            this.servicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oFICINADataSet4 = new OficinaMecanica.OFICINADataSet4();
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbID = new System.Windows.Forms.RadioButton();
             this.rdbTodos = new System.Windows.Forms.RadioButton();
@@ -42,16 +44,14 @@
             this.totEditar = new System.Windows.Forms.ToolTip(this.components);
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.oFICINADataSet4 = new OficinaMecanica.OFICINADataSet4();
-            this.servicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicosTableAdapter = new OficinaMecanica.OFICINADataSet4TableAdapters.ServicosTableAdapter();
-            this.idservicoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idServico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valmaoobraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet4)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -104,7 +104,7 @@
             this.dgvServicos.BackgroundColor = System.Drawing.Color.White;
             this.dgvServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvServicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idservicoDataGridViewTextBoxColumn,
+            this.idServico,
             this.descricaoDataGridViewTextBoxColumn,
             this.valmaoobraDataGridViewTextBoxColumn});
             this.dgvServicos.DataSource = this.servicosBindingSource;
@@ -112,6 +112,16 @@
             this.dgvServicos.Name = "dgvServicos";
             this.dgvServicos.Size = new System.Drawing.Size(828, 253);
             this.dgvServicos.TabIndex = 3;
+            // 
+            // servicosBindingSource
+            // 
+            this.servicosBindingSource.DataMember = "Servicos";
+            this.servicosBindingSource.DataSource = this.oFICINADataSet4;
+            // 
+            // oFICINADataSet4
+            // 
+            this.oFICINADataSet4.DataSetName = "OFICINADataSet4";
+            this.oFICINADataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rdbNome
             // 
@@ -159,6 +169,7 @@
             this.btnEditar.Size = new System.Drawing.Size(50, 50);
             this.btnEditar.TabIndex = 7;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnSair
             // 
@@ -172,26 +183,16 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
-            // oFICINADataSet4
-            // 
-            this.oFICINADataSet4.DataSetName = "OFICINADataSet4";
-            this.oFICINADataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // servicosBindingSource
-            // 
-            this.servicosBindingSource.DataMember = "Servicos";
-            this.servicosBindingSource.DataSource = this.oFICINADataSet4;
-            // 
             // servicosTableAdapter
             // 
             this.servicosTableAdapter.ClearBeforeFill = true;
             // 
-            // idservicoDataGridViewTextBoxColumn
+            // idServico
             // 
-            this.idservicoDataGridViewTextBoxColumn.DataPropertyName = "id_servico";
-            this.idservicoDataGridViewTextBoxColumn.HeaderText = "Código";
-            this.idservicoDataGridViewTextBoxColumn.Name = "idservicoDataGridViewTextBoxColumn";
-            this.idservicoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idServico.DataPropertyName = "id_servico";
+            this.idServico.HeaderText = "Código";
+            this.idServico.Name = "idServico";
+            this.idServico.ReadOnly = true;
             // 
             // descricaoDataGridViewTextBoxColumn
             // 
@@ -225,8 +226,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,7 +249,7 @@
         private OFICINADataSet4 oFICINADataSet4;
         private System.Windows.Forms.BindingSource servicosBindingSource;
         private OFICINADataSet4TableAdapters.ServicosTableAdapter servicosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idservicoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idServico;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valmaoobraDataGridViewTextBoxColumn;
     }

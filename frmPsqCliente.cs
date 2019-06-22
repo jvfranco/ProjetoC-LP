@@ -79,12 +79,10 @@ namespace OficinaMecanica
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            frmCadCliente frmCli = new frmCadCliente();
+            int id = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells["id"].Value.ToString());
+            frmCadCliente frmCli = new frmCadCliente(id);
             this.Hide();
             frmCli.Show();
-            
-
-            //lblID.Text = dgvProdutos.SelectedRows[0].Cells["id"].Value.ToString();
         }
     }
 }

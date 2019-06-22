@@ -70,6 +70,7 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.txtData = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -326,6 +327,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtData);
             this.groupBox3.Controls.Add(this.dtpCadastro);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtEmail);
@@ -374,7 +376,6 @@
             this.label13.Size = new System.Drawing.Size(332, 23);
             this.label13.TabIndex = 8;
             this.label13.Text = "Telefone:";
-            this.label13.Click += new System.EventHandler(this.Label13_Click);
             // 
             // txtTelefone
             // 
@@ -392,10 +393,6 @@
             this.label15.Size = new System.Drawing.Size(143, 23);
             this.label15.TabIndex = 9;
             this.label15.Text = "Data do Cadastro:";
-            // 
-            // totSalvar
-            // 
-            this.totSalvar.Popup += new System.Windows.Forms.PopupEventHandler(this.TotSalvar_Popup);
             // 
             // btnCadVeiculo
             // 
@@ -450,6 +447,15 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
+            // txtData
+            // 
+            this.txtData.Enabled = false;
+            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtData.Location = new System.Drawing.Point(432, 116);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(313, 26);
+            this.txtData.TabIndex = 17;
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,7 +475,6 @@
             this.Name = "frmCadCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Clientes - Oficina Mecânica";
-            this.Load += new System.EventHandler(this.FrmCadCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -524,5 +529,6 @@
         private System.Windows.Forms.Button btnCadVeiculo;
         private System.Windows.Forms.ToolTip totCadVeiculo;
         private System.Windows.Forms.DateTimePicker dtpCadastro;
+        private System.Windows.Forms.TextBox txtData;
     }
 }

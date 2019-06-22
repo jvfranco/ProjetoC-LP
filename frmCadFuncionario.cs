@@ -12,25 +12,39 @@ namespace OficinaMecanica
 {
     public partial class frmCadFuncionario : Form
     {
-        public frmCadFuncionario()
-        {
-            InitializeComponent();
-        }
-        private void FrmCadFuncionario_Load(object sender, EventArgs e)
-        {
-            lblID.Text = "-1";
-            totSalvar.SetToolTip(btnSalvar, "Salvar");
-            totAddUser.SetToolTip(btnAddUser, "Adicionar Usuário");
-            totSair.SetToolTip(btnSair, "Sair");
-            totCancelar.SetToolTip(btnCancelar, "Cancelar");
-        }
-
         private void limparCampos()
         {
             lblID.Text = "";
             txtNome.Text = "";
             txtCpf.Text = "";
             txtCargo.Text = "";
+        }
+
+        public frmCadFuncionario()
+        {
+            InitializeComponent();
+            lblID.Text = "-1";
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totAddUser.SetToolTip(btnAddUser, "Adicionar Usuário");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
+        }
+        public frmCadFuncionario(int id)
+        {
+            InitializeComponent();
+            this.limparCampos();
+            Camadas.MODEL.Funcionarios funcionario = new Camadas.MODEL.Funcionarios();
+            Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
+            funcionario = bllFunc.SelectById(id)[0];
+
+            lblID.Text = funcionario.idFuncionario.ToString();
+            txtNome.Text = funcionario.nome.ToString();
+            txtCpf.Text = funcionario.cpf.ToString();
+            txtCargo.Text = funcionario.cargo.ToString();
+        }
+        private void FrmCadFuncionario_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void BtnSair_Click(object sender, EventArgs e)

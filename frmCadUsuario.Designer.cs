@@ -45,11 +45,13 @@
             this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
+            this.txtFunc = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtFunc);
             this.groupBox1.Controls.Add(this.cmbFuncionario);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtSenha);
@@ -166,6 +168,13 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
+            // txtFunc
+            // 
+            this.txtFunc.Location = new System.Drawing.Point(126, 53);
+            this.txtFunc.Name = "txtFunc";
+            this.txtFunc.Size = new System.Drawing.Size(622, 29);
+            this.txtFunc.TabIndex = 8;
+            // 
             // frmCadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,5 +214,6 @@
         private System.Windows.Forms.ToolTip totSalvar;
         private System.Windows.Forms.ToolTip totCancelar;
         private System.Windows.Forms.ToolTip totSair;
+        private System.Windows.Forms.TextBox txtFunc;
     }
 }

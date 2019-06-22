@@ -76,5 +76,13 @@ namespace OficinaMecanica
             dgvFuncionarios.DataSource = "";
             dgvFuncionarios.DataSource = lstFuncionarios;
         }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvFuncionarios.SelectedRows[0].Cells["idFuncionario"].Value.ToString());
+            frmCadFuncionario frmFunc = new frmCadFuncionario(id);
+            this.Hide();
+            frmFunc.Show();
+        }
     }
 }

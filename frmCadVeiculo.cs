@@ -15,6 +15,39 @@ namespace OficinaMecanica
         public frmCadVeiculo()
         {
             InitializeComponent();
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
+            txtProp.Visible = false;
+
+            lblID.Text = "-1";
+            txtModelo.Focus();
+
+            Camadas.BLL.Cliente bllCliente = new Camadas.BLL.Cliente();
+            cmbCliente.DisplayMember = "nome";
+            cmbCliente.ValueMember = "idCliente";
+            cmbCliente.DataSource = bllCliente.Select();
+        }
+
+        public frmCadVeiculo(int id)
+        {
+            InitializeComponent();
+            Camadas.MODEL.Veiculos veiculo = new Camadas.MODEL.Veiculos();
+            Camadas.BLL.Veiculo bllVeic = new Camadas.BLL.Veiculo();
+            Camadas.MODEL.Clientes cliente = new Camadas.MODEL.Clientes();
+            Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
+            veiculo = bllVeic.SelectById(id)[0];
+            cliente = bllCli.SelectByID(Convert.ToInt32(veiculo.idCliente.ToString()))[0];
+            cmbCliente.Visible = false;
+            txtProp.Visible = true;
+            txtProp.Enabled = false;
+
+            lblID.Text = veiculo.idVeiculo.ToString();
+            txtModelo.Text = veiculo.modelo.ToString();
+            txtMarca.Text = veiculo.marca.ToString();
+            txtPlaca.Text = veiculo.placa.ToString();
+            txtCliente.Text = veiculo.idCliente.ToString();
+            txtProp.Text = cliente.nome.ToString();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -32,17 +65,7 @@ namespace OficinaMecanica
 
         private void FrmCadVeiculo_Load(object sender, EventArgs e)
         {
-            totSalvar.SetToolTip(btnSalvar, "Salvar");
-            totSair.SetToolTip(btnSair, "Sair");
-            totCancelar.SetToolTip(btnCancelar, "Cancelar");
-
-            lblID.Text = "-1";
-            txtModelo.Focus();
-
-            Camadas.BLL.Cliente bllCliente = new Camadas.BLL.Cliente();
-            cmbCliente.DisplayMember = "nome";
-            cmbCliente.ValueMember = "idCliente";
-            cmbCliente.DataSource = bllCliente.Select();
+            
 
         }
 

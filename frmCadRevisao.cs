@@ -65,7 +65,7 @@ namespace OficinaMecanica
             cmbServico.DisplayMember = "descricao";
             cmbServico.ValueMember = "idServico";
             cmbServico.DataSource = bllServ.Select();
-            servico = bllServ.SelectById(Convert.ToInt32(cmbServico.SelectedValue.ToString()));
+            servico = bllServ.SelectById(Convert.ToInt32(cmbServico.SelectedValue.ToString()))[0];
             txtValServ.Text = servico.valMaoObra.ToString();
 
             Camadas.BLL.Estoque bllProd = new Camadas.BLL.Estoque();
@@ -91,7 +91,7 @@ namespace OficinaMecanica
             Camadas.BLL.Estoque bllProd = new Camadas.BLL.Estoque();
             Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
 
-            produto = bllProd.SelectById(id); 
+            produto = bllProd.SelectById(id)[0]; 
             float valorPeca = Convert.ToSingle(txtQuantidade.Text) * produto.valor; 
             dgvVenda.Rows.Add(produto.idProduto.ToString(), produto.descricao.ToString(), txtQuantidade.Text, valorPeca.ToString());
         }
@@ -103,7 +103,7 @@ namespace OficinaMecanica
             Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
             Camadas.MODEL.Servicos servico = new Camadas.MODEL.Servicos();
 
-            servico = bllServ.SelectById(idServ);
+            servico = bllServ.SelectById(idServ)[0];
             valorTotal = Convert.ToSingle(servico.valMaoObra);
             foreach (DataGridViewRow valor in dgvVenda.Rows)
             {

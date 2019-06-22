@@ -75,5 +75,13 @@ namespace OficinaMecanica
         {
             this.Close();
         }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvVeiculos.SelectedRows[0].Cells["idVeiculo"].Value.ToString());
+            frmCadVeiculo frmVeic = new frmCadVeiculo(id);
+            this.Hide();
+            frmVeic.Show();
+        }
     }
 }

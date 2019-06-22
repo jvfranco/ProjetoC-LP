@@ -216,6 +216,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OFICINADataSet8.xsd</DependentUpon>
     </Compile>
+    <Compile Include="OFICINADataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OFICINADataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadCliente.resx">
@@ -377,6 +382,17 @@
     </None>
     <None Include="OFICINADataSet8.xss">
       <DependentUpon>OFICINADataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet9.xsc">
+      <DependentUpon>OFICINADataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OFICINADataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OFICINADataSet9.xss">
+      <DependentUpon>OFICINADataSet9.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

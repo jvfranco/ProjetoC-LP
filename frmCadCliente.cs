@@ -28,19 +28,11 @@ namespace OficinaMecanica
             txtEmail.Clear();
             txtTelefone.Clear();
             dtpCadastro.Text = "";
+            txtData.Text = "";
         }
         public frmCadCliente()
         {
             InitializeComponent();
-        }
-
-        private void Label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmCadCliente_Load(object sender, EventArgs e)
-        {
             limpaCampos();
             totSalvar.SetToolTip(btnSalvar, "Salvar");
             totSair.SetToolTip(btnSair, "Sair");
@@ -49,6 +41,32 @@ namespace OficinaMecanica
             lblTipoDoc.Text = "CPF:";
             lblID.Text = "-1";
             txtNome.Focus();
+            dtpCadastro.Visible = true;
+            txtData.Visible = false;
+        }
+
+        public frmCadCliente(int id)
+        {
+            InitializeComponent();
+            this.limpaCampos();
+            Camadas.MODEL.Clientes cliente = new Camadas.MODEL.Clientes();
+            Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
+            cliente = bllCli.SelectByID(id)[0];
+            lblID.Text = cliente.idCliente.ToString();
+            txtNome.Text = cliente.nome.ToString();
+            txtRg.Text = cliente.rg.ToString();
+            txtCpf.Text = cliente.cpf_cnpj.ToString();
+            txtEndereco.Text = cliente.endereco.ToString();
+            txtNumero.Text = cliente.numero.ToString();
+            txtCidade.Text = cliente.cidade.ToString();
+            txtBairro.Text = cliente.bairro.ToString();
+            txtCep.Text = cliente.cep.ToString();
+            txtEstado.Text = cliente.estado.ToString();
+            txtTelefone.Text = cliente.telefone.ToString();
+            txtEmail.Text = cliente.email.ToString();
+            dtpCadastro.Visible = false;
+            txtData.Visible = true;
+            txtData.Text = cliente.dataCadastro.ToString();
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
@@ -62,11 +80,6 @@ namespace OficinaMecanica
             lblID.Text = "-1";
             txtNome.Focus();       
         } 
-
-        private void TotSalvar_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
 
         private void BtnCadVeiculo_Click(object sender, EventArgs e)
         {
@@ -89,7 +102,6 @@ namespace OficinaMecanica
         {
             Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
 
-            //instancia e preenche com dados o objeto produto
             Camadas.MODEL.Clientes cliente = new Camadas.MODEL.Clientes();
             cliente.idCliente = Convert.ToInt32(lblID.Text);
             cliente.nome = txtNome.Text;
@@ -101,7 +113,6 @@ namespace OficinaMecanica
             cliente.estado = txtEstado.Text;
             cliente.telefone = txtTelefone.Text;
             cliente.email = txtEmail.Text;
-            cliente.dataCadastro = Convert.ToDateTime(dtpCadastro.Text);
             cliente.cpf_cnpj = txtCpf.Text;
             cliente.rg = txtRg.Text;
             if (rdbFisica.Checked)
@@ -116,24 +127,36 @@ namespace OficinaMecanica
             string msg;
             string titulo;
             
+            if (cliente.idCliente == -1)
+            {
                 msg = "Deseja inserir Cliente?";
                 titulo = "Inserir";
-            
+                cliente.dataCadastro = Convert.ToDateTime(dtpCadastro.Text);
+            }
+            else
+            {
+                msg = "Deseja atualizar Cliente?";
+                titulo = "Atualizar";
+                cliente.dataCadastro = Convert.ToDateTime(txtData.Text);
+            }
             DialogResult resposta;
             resposta = MessageBox.Show(msg, titulo, MessageBoxButtons.YesNo,
-                               MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                                   MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-            if (resposta == DialogResult.Yes)
+
+            if (resposta == DialogResult.Yes) { 
                 if (cliente.idCliente == -1)
+                {
                     bllCli.Insert(cliente);
-                else limpaCampos();
+                }                   
+                else
+                {
+                    bllCli.Update(cliente);
+                }
+            }
+            else limpaCampos();
 
             limpaCampos();
-        }
-
-        private void ToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

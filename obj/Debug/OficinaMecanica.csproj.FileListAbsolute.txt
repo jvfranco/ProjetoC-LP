@@ -34,6 +34,9 @@ C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOf
 C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.exe
 C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.pdb
 C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.csprojAssemblyReference.cache
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadEstoque.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmRevisao.resources
+C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqFuncionario.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\bin\Debug\OficinaMecanica.exe.config
 D:\Projetos\C#\Oficina\ProjetoC-LP\bin\Debug\OficinaMecanica.exe
 D:\Projetos\C#\Oficina\ProjetoC-LP\bin\Debug\OficinaMecanica.pdb
@@ -46,19 +49,16 @@ D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmLogin.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmMenu.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqCliente.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadServico.resources
-D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmSobre.resources
-D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.Properties.Resources.resources
-D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.csproj.GenerateResource.cache
-D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.csproj.CoreCompileInputs.cache
-D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.exe
-D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.pdb
-C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadEstoque.resources
-C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmRevisao.resources
-C:\Users\João Victor\Documents\ADS\ADS - 2º Ano\Linguagem de Programação\ZOficina\OficinaMecanica\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqFuncionario.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqEstoque.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqFuncionario.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqOS.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqServicos.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqUsuarios.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmPsqVeiculos.resources
+D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmSobre.resources
 D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.frmCadRevisao.resources
+D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.Properties.Resources.resources
+D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.csproj.GenerateResource.cache
+D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.csproj.CoreCompileInputs.cache
+D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.exe
+D:\Projetos\C#\Oficina\ProjetoC-LP\obj\Debug\OficinaMecanica.pdb

@@ -35,11 +35,6 @@
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.dgvVeiculos = new System.Windows.Forms.DataGridView();
-            this.idveiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.veiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oFICINADataSet6 = new OficinaMecanica.OFICINADataSet6();
             this.rdbModelo = new System.Windows.Forms.RadioButton();
@@ -50,6 +45,11 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.veiculosTableAdapter = new OficinaMecanica.OFICINADataSet6TableAdapters.VeiculosTableAdapter();
+            this.idVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVeiculos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.veiculosBindingSource)).BeginInit();
@@ -106,7 +106,7 @@
             this.dgvVeiculos.BackgroundColor = System.Drawing.Color.White;
             this.dgvVeiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVeiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idveiculoDataGridViewTextBoxColumn,
+            this.idVeiculo,
             this.idclienteDataGridViewTextBoxColumn,
             this.modeloDataGridViewTextBoxColumn,
             this.marcaDataGridViewTextBoxColumn,
@@ -116,42 +116,6 @@
             this.dgvVeiculos.Name = "dgvVeiculos";
             this.dgvVeiculos.Size = new System.Drawing.Size(828, 253);
             this.dgvVeiculos.TabIndex = 3;
-            // 
-            // idveiculoDataGridViewTextBoxColumn
-            // 
-            this.idveiculoDataGridViewTextBoxColumn.DataPropertyName = "id_veiculo";
-            this.idveiculoDataGridViewTextBoxColumn.HeaderText = "Código";
-            this.idveiculoDataGridViewTextBoxColumn.Name = "idveiculoDataGridViewTextBoxColumn";
-            this.idveiculoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idveiculoDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // idclienteDataGridViewTextBoxColumn
-            // 
-            this.idclienteDataGridViewTextBoxColumn.DataPropertyName = "id_cliente";
-            this.idclienteDataGridViewTextBoxColumn.HeaderText = "Cód. Cliente";
-            this.idclienteDataGridViewTextBoxColumn.Name = "idclienteDataGridViewTextBoxColumn";
-            this.idclienteDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // modeloDataGridViewTextBoxColumn
-            // 
-            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "modelo";
-            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
-            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
-            this.modeloDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "marca";
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            this.marcaDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // placaDataGridViewTextBoxColumn
-            // 
-            this.placaDataGridViewTextBoxColumn.DataPropertyName = "placa";
-            this.placaDataGridViewTextBoxColumn.HeaderText = "Placa";
-            this.placaDataGridViewTextBoxColumn.Name = "placaDataGridViewTextBoxColumn";
-            this.placaDataGridViewTextBoxColumn.Width = 150;
             // 
             // veiculosBindingSource
             // 
@@ -209,6 +173,7 @@
             this.btnEditar.Size = new System.Drawing.Size(50, 50);
             this.btnEditar.TabIndex = 10;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnSair
             // 
@@ -225,6 +190,42 @@
             // veiculosTableAdapter
             // 
             this.veiculosTableAdapter.ClearBeforeFill = true;
+            // 
+            // idVeiculo
+            // 
+            this.idVeiculo.DataPropertyName = "id_veiculo";
+            this.idVeiculo.HeaderText = "Código";
+            this.idVeiculo.Name = "idVeiculo";
+            this.idVeiculo.ReadOnly = true;
+            this.idVeiculo.Width = 80;
+            // 
+            // idclienteDataGridViewTextBoxColumn
+            // 
+            this.idclienteDataGridViewTextBoxColumn.DataPropertyName = "id_cliente";
+            this.idclienteDataGridViewTextBoxColumn.HeaderText = "Cód. Cliente";
+            this.idclienteDataGridViewTextBoxColumn.Name = "idclienteDataGridViewTextBoxColumn";
+            this.idclienteDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // modeloDataGridViewTextBoxColumn
+            // 
+            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "modelo";
+            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            this.modeloDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // placaDataGridViewTextBoxColumn
+            // 
+            this.placaDataGridViewTextBoxColumn.DataPropertyName = "placa";
+            this.placaDataGridViewTextBoxColumn.HeaderText = "Placa";
+            this.placaDataGridViewTextBoxColumn.Name = "placaDataGridViewTextBoxColumn";
+            this.placaDataGridViewTextBoxColumn.Width = 150;
             // 
             // frmPsqVeiculos
             // 
@@ -268,7 +269,7 @@
         private OFICINADataSet6 oFICINADataSet6;
         private System.Windows.Forms.BindingSource veiculosBindingSource;
         private OFICINADataSet6TableAdapters.VeiculosTableAdapter veiculosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idveiculoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idVeiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idclienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;

@@ -25,7 +25,7 @@ namespace OficinaMecanica
         private void FrmPsqEstoque_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'oFICINADataSet2.Estoque'. Você pode movê-la ou removê-la conforme necessário.
-            this.estoqueTableAdapter.Fill(this.oFICINADataSet2.Estoque);
+            this.estoqueTableAdapter.Fill(this.oFICINADataSet9.Estoque);
             totSair.SetToolTip(btnSair, "Sair");
             totEditar.SetToolTip(btnEditar, "Editar");
         }
@@ -65,7 +65,7 @@ namespace OficinaMecanica
             }
             else if (rdbID.Checked)
             {
-                lstProdutos = bllEst.SelectByIdList(Convert.ToInt32(txtPesquisa.Text));
+                lstProdutos = bllEst.SelectById(Convert.ToInt32(txtPesquisa.Text));
             }
             else if (rdbNome.Checked)
             { 
@@ -73,6 +73,21 @@ namespace OficinaMecanica
             }
             dgvProdutos.DataSource = "";
             dgvProdutos.DataSource = lstProdutos;
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvProdutos.SelectedRows[0].Cells["idProduto"].Value.ToString());
+            frmCadEstoque frmProd = new frmCadEstoque(id);
+            this.Hide();
+            frmProd.Show();
+        }
+
+        private void FrmPsqEstoque_Load_1(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'oFICINADataSet9.Estoque'. Você pode movê-la ou removê-la conforme necessário.
+            this.estoqueTableAdapter.Fill(this.oFICINADataSet9.Estoque);
+
         }
     }
 }

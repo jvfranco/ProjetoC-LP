@@ -180,11 +180,9 @@ namespace OficinaMecanica.Camadas.DAL
         public void Update(Camadas.MODEL.Clientes cliente)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Update Clientes set nome=@nome, endereco=@endereco, ";
-            sql += "numero=@numero, bairro=@bairro, cep=@cep, ";
-            sql += "cidade=@cidade, estado=@estado, telefone=@telefone, ";
-            sql += "email=@email, dataCadastro=@data_cadastro, cpf_cnpj=@cpf_cnpj, ";
-            sql += "rg=@rg tipoPessoa=@tipo_pessoa where idCliente=@id; ";
+            string sql = "Update Clientes set nome=@nome, endereco=@endereco, numero=@numero, bairro=@bairro, cep=@cep, " +
+                "cidade=@cidade, estado=@estado, telefone=@telefone, email=@email, data_cadastro=@data_cadastro, " +
+                "cpf_cnpj=@cpf_cnpj, rg=@rg tipo_pessoa=@tipo_pessoa where id=@id; ";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", cliente.idCliente);
             cmd.Parameters.AddWithValue("@nome", cliente.nome);

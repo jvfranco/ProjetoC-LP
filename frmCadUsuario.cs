@@ -15,14 +15,6 @@ namespace OficinaMecanica
         public frmCadUsuario()
         {
             InitializeComponent();
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void FrmCadUsuario_Load(object sender, EventArgs e)
-        {
             lblID.Text = "-1";
             txtLogin.Focus();
             totSalvar.SetToolTip(btnSalvar, "Salvar");
@@ -33,6 +25,34 @@ namespace OficinaMecanica
             cmbFuncionario.DisplayMember = "nome";
             cmbFuncionario.ValueMember = "idFuncionario";
             cmbFuncionario.DataSource = bllFunc.Select();
+            txtFunc.Visible = false;
+        }
+
+        public frmCadUsuario(int id)
+        {
+            InitializeComponent();
+            this.limparCampos();
+            Camadas.MODEL.Usuarios usuario = new Camadas.MODEL.Usuarios();
+            Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
+            Camadas.MODEL.Funcionarios funcionario = new Camadas.MODEL.Funcionarios();
+            Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
+            usuario = bllUser.SelectByIdFunc(id)[0];
+            funcionario = bllFunc.SelectById(usuario.idFuncionario)[0];
+            cmbFuncionario.Visible = false;
+            txtFunc.Visible = true;
+            txtFunc.Enabled = false;
+            lblID.Text = usuario.idFuncionario.ToString();
+            txtLogin.Text = usuario.login.ToString();
+            txtSenha.Text = usuario.senha.ToString();
+            txtFunc.Text = funcionario.nome.ToString();
+        }
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void FrmCadUsuario_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void limparCampos()

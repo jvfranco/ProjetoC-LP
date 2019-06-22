@@ -75,7 +75,7 @@ namespace OficinaMecanica.Camadas.DAL
             }
             catch
             {
-                Console.WriteLine("Deu erro na consulta da evisao.");
+                Console.WriteLine("Deu erro na Inserção da Venda.");
             }
             finally
             {

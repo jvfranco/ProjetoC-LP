@@ -15,14 +15,28 @@ namespace OficinaMecanica
         public frmCadEstoque()
         {
             InitializeComponent();
-        }
-
-        private void FrmCadEstoque_Load(object sender, EventArgs e)
-        {
             lblID.Text = "-1";
             totSalvar.SetToolTip(btnSalvar, "Salvar");
             totSair.SetToolTip(btnSair, "Sair");
             totCancelar.SetToolTip(btnCancelar, "Cancelar");
+        }
+
+        public frmCadEstoque(int id)
+        {
+            InitializeComponent();
+            this.limparCampos();
+            Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
+            Camadas.BLL.Estoque bllProd = new Camadas.BLL.Estoque();
+            produto = bllProd.SelectById(id)[0];
+            lblID.Text = produto.idProduto.ToString();
+            txtDescricao.Text = produto.descricao.ToString();
+            txtQuantidade.Text = produto.quantidade.ToString();
+            txtValor.Text = produto.valor.ToString();
+        }
+
+        private void FrmCadEstoque_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void limparCampos()

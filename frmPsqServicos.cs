@@ -53,7 +53,7 @@ namespace OficinaMecanica
             else if (rdbID.Checked)
             {
                 int id = Convert.ToInt32(txtPesquisa.Text);
-                lstServicos = bllServ.SelectByIdList(id);
+                lstServicos = bllServ.SelectById(id);
             }
             else if (rdbNome.Checked)
             {
@@ -76,6 +76,14 @@ namespace OficinaMecanica
         private void BtnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvServicos.SelectedRows[0].Cells["idServico"].Value.ToString());
+            frmCadServico frmServ = new frmCadServico(id);
+            this.Hide();
+            frmServ.Show();
         }
     }
 }

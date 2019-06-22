@@ -48,11 +48,13 @@
             this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
+            this.txtProp = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtProp);
             this.groupBox1.Controls.Add(this.txtCliente);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmbCliente);
@@ -196,6 +198,13 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // txtProp
+            // 
+            this.txtProp.Location = new System.Drawing.Point(125, 194);
+            this.txtProp.Name = "txtProp";
+            this.txtProp.Size = new System.Drawing.Size(623, 29);
+            this.txtProp.TabIndex = 10;
+            // 
             // frmCadVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,5 +248,6 @@
         private System.Windows.Forms.ToolTip totCancelar;
         private System.Windows.Forms.ToolTip totSair;
         private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.TextBox txtProp;
     }
 }

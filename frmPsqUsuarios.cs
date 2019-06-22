@@ -63,5 +63,13 @@ namespace OficinaMecanica
             totSair.SetToolTip(btnSair, "Sair");
             totEditar.SetToolTip(btnEditar, "Editar");
         }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvUsuarios.SelectedRows[0].Cells["idfuncionarioDataGridViewTextBoxColumn"].Value.ToString());
+            frmCadUsuario frmUser = new frmCadUsuario(id);
+            this.Hide();
+            frmUser.Show();
+        }
     }
 }

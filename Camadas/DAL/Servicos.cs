@@ -41,7 +41,7 @@ namespace OficinaMecanica.Camadas.DAL
 
             return listaServicos;
         }
-        public List<MODEL.Servicos> SelectByIdList(int id)
+        public List<MODEL.Servicos> SelectById(int id)
         {
             List<MODEL.Servicos> listaServicos = new List<MODEL.Servicos>();
             SqlConnection conexao = new SqlConnection(strCon);
@@ -71,36 +71,6 @@ namespace OficinaMecanica.Camadas.DAL
             }
 
             return listaServicos;
-        }
-
-        public MODEL.Servicos SelectById(int id)
-        {
-            MODEL.Servicos servico = new MODEL.Servicos();
-            SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Select * from Servicos where id_servico=@id_servico";
-            SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_servico", id);
-            try
-            {
-                conexao.Open();
-                SqlDataReader dados = cmd.ExecuteReader();
-                while (dados.Read())
-                {                    
-                    servico.idServico = Convert.ToInt32(dados["id_servico"].ToString());
-                    servico.descricao = dados["descricao"].ToString();
-                    servico.valMaoObra = Convert.ToSingle(dados["val_mao_obra"].ToString());
-                }
-            }
-            catch
-            {
-                Console.WriteLine("Deu erro na consulta de Servicos.");
-            }
-            finally
-            {
-                conexao.Close();
-            }
-
-            return servico;
         }
         public List<MODEL.Servicos> SelectByDescricao(string descricao)
         {

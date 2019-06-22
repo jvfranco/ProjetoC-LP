@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPsqFuncionario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvFuncionarios = new System.Windows.Forms.DataGridView();
+            this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oFICINADataSet3 = new OficinaMecanica.OFICINADataSet3();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
@@ -42,17 +44,15 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.totEditar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
-            this.oFICINADataSet3 = new OficinaMecanica.OFICINADataSet3();
-            this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.funcionarioTableAdapter = new OficinaMecanica.OFICINADataSet3TableAdapters.FuncionarioTableAdapter();
-            this.idfuncionarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -78,7 +78,7 @@
             this.dgvFuncionarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idfuncionarioDataGridViewTextBoxColumn,
+            this.idFuncionario,
             this.nomeDataGridViewTextBoxColumn,
             this.cpfDataGridViewTextBoxColumn,
             this.cargoDataGridViewTextBoxColumn});
@@ -87,6 +87,16 @@
             this.dgvFuncionarios.Name = "dgvFuncionarios";
             this.dgvFuncionarios.Size = new System.Drawing.Size(781, 244);
             this.dgvFuncionarios.TabIndex = 10;
+            // 
+            // funcionarioBindingSource
+            // 
+            this.funcionarioBindingSource.DataMember = "Funcionario";
+            this.funcionarioBindingSource.DataSource = this.oFICINADataSet3;
+            // 
+            // oFICINADataSet3
+            // 
+            this.oFICINADataSet3.DataSetName = "OFICINADataSet3";
+            this.oFICINADataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnFiltrar
             // 
@@ -160,6 +170,7 @@
             this.btnEditar.Size = new System.Drawing.Size(50, 50);
             this.btnEditar.TabIndex = 3;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // btnSair
             // 
@@ -173,26 +184,16 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
-            // oFICINADataSet3
-            // 
-            this.oFICINADataSet3.DataSetName = "OFICINADataSet3";
-            this.oFICINADataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // funcionarioBindingSource
-            // 
-            this.funcionarioBindingSource.DataMember = "Funcionario";
-            this.funcionarioBindingSource.DataSource = this.oFICINADataSet3;
-            // 
             // funcionarioTableAdapter
             // 
             this.funcionarioTableAdapter.ClearBeforeFill = true;
             // 
-            // idfuncionarioDataGridViewTextBoxColumn
+            // idFuncionario
             // 
-            this.idfuncionarioDataGridViewTextBoxColumn.DataPropertyName = "id_funcionario";
-            this.idfuncionarioDataGridViewTextBoxColumn.HeaderText = "Código";
-            this.idfuncionarioDataGridViewTextBoxColumn.Name = "idfuncionarioDataGridViewTextBoxColumn";
-            this.idfuncionarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idFuncionario.DataPropertyName = "id_funcionario";
+            this.idFuncionario.HeaderText = "Código";
+            this.idFuncionario.Name = "idFuncionario";
+            this.idFuncionario.ReadOnly = true;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -233,8 +234,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFICINADataSet3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,7 +257,7 @@
         private OFICINADataSet3 oFICINADataSet3;
         private System.Windows.Forms.BindingSource funcionarioBindingSource;
         private OFICINADataSet3TableAdapters.FuncionarioTableAdapter funcionarioTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idfuncionarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFuncionario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpfDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cargoDataGridViewTextBoxColumn;

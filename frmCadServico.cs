@@ -15,14 +15,27 @@ namespace OficinaMecanica
         public frmCadServico()
         {
             InitializeComponent();
-        }
-
-        private void FrmCadServico_Load(object sender, EventArgs e)
-        {
             lblID.Text = "-1";
             totSalvar.SetToolTip(btnSalvar, "Salvar");
             totSair.SetToolTip(btnSair, "Sair");
             totCancelar.SetToolTip(btnCancelar, "Cancelar");
+        }
+
+        public frmCadServico(int id)
+        {
+            InitializeComponent();
+            this.limparCampos();
+            Camadas.MODEL.Servicos servico = new Camadas.MODEL.Servicos();
+            Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
+            servico = bllServ.SelectById(id)[0];
+            lblID.Text = servico.idServico.ToString();
+            txtDescricao.Text = servico.descricao.ToString();
+            txtValor.Text = servico.valMaoObra.ToString();            
+        }
+
+        private void FrmCadServico_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void limparCampos()
