@@ -39,6 +39,7 @@
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.veículosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviçosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +48,6 @@
             this.finalizarServiçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.veículosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,6 +141,13 @@
             this.funcionáriosToolStripMenuItem1.Text = "Funcionários";
             this.funcionáriosToolStripMenuItem1.Click += new System.EventHandler(this.FuncionáriosToolStripMenuItem1_Click);
             // 
+            // veículosToolStripMenuItem1
+            // 
+            this.veículosToolStripMenuItem1.Name = "veículosToolStripMenuItem1";
+            this.veículosToolStripMenuItem1.Size = new System.Drawing.Size(234, 30);
+            this.veículosToolStripMenuItem1.Text = "Veículos";
+            this.veículosToolStripMenuItem1.Click += new System.EventHandler(this.VeículosToolStripMenuItem1_Click);
+            // 
             // estoqueToolStripMenuItem
             // 
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
@@ -198,13 +205,6 @@
             this.sairToolStripMenuItem.Text = "S&air";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
             // 
-            // veículosToolStripMenuItem1
-            // 
-            this.veículosToolStripMenuItem1.Name = "veículosToolStripMenuItem1";
-            this.veículosToolStripMenuItem1.Size = new System.Drawing.Size(234, 30);
-            this.veículosToolStripMenuItem1.Text = "Veículos";
-            this.veículosToolStripMenuItem1.Click += new System.EventHandler(this.VeículosToolStripMenuItem1_Click);
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,7 +216,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu - Oficina Mecânica - Projeto LPADS2019";

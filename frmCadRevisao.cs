@@ -17,7 +17,7 @@ namespace OficinaMecanica
             InitializeComponent();
         }
 
-        
+
         private void limparCampos()
         {
             lblID.Text = "-1";
@@ -86,13 +86,13 @@ namespace OficinaMecanica
         }
 
         private void BtnAddPecas_Click(object sender, EventArgs e)
-        {            
+        {
             int id = Convert.ToInt32(cmbPecas.SelectedValue.ToString());
             Camadas.BLL.Estoque bllProd = new Camadas.BLL.Estoque();
             Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
 
-            produto = bllProd.SelectById(id)[0]; 
-            float valorPeca = Convert.ToSingle(txtQuantidade.Text) * produto.valor; 
+            produto = bllProd.SelectById(id)[0];
+            float valorPeca = Convert.ToSingle(txtQuantidade.Text) * produto.valor;
             dgvVenda.Rows.Add(produto.idProduto.ToString(), produto.descricao.ToString(), txtQuantidade.Text, valorPeca.ToString());
         }
 
@@ -119,6 +119,40 @@ namespace OficinaMecanica
             {
                 txtValorFinal.Text = txtValorTotal.Text;
             }
+        }
+
+        private void BtnGravar_Click(object sender, EventArgs e)
+        {
+            Camadas.MODEL.Revisao venda = new Camadas.MODEL.Revisao();
+            Camadas.BLL.Revisao bllVenda = new Camadas.BLL.Revisao();
+            Camadas.MODEL.Revisao_Estoque prodVenda = new Camadas.MODEL.Revisao_Estoque();
+            Camadas.BLL.Revisao_Estoque bllRevProd = new Camadas.BLL.Revisao_Estoque();
+
+            venda.idCliente = Convert.ToInt32(cmbCliente.SelectedValue.ToString());
+            venda.idFuncionario = Convert.ToInt32(cmbFuncionario.SelectedValue.ToString());
+            venda.idServico = Convert.ToInt32(cmbServico.SelectedValue.ToString());
+            venda.kmAtual = Convert.ToInt32(txtKM.Text);
+            venda.dataRevisao = Convert.ToDateTime(dtpData.Text);
+            venda.observacao = txtObservações.Text;
+            venda.valor_total = Convert.ToSingle(txtValorTotal.Text);
+            venda.idVeiculo = Convert.ToInt32(cmbVeiculo.SelectedValue.ToString());
+            venda.forma_pagto = txtFormaPagto.Text;
+            venda.desconto = Convert.ToInt32(txtDesconto.Text);
+            venda.valor_final = Convert.ToSingle(txtValorFinal.Text);
+            bllVenda.Insert(venda);
+
+            int id = bllVenda.SelectUltimoId();
+            foreach(DataGridViewRow produto in dgvVenda.Rows)
+            {
+                prodVenda.idRevisao = id;
+                prodVenda.idProduto = Convert.ToInt32(produto.Cells["colCodigo"].Value);
+                prodVenda.quantidade = Convert.ToSingle(produto.Cells["colQuantidade"].Value);
+                if (prodVenda.idProduto != 0)
+                {
+                    bllRevProd.Insert(prodVenda);
+                }
+            }
+            this.limparCampos();
         }
     }
 }

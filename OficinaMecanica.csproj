@@ -50,6 +50,7 @@
     <Compile Include="Camadas\BLL\Estoque.cs" />
     <Compile Include="Camadas\BLL\Funcionario.cs" />
     <Compile Include="Camadas\BLL\Revisao.cs" />
+    <Compile Include="Camadas\BLL\Revisao_Estoque.cs" />
     <Compile Include="Camadas\BLL\Servico.cs" />
     <Compile Include="Camadas\BLL\Usuario.cs" />
     <Compile Include="Camadas\BLL\Veiculo.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Camadas\DAL\Estoque.cs" />
     <Compile Include="Camadas\DAL\Funcionarios.cs" />
     <Compile Include="Camadas\DAL\Revisao.cs" />
+    <Compile Include="Camadas\DAL\Revisao_Estoque.cs" />
     <Compile Include="Camadas\DAL\Servicos.cs" />
     <Compile Include="Camadas\DAL\Usuarios.cs" />
     <Compile Include="Camadas\DAL\Veiculos.cs" />

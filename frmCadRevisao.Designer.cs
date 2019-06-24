@@ -419,6 +419,7 @@
             this.btnGravar.Size = new System.Drawing.Size(50, 50);
             this.btnGravar.TabIndex = 16;
             this.btnGravar.UseVisualStyleBackColor = false;
+            this.btnGravar.Click += new System.EventHandler(this.BtnGravar_Click);
             // 
             // btnCancelar
             // 

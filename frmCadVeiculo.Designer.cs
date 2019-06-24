@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadVeiculo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtProp = new System.Windows.Forms.TextBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
@@ -48,7 +49,6 @@
             this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
-            this.txtProp = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Veículo";
+            // 
+            // txtProp
+            // 
+            this.txtProp.Location = new System.Drawing.Point(125, 194);
+            this.txtProp.Name = "txtProp";
+            this.txtProp.Size = new System.Drawing.Size(623, 29);
+            this.txtProp.TabIndex = 10;
             // 
             // txtCliente
             // 
@@ -198,13 +205,6 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
-            // txtProp
-            // 
-            this.txtProp.Location = new System.Drawing.Point(125, 194);
-            this.txtProp.Name = "txtProp";
-            this.txtProp.Size = new System.Drawing.Size(623, 29);
-            this.txtProp.TabIndex = 10;
-            // 
             // frmCadVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,7 +217,6 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "frmCadVeiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Veículos - Oficina Mecânica";
