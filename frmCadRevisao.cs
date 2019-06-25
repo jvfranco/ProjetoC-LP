@@ -15,28 +15,6 @@ namespace OficinaMecanica
         public frmCadRevisao()
         {
             InitializeComponent();
-        }
-
-
-        private void limparCampos()
-        {
-            lblID.Text = "-1";
-            cmbCliente.Text = "";
-            cmbFuncionario.Text = "";
-            cmbVeiculo.Text = "";
-            cmbServico.Text = "";
-            cmbPecas.Text = "";
-            txtKM.Text = "";
-            txtObservações.Text = "";
-            txtFormaPagto.Text = "";
-            txtValServ.Text = "";
-            txtDesconto.Text = "";
-            txtValorTotal.Text = "";
-            txtValorFinal.Text = "";
-        }
-
-        private void FrmRevisao_Load(object sender, EventArgs e)
-        {
             lblID.Text = "-1";
             txtDesconto.Text = "0";
             totSalvar.SetToolTip(btnGravar, "Salvar");
@@ -61,7 +39,6 @@ namespace OficinaMecanica
 
             Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
             Camadas.MODEL.Servicos servico = new Camadas.MODEL.Servicos();
-
             cmbServico.DisplayMember = "descricao";
             cmbServico.ValueMember = "idServico";
             cmbServico.DataSource = bllServ.Select();
@@ -72,6 +49,89 @@ namespace OficinaMecanica
             cmbPecas.DisplayMember = "descricao";
             cmbPecas.ValueMember = "idProduto";
             cmbPecas.DataSource = bllProd.Select();
+        }
+
+        public frmCadRevisao(int id)
+        {
+            InitializeComponent();
+
+            Camadas.MODEL.Revisao servico = new Camadas.MODEL.Revisao();
+            List<Camadas.MODEL.Revisao_Estoque> lstProdutos = new List<Camadas.MODEL.Revisao_Estoque>();
+            Camadas.BLL.Revisao bllRev = new Camadas.BLL.Revisao();
+            Camadas.BLL.Revisao_Estoque bllEst = new Camadas.BLL.Revisao_Estoque();
+
+            servico = bllRev.SelectById(id)[0];
+            lstProdutos = bllEst.SelectByIdRevisao(servico.idRevisao);
+
+            this.limparCampos();
+            this.desabilitarCampos();
+            lblID.Text = servico.idRevisao.ToString();
+            Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
+            cmbCliente.DisplayMember = "nome";
+            cmbCliente.ValueMember = "idCliente";
+            cmbCliente.DataSource = bllCli.SelectByID(Convert.ToInt32(servico.idCliente));
+
+            Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
+            cmbFuncionario.DisplayMember = "nome";
+            cmbFuncionario.ValueMember = "idFuncionario";
+            cmbFuncionario.DataSource = bllFunc.SelectById(servico.idFuncionario);
+
+            Camadas.BLL.Veiculo bllVei = new Camadas.BLL.Veiculo();
+            cmbVeiculo.DisplayMember = "modelo";
+            cmbVeiculo.ValueMember = "idVeiculo";
+            cmbVeiculo.DataSource = bllVei.SelectById(servico.idVeiculo);
+
+            Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
+            Camadas.MODEL.Servicos servicoM = new Camadas.MODEL.Servicos();
+            cmbServico.DisplayMember = "descricao";
+            cmbServico.ValueMember = "idServico";
+            cmbServico.DataSource = bllServ.SelectById(servico.idServico);
+            servicoM = bllServ.SelectById(Convert.ToInt32(cmbServico.SelectedValue.ToString()))[0];
+            txtValServ.Text = servicoM.valMaoObra.ToString();
+
+
+        }
+
+        private void limparCampos()
+        {
+            lblID.Text = "-1";
+            cmbCliente.Text = "";
+            cmbFuncionario.Text = "";
+            cmbVeiculo.Text = "";
+            cmbServico.Text = "";
+            cmbPecas.Text = "";
+            txtKM.Text = "";
+            txtObservações.Text = "";
+            txtFormaPagto.Text = "";
+            txtValServ.Text = "";
+            txtDesconto.Text = "";
+            txtValorTotal.Text = "";
+            txtValorFinal.Text = "";
+            txtQuantidade.Text = "";
+            dgvVenda.DataSource = "";
+        }
+
+        private void desabilitarCampos()
+        {
+            lblID.Enabled = false;
+            cmbCliente.Enabled = false;
+            cmbFuncionario.Enabled = false;
+            cmbVeiculo.Enabled = false;
+            cmbServico.Enabled = false;
+            cmbPecas.Enabled = false;
+            txtKM.Enabled = false;
+            txtObservações.Enabled = false;
+            txtFormaPagto.Enabled = false;
+            txtValServ.Enabled = false;
+            txtDesconto.Enabled = false;
+            txtValorTotal.Enabled = false;
+            txtValorFinal.Enabled = false;
+            txtQuantidade.Enabled = false;
+        }
+
+        private void FrmRevisao_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

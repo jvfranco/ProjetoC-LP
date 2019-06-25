@@ -23,6 +23,11 @@ namespace OficinaMecanica.Camadas.BLL
             DAL.Revisao dalRev = new DAL.Revisao();
             return dalRev.SelectById(id);
         }
+        public List<MODEL.Revisao> SelectByData(DateTime data)
+        {
+            DAL.Revisao dalRev = new DAL.Revisao();
+            return dalRev.SelectByData(data);
+        }
         public void Insert(MODEL.Revisao revisao)
         {
             DAL.Revisao dalRev = new DAL.Revisao();

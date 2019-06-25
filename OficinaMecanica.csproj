@@ -183,6 +183,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OFICINADataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="OFICINADataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OFICINADataSet10.xsd</DependentUpon>
+    </Compile>
     <Compile Include="OFICINADataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,6 +227,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OFICINADataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OrdensServico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdensServico.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -307,6 +317,17 @@
     </None>
     <None Include="OFICINADataSet1.xss">
       <DependentUpon>OFICINADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet10.xsc">
+      <DependentUpon>OFICINADataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OFICINADataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OFICINADataSet10.xss">
+      <DependentUpon>OFICINADataSet10.xsd</DependentUpon>
     </None>
     <None Include="OFICINADataSet2.xsc">
       <DependentUpon>OFICINADataSet2.xsd</DependentUpon>
@@ -395,6 +416,17 @@
     </None>
     <None Include="OFICINADataSet9.xss">
       <DependentUpon>OFICINADataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="OrdensServico.xsc">
+      <DependentUpon>OrdensServico.xsd</DependentUpon>
+    </None>
+    <None Include="OrdensServico.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrdensServico.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OrdensServico.xss">
+      <DependentUpon>OrdensServico.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

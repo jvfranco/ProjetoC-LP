@@ -13,5 +13,11 @@ namespace OficinaMecanica.Camadas.BLL
             DAL.Revisao_Estoque dalRevEst = new DAL.Revisao_Estoque();
             dalRevEst.Insert(prodVenda);
         }
+
+        public List<Camadas.MODEL.Revisao_Estoque> SelectByIdRevisao(int id)
+        {
+            DAL.Revisao_Estoque dalRevEst = new DAL.Revisao_Estoque();
+            return dalRevEst.SelectByIdServico(id);
+        }
     }
 }

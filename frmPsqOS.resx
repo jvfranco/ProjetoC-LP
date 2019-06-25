@@ -127,26 +127,36 @@
         atOFtqRfPoe2/gs+9vsL1gh1QRozhLbArIIlQlvwLIY+xq/TdzOMB7z9zEYb8wQ3AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="revisaoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>569, 11</value>
+  </metadata>
+  <metadata name="oFICINADataSet10.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>429, 13</value>
+  </metadata>
   <metadata name="totSair.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>201, 17</value>
   </metadata>
-  <metadata name="totEditar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="totDetalhes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>288, 17</value>
   </metadata>
-  <data name="btnEditar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDetalhes.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAjpJREFUaEPt2c1LFHEcx/G1QOpUeNK8RAepxIMaEVZCJ/HQ0WOnrv0PnUQvImIi
-        IUWJRJc8eewmRKCnwFLPQeFDPp+C9P2J/cHMOLu6u/P9za+YD7xwH0bYt8suM1hK7AqODXxAM7zNKkS8
-        xliE/MRG+ba3GIuQL+iEi5mHeYxViOY1xjJE8xZjHaJ5ifERopnH+ArRTGN8hmhmMb5DNJOYPEK0zGPy
-        CtEyjckzRMssxiJkFTdq8BhH0O++QF2zCGnEAupaEWKkCClCjBQhRYiR/zrkJgbQ9fdehYUc0oqPiD7/
-        CddxaqGGXMVXpB2zjsuILcQQRSxHHkvzFLGFFrKIpfJtvSOD2C7fj5pEbKGFOIrQZ0TrQTJmGLGFGPIN
-        LsItGvMHdxBbaCFpEVo3tqBjRvVAciGFVIqIvhvvcRGnFkqIItqQXC9+Qce8Q2qEFkKIrvHTIvQ52IGO
-        mUPFCC3vkGoRu9Axs6gaoeUZoohrSO4uXMQbnBmh5RVSKeIeXMRrnCtCyyNkDWkRfXARr3AB557vkGoR
-        e9AxM2hCTfMZooh2JHcfLuIlao7QfIXo1Dst4gH2oWOmUVeE5iPkN24juYc4gI6ZQt0Rmq935DN0neHW
-        j0PoOZ2SNxShWYf8gL5qdVsXSy2IRkyg4QjNOkRfozoRXCnf10/3L4RxZBKhWYcMoQPPoesI9/gYMp0u
-        4vWVlyWdpboXvBm5LYoZwT+xR4i++O94iydIO0EMdpegv/oz3NID2a9UOgHV9t2H8m9FHAAAAABJRU5E
-        rkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAM3SURBVGhD7Zk9r01BFIZPfCVyCxQ0Oj/ARa9T8AdEiUrp
+        dkoN4Reg16j8A5WPIBoJlaAl0WhIxMf7xJ1kZbJmnz0za9xdeJMnd985M2vW2XvNmjX7rBp0TFwR98Ur
+        8UX82IZr2viMPvRdhHaLC+Kx+Cl+z4S+jGEsNnZEZ8Qb4TlYw1uBrX+m/eKu+CU8h1rAFjaxPVSHxXPh
+        OZH4Kh4JHLq5Dde08Zk3JoFt5hgiDPO4vYmJ6YfinNgnSuIz+tC3tGaYI/xL8GhLd/6ZOClqxZinwrPJ
+        XKHhRAjkkxC3t8UeYbVLbIqL4hoNE2IsNrz1xJwhIkPkE/D/lrDaEDj8Qdi+c3RVeHN0ZydytJcquWtW
+        p8VHkfeDucJmPpb10LVPsNHkRol5GzbnxXdh+3wWDwQZaK6w6a0JfGgWu6U1RuawC5Y7b53/JC6LqUw0
+        pRMiz0740CTqldwY6S+JmLdh81ocFb1iDjsnPjTVThRd1hCQw5NYsKmdOx/hPGIOOyfgS7WoHK0RdtEU
+        GqRKm20uiSgxR75j40u1KH+tEUqBpOMitbNg94pIMZedG1+qRQ1vjdiNhU0qtZNtonVH2LnxpVocRKwR
+        mxJt/Nekyrm6Iezc+FKtqS8wWiFfYCqERiskhKYW8WiFLOKpNDpSYWl03UY2SmdFPm/TRraulBilsFIC
+        rSvmohVazCGvnKbkzU9hERpSTnOY8A7y+YEmQrdEPk/3gQbNPVL2aNiRMqnmUF8jxnLnc+fhngjT1GsV
+        4pbFVyvGlF6rvBD2tQrH1oN/L9u1Uy+2Tolv4qU4REOPMDz31SL1DEUZcE1bvsPmcOet80fEe2E/7/4S
+        PFrWhBe3rWCLmLdhc0Bw1/O+tHWHEyJDlEKqBmzk2YY77zmfCAknRI5mo2G3LMW0B30Zw9g8zxPzNmxK
+        hISTFfUKRReVI+UvNTwHEeCaNj6jT6m2IduwYD2HPcLCKUo4MxU6HmHhFCWcITw8Z0uEh1OvcKblSfwP
+        p2i1hBNvz0N/3elVSzhdF4tSbTi9E4tTTTjxm8UiNTecFvkEkuaE0+LWQC6eBNnGc/6JWFQWKgknudOE
+        CzHPX/5X+2r1B+S5jTvEC5XPAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnSair.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -162,6 +172,9 @@
         EJ9QF5C8v+7j49OdpvkHRhtNFM51smsAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="revisaoTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>731, 16</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAABcPAAAXDwAAAAAAAAAA

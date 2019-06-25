@@ -94,6 +94,48 @@ namespace OficinaMecanica.Camadas.DAL
             return lstRevisao;
         }
 
+        public List<MODEL.Revisao> SelectByData(DateTime data)
+        {
+            List<MODEL.Revisao> lstRevisao = new List<MODEL.Revisao>();
+            SqlConnection conexao = new SqlConnection(strCon);
+            string sql = "Select * from Revisao where data_revisao=@data_revisao";
+            SqlCommand cmd = new SqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("data_revisao", data);
+            try
+            {
+                conexao.Open();
+                SqlDataReader dados = cmd.ExecuteReader();
+                while (dados.Read())
+                {
+                    MODEL.Revisao revisao = new MODEL.Revisao();
+                    revisao.idRevisao = Convert.ToInt32(dados["id_revisao"].ToString());
+                    revisao.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
+                    revisao.idFuncionario = Convert.ToInt32(dados["id_funcionario"].ToString());
+                    revisao.idServico = Convert.ToInt32(dados["id_servico"].ToString());
+                    revisao.kmAtual = Convert.ToInt32(dados["km_atual"].ToString());
+                    revisao.dataRevisao = Convert.ToDateTime(dados["data_revisao"].ToString());
+                    revisao.observacao = dados["observacao"].ToString();
+                    revisao.valor_total = Convert.ToSingle(dados["valor_total"].ToString());
+                    revisao.idVeiculo = Convert.ToInt32(dados["id_veiculo"].ToString());
+                    revisao.forma_pagto = dados["forma_pagto"].ToString();
+                    revisao.desconto = Convert.ToSingle(dados["desconto"].ToString());
+                    revisao.valor_final = Convert.ToSingle(dados["valor_final"].ToString());
+
+                    lstRevisao.Add(revisao);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na consulta da revisao.");
+            }
+            finally
+            {
+                conexao.Close();
+            }
+
+            return lstRevisao;
+        }
+
         public int SelectUltimoId()
         {
             int id = 0;
