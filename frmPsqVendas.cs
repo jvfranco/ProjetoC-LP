@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OficinaMecanica
 {
-    public partial class frmPsqOS : Form
+    public partial class frmPsqVendas : Form
     {
-        public frmPsqOS()
+        public frmPsqVendas()
         {
             InitializeComponent();
         }
@@ -55,7 +55,7 @@ namespace OficinaMecanica
         private void BtnDetalhes_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dgvOS.SelectedRows[0].Cells["idServico"].Value.ToString());
-            frmCadRevisao frmServ = new frmCadRevisao(id);
+            frmCadVenda frmServ = new frmCadVenda(id);
             this.Hide();
             frmServ.Show();
         }

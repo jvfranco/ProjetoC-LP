@@ -144,7 +144,7 @@ namespace OficinaMecanica.Camadas.DAL
         {
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "Update Veiculos set modelo=@modelo, marca=@marca, ";
-            sql += "placa=@placa, idCliente=@id_cliente where idVeiculo=@id_veiculo; ";
+            sql += "placa=@placa, id_cliente=@id_cliente where id_veiculo=@id_veiculo; ";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_veiculo", veiculo.idVeiculo);
             cmd.Parameters.AddWithValue("@modelo", veiculo.modelo);
@@ -169,7 +169,7 @@ namespace OficinaMecanica.Camadas.DAL
         public void Delete(int idVeiculo)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Delete from Veiculos where idVeiculo=@id_veiculo;";
+            string sql = "Delete from Veiculos where id_veiculo=@id_veiculo;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_veiculo", idVeiculo);
             try

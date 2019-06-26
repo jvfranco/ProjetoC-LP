@@ -1,6 +1,6 @@
 ﻿namespace OficinaMecanica
 {
-    partial class frmCadRevisao
+    partial class frmCadVenda
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadRevisao));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadVenda));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtValorFinal = new System.Windows.Forms.TextBox();
             this.txtValorTotal = new System.Windows.Forms.TextBox();
@@ -120,7 +120,7 @@
             this.groupBox1.Size = new System.Drawing.Size(999, 642);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ordem de Serviço";
+            this.groupBox1.Text = "Venda";
             // 
             // txtValorFinal
             // 
@@ -465,7 +465,7 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // frmCadRevisao
+            // frmCadVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -478,9 +478,9 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmCadRevisao";
+            this.Name = "frmCadVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ordem de Serviço - Oficina Mecânica";
+            this.Text = "Vendas - Oficina Mecânica";
             this.Load += new System.EventHandler(this.FrmRevisao_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

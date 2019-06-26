@@ -19,7 +19,7 @@ namespace OficinaMecanica
 
         private void SairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Application.Exit();
         }
 
         private void SobreToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace OficinaMecanica
 
         private void FinalizarServiçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadRevisao frmRev = new frmCadRevisao();
+            frmCadVenda frmRev = new frmCadVenda();
             frmRev.MdiParent = this;
             frmRev.Show();
         }
@@ -107,7 +107,7 @@ namespace OficinaMecanica
 
         private void RevisõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPsqOS frmOS = new frmPsqOS();
+            frmPsqVendas frmOS = new frmPsqVendas();
             frmOS.MdiParent = this;
             frmOS.Show();
         }
@@ -117,6 +117,13 @@ namespace OficinaMecanica
             frmPsqVeiculos frmVeic = new frmPsqVeiculos();
             frmVeic.MdiParent = this;
             frmVeic.Show();
+        }
+
+        private void VendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorios frmRel = new frmRelatorios();
+            frmRel.MdiParent = this;
+            frmRel.Show();
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OficinaMecanica
 {
-    public partial class frmCadRevisao : Form
+    public partial class frmCadVenda : Form
     {
-        public frmCadRevisao()
+        public frmCadVenda()
         {
             InitializeComponent();
             lblID.Text = "-1";
@@ -51,7 +51,7 @@ namespace OficinaMecanica
             cmbPecas.DataSource = bllProd.Select();
         }
 
-        public frmCadRevisao(int id)
+        public frmCadVenda(int id)
         {
             InitializeComponent();
 

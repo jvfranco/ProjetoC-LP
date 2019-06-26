@@ -18,6 +18,7 @@ namespace OficinaMecanica
             totSalvar.SetToolTip(btnSalvar, "Salvar");
             totSair.SetToolTip(btnSair, "Sair");
             totCancelar.SetToolTip(btnCancelar, "Cancelar");
+            totExcluir.SetToolTip(btnDelete, "Excluir");
             txtProp.Visible = false;
 
             lblID.Text = "-1";
@@ -88,8 +89,18 @@ namespace OficinaMecanica
             string msg;
             string titulo;
 
-            msg = "Deseja inserir Veiculo?";
-            titulo = "Inserir";
+            int id = Convert.ToInt32(lblID.Text);
+
+            if(id == -1)
+            {
+                msg = "Deseja inserir Veiculo?";
+                titulo = "Inserir";
+            }
+            else
+            {
+                msg = "Deseja alterar Veiculo?";
+                titulo = "Alterar";
+            }
 
             DialogResult resposta;
             resposta = MessageBox.Show(msg, titulo, MessageBoxButtons.YesNo,
@@ -97,7 +108,15 @@ namespace OficinaMecanica
 
             if (resposta == DialogResult.Yes)
             {
-                bllVeiculo.Insert(veiculo);
+                if (id == -1)
+                {
+                    bllVeiculo.Insert(veiculo);
+                } 
+                else
+                {
+                    bllVeiculo.Update(veiculo);
+                }
+                
             }
             else
             {
@@ -120,6 +139,25 @@ namespace OficinaMecanica
             this.limparCampos();
             lblID.Text = "-1";
             txtModelo.Focus();
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            Camadas.BLL.Veiculo bllVeiculo = new Camadas.BLL.Veiculo();
+
+            if (lblID.Text != string.Empty)
+            {
+                DialogResult resposta;
+                resposta = MessageBox.Show("Deseja remover este item?", "Remover", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    bllVeiculo.Delete(Convert.ToInt32(lblID.Text));
+                }
+            }
+            else MessageBox.Show("Não há registros para remover!");
+
+            this.limparCampos();
         }
     }
 }

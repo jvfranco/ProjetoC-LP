@@ -137,11 +137,11 @@
     <Compile Include="frmPsqFuncionario.Designer.cs">
       <DependentUpon>frmPsqFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPsqOS.cs">
+    <Compile Include="frmPsqVendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPsqOS.Designer.cs">
-      <DependentUpon>frmPsqOS.cs</DependentUpon>
+    <Compile Include="frmPsqVendas.Designer.cs">
+      <DependentUpon>frmPsqVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPsqServicos.cs">
       <SubType>Form</SubType>
@@ -161,17 +161,23 @@
     <Compile Include="frmPsqVeiculos.Designer.cs">
       <DependentUpon>frmPsqVeiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorios.Designer.cs">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSobre.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSobre.Designer.cs">
       <DependentUpon>frmSobre.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCadRevisao.cs">
+    <Compile Include="frmCadVenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCadRevisao.Designer.cs">
-      <DependentUpon>frmCadRevisao.cs</DependentUpon>
+    <Compile Include="frmCadVenda.Designer.cs">
+      <DependentUpon>frmCadVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="OFICINADataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -235,6 +241,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\Funcoes.cs" />
+    <Compile Include="Relatorios\relVendas.cs" />
     <EmbeddedResource Include="frmCadCliente.resx">
       <DependentUpon>frmCadCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,8 +276,8 @@
     <EmbeddedResource Include="frmPsqFuncionario.resx">
       <DependentUpon>frmPsqFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPsqOS.resx">
-      <DependentUpon>frmPsqOS.cs</DependentUpon>
+    <EmbeddedResource Include="frmPsqVendas.resx">
+      <DependentUpon>frmPsqVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPsqServicos.resx">
       <DependentUpon>frmPsqServicos.cs</DependentUpon>
@@ -280,11 +288,14 @@
     <EmbeddedResource Include="frmPsqVeiculos.resx">
       <DependentUpon>frmPsqVeiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorios.resx">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSobre.resx">
       <DependentUpon>frmSobre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCadRevisao.resx">
-      <DependentUpon>frmCadRevisao.cs</DependentUpon>
+    <EmbeddedResource Include="frmCadVenda.resx">
+      <DependentUpon>frmCadVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
