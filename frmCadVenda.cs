@@ -55,41 +55,55 @@ namespace OficinaMecanica
         {
             InitializeComponent();
 
-            Camadas.MODEL.Revisao servico = new Camadas.MODEL.Revisao();
+            Camadas.MODEL.Revisao venda = new Camadas.MODEL.Revisao();
             List<Camadas.MODEL.Revisao_Estoque> lstProdutos = new List<Camadas.MODEL.Revisao_Estoque>();
             Camadas.BLL.Revisao bllRev = new Camadas.BLL.Revisao();
             Camadas.BLL.Revisao_Estoque bllEst = new Camadas.BLL.Revisao_Estoque();
 
-            servico = bllRev.SelectById(id)[0];
-            lstProdutos = bllEst.SelectByIdRevisao(servico.idRevisao);
+            venda = bllRev.SelectById(id)[0];
+            lstProdutos = bllEst.SelectByIdVenda(venda.idRevisao);
 
             this.limparCampos();
             this.desabilitarCampos();
-            lblID.Text = servico.idRevisao.ToString();
+            btnGravar.Enabled = false;
+            btnCalcular.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnAddPecas.Enabled = false;
+
+            lblID.Text = venda.idRevisao.ToString();
             Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
             cmbCliente.DisplayMember = "nome";
             cmbCliente.ValueMember = "idCliente";
-            cmbCliente.DataSource = bllCli.SelectByID(Convert.ToInt32(servico.idCliente));
+            cmbCliente.DataSource = bllCli.SelectByID(Convert.ToInt32(venda.idCliente));
 
             Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
             cmbFuncionario.DisplayMember = "nome";
             cmbFuncionario.ValueMember = "idFuncionario";
-            cmbFuncionario.DataSource = bllFunc.SelectById(servico.idFuncionario);
+            cmbFuncionario.DataSource = bllFunc.SelectById(venda.idFuncionario);
 
             Camadas.BLL.Veiculo bllVei = new Camadas.BLL.Veiculo();
             cmbVeiculo.DisplayMember = "modelo";
             cmbVeiculo.ValueMember = "idVeiculo";
-            cmbVeiculo.DataSource = bllVei.SelectById(servico.idVeiculo);
+            cmbVeiculo.DataSource = bllVei.SelectById(venda.idVeiculo);
 
             Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
             Camadas.MODEL.Servicos servicoM = new Camadas.MODEL.Servicos();
             cmbServico.DisplayMember = "descricao";
             cmbServico.ValueMember = "idServico";
-            cmbServico.DataSource = bllServ.SelectById(servico.idServico);
+            cmbServico.DataSource = bllServ.SelectById(venda.idServico);
             servicoM = bllServ.SelectById(Convert.ToInt32(cmbServico.SelectedValue.ToString()))[0];
             txtValServ.Text = servicoM.valMaoObra.ToString();
 
+            dgvVenda.DataSource = "";
+            dgvVenda.DataSource = lstProdutos;
 
+            dtpData.Text = venda.dataRevisao.ToString();
+            txtKM.Text = venda.kmAtual.ToString();
+            txtObservações.Text = venda.observacao.ToString();
+            txtValorTotal.Text = venda.valor_total.ToString();
+            txtDesconto.Text = venda.desconto.ToString();
+            txtValorFinal.Text = venda.valor_final.ToString();
+            txtFormaPagto.Text = venda.forma_pagto.ToString();
         }
 
         private void limparCampos()
@@ -127,6 +141,7 @@ namespace OficinaMecanica
             txtValorTotal.Enabled = false;
             txtValorFinal.Enabled = false;
             txtQuantidade.Enabled = false;
+            dtpData.Enabled = false;
         }
 
         private void FrmRevisao_Load(object sender, EventArgs e)
@@ -152,8 +167,18 @@ namespace OficinaMecanica
             Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
 
             produto = bllProd.SelectById(id)[0];
-            float valorPeca = Convert.ToSingle(txtQuantidade.Text) * produto.valor;
-            dgvVenda.Rows.Add(produto.idProduto.ToString(), produto.descricao.ToString(), txtQuantidade.Text, valorPeca.ToString());
+            if (Convert.ToInt32(txtQuantidade.Text) > produto.quantidade)
+            {
+                MessageBox.Show("Quantidade superior ao encontrado no estoque! Há " + produto.quantidade + " peças no estoque!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtQuantidade.Text = "";
+                txtQuantidade.Focus();
+                return;
+            }
+            else
+            {
+                float valorPeca = Convert.ToSingle(txtQuantidade.Text) * produto.valor;
+                dgvVenda.Rows.Add(produto.idProduto.ToString(), produto.descricao.ToString(), txtQuantidade.Text, valorPeca.ToString());
+            }            
         }
 
         private void BtnCalcular_Click(object sender, EventArgs e)
@@ -202,7 +227,7 @@ namespace OficinaMecanica
             bllVenda.Insert(venda);
 
             int id = bllVenda.SelectUltimoId();
-            foreach(DataGridViewRow produto in dgvVenda.Rows)
+            foreach (DataGridViewRow produto in dgvVenda.Rows)
             {
                 prodVenda.idRevisao = id;
                 prodVenda.idProduto = Convert.ToInt32(produto.Cells["colCodigo"].Value);
@@ -212,6 +237,7 @@ namespace OficinaMecanica
                     bllRevProd.Insert(prodVenda);
                 }
             }
+
             this.limparCampos();
         }
     }

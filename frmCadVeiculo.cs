@@ -98,7 +98,7 @@ namespace OficinaMecanica
             }
             else
             {
-                msg = "Deseja alterar Veiculo?";
+                msg = "Deseja atualizar Veiculo?";
                 titulo = "Alterar";
             }
 

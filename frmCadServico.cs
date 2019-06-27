@@ -61,8 +61,16 @@ namespace OficinaMecanica
             string msg;
             string titulo;
 
-            msg = "Deseja inserir Serviço?";
-            titulo = "Inserir";
+            if (servico.idServico == -1)
+            {
+                msg = "Deseja inserir Serviço?";
+                titulo = "Inserir";
+            }
+            else
+            {
+                msg = "Deseja atualizar Serviço?";
+                titulo = "Alterar";
+            }
 
             DialogResult resposta;
             resposta = MessageBox.Show(msg, titulo, MessageBoxButtons.YesNo,
@@ -70,7 +78,13 @@ namespace OficinaMecanica
 
             if (resposta == DialogResult.Yes)
                 if (servico.idServico == -1)
+                {
                     bllServ.Insert(servico);
+                }
+                else if (servico.idServico > 0)
+                {
+                    bllServ.Update(servico);
+                }
                 else limparCampos();
 
             limparCampos();

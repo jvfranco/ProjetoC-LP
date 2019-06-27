@@ -71,9 +71,15 @@ namespace OficinaMecanica
 
             string msg;
             string titulo;
-
-            msg = "Deseja inserir Produto?";
-            titulo = "Inserir";
+            if (produto.idProduto == -1) {
+                msg = "Deseja inserir Produto?";
+                titulo = "Inserir";
+            }
+            else
+            {
+                msg = "Deseja atualizar Produto?";
+                titulo = "Alterar";
+            }            
 
             DialogResult resposta;
             resposta = MessageBox.Show(msg, titulo, MessageBoxButtons.YesNo,
@@ -81,8 +87,15 @@ namespace OficinaMecanica
 
             if (resposta == DialogResult.Yes)
                 if (produto.idProduto == -1)
+                {
                     bllEst.Insert(produto);
-                else limparCampos();
+                }                    
+                else if (produto.idProduto > 0)
+                {
+                    bllEst.Update(produto);
+                }
+            else limparCampos();
+
 
             limparCampos();
         }

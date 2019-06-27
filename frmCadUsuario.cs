@@ -81,8 +81,16 @@ namespace OficinaMecanica
             string msg;
             string titulo;
 
-            msg = "Deseja inserir Usuario?";
-            titulo = "Inserir";
+            if(user.idUsuario == -1)
+            {
+                msg = "Deseja inserir Usuario?";
+                titulo = "Inserir";
+            } 
+            else
+            {
+                msg = "Deseja atualizar Usuario?";
+                titulo = "Inserir";
+            }
 
             DialogResult resposta;
             resposta = MessageBox.Show(msg, titulo, MessageBoxButtons.YesNo,
@@ -94,7 +102,10 @@ namespace OficinaMecanica
                 if (usuario.login != user.login && user.idUsuario == -1)
                 {
                     bllUser.Insert(user);
-                    limparCampos();
+                }
+                else if (usuario.login != user.login && user.idUsuario > 0)
+                {
+                    bllUser.Update(user);
                 }
                 else
                 {
@@ -103,7 +114,14 @@ namespace OficinaMecanica
                     txtLogin.Focus();
                     return;
                 }
-            }          
+            }
+            else
+            {
+                limparCampos();
+                lblID.Text = "-1";
+            }               
+
+            limparCampos();
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

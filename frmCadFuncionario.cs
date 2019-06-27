@@ -72,8 +72,16 @@ namespace OficinaMecanica
             string msg;
             string titulo;
 
-            msg = "Deseja inserir Funcionario?";
-            titulo = "Inserir";
+            if (funcionario.idFuncionario == -1)
+            {
+                msg = "Deseja inserir Funcionario?";
+                titulo = "Inserir";
+            }
+            else
+            {
+                msg = "Deseja atualizar funcionario?";
+                titulo = "Alterar";
+            }
 
             DialogResult resposta;
             resposta = MessageBox.Show(msg, titulo, MessageBoxButtons.YesNo,
@@ -81,7 +89,13 @@ namespace OficinaMecanica
 
             if (resposta == DialogResult.Yes)
                 if (funcionario.idFuncionario == -1)
+                {
                     bllFun.Insert(funcionario);
+                }
+                else if (funcionario.idFuncionario > 0)
+                {
+                    bllFun.Update(funcionario);
+                }
                 else limparCampos();
 
             limparCampos();

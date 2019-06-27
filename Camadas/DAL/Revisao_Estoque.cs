@@ -11,11 +11,11 @@ namespace OficinaMecanica.Camadas.DAL
     {
         private string strCon = Conexao.getConexao();
 
-        public List<Camadas.MODEL.Revisao_Estoque> SelectByIdServico(int id)
+        public List<Camadas.MODEL.Revisao_Estoque> SelectByIdVenda(int id)
         {
             List<Camadas.MODEL.Revisao_Estoque> lstProdutos = new List<MODEL.Revisao_Estoque>();
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Insert * from Revisao_Estoque where id_revisao=@id_revisao;";
+            string sql = "Select * from Revisao_Estoque where id_revisao=@id_revisao;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_revisao", id);
             try
