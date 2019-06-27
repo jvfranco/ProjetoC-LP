@@ -27,28 +27,30 @@ namespace OficinaMecanica
             txtEstado.Clear();
             txtEmail.Clear();
             txtTelefone.Clear();
-            dtpCadastro.Text = "";
-            txtData.Text = "";
+        }
+
+        private void inicializarTooltip()
+        {
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
+            totCadVeiculo.SetToolTip(btnCadVeiculo, "Cadastrar Veículo");
         }
         public frmCadCliente()
         {
             InitializeComponent();
             limpaCampos();
-            totSalvar.SetToolTip(btnSalvar, "Salvar");
-            totSair.SetToolTip(btnSair, "Sair");
-            totCancelar.SetToolTip(btnCancelar, "Cancelar");
-            totCadVeiculo.SetToolTip(btnCadVeiculo, "Cadastrar Veículo");
+            inicializarTooltip();
             lblTipoDoc.Text = "CPF:";
             lblID.Text = "-1";
             txtNome.Focus();
-            dtpCadastro.Visible = true;
-            txtData.Visible = false;
         }
 
         public frmCadCliente(int id)
         {
             InitializeComponent();
             this.limpaCampos();
+            inicializarTooltip();
             Camadas.MODEL.Clientes cliente = new Camadas.MODEL.Clientes();
             Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
             cliente = bllCli.SelectByID(id)[0];
@@ -64,9 +66,8 @@ namespace OficinaMecanica
             txtEstado.Text = cliente.estado.ToString();
             txtTelefone.Text = cliente.telefone.ToString();
             txtEmail.Text = cliente.email.ToString();
-            dtpCadastro.Visible = false;
-            txtData.Visible = true;
-            txtData.Text = cliente.dataCadastro.ToString();
+            dtpCadastro.Enabled = false;
+            dtpCadastro.Text = cliente.dataCadastro.ToString();
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
@@ -137,7 +138,6 @@ namespace OficinaMecanica
             {
                 msg = "Deseja atualizar Cliente?";
                 titulo = "Atualizar";
-                cliente.dataCadastro = Convert.ToDateTime(txtData.Text);
             }
             DialogResult resposta;
             resposta = MessageBox.Show(msg, titulo, MessageBoxButtons.YesNo,
@@ -157,6 +157,7 @@ namespace OficinaMecanica
             else limpaCampos();
 
             limpaCampos();
+            lblID.Text = "-1";
         }
     }
 }

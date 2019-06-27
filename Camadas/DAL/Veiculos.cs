@@ -165,26 +165,5 @@ namespace OficinaMecanica.Camadas.DAL
                 conexao.Close();
             }
         }
-
-        public void Delete(int idVeiculo)
-        {
-            SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Delete from Veiculos where id_veiculo=@id_veiculo;";
-            SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_veiculo", idVeiculo);
-            try
-            {
-                conexao.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                Console.WriteLine("Deu erro na remoção de Veiculo.");
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
     }
 }

@@ -15,10 +15,7 @@ namespace OficinaMecanica
         public frmCadVeiculo()
         {
             InitializeComponent();
-            totSalvar.SetToolTip(btnSalvar, "Salvar");
-            totSair.SetToolTip(btnSair, "Sair");
-            totCancelar.SetToolTip(btnCancelar, "Cancelar");
-            totExcluir.SetToolTip(btnDelete, "Excluir");
+            inicializarTooltip();
             txtProp.Visible = false;
 
             lblID.Text = "-1";
@@ -33,6 +30,7 @@ namespace OficinaMecanica
         public frmCadVeiculo(int id)
         {
             InitializeComponent();
+            inicializarTooltip();
             Camadas.MODEL.Veiculos veiculo = new Camadas.MODEL.Veiculos();
             Camadas.BLL.Veiculo bllVeic = new Camadas.BLL.Veiculo();
             Camadas.MODEL.Clientes cliente = new Camadas.MODEL.Clientes();
@@ -51,11 +49,12 @@ namespace OficinaMecanica
             txtProp.Text = cliente.nome.ToString();
         }
 
-        private void Label1_Click(object sender, EventArgs e)
+        private void inicializarTooltip()
         {
-
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
         }
-
         private void limparCampos()
         {
             lblID.Text = "";
@@ -63,13 +62,6 @@ namespace OficinaMecanica
             txtMarca.Text = "";
             txtPlaca.Text = "";
         }
-
-        private void FrmCadVeiculo_Load(object sender, EventArgs e)
-        {
-            
-
-        }
-
         private void BtnSair_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -121,8 +113,10 @@ namespace OficinaMecanica
             else
             {
                 limparCampos();
+                lblID.Text = "-1";
             }
-            limparCampos();  
+            limparCampos();
+            lblID.Text = "-1";
         }
 
         private void TxtCliente_Leave(object sender, EventArgs e)
@@ -139,25 +133,6 @@ namespace OficinaMecanica
             this.limparCampos();
             lblID.Text = "-1";
             txtModelo.Focus();
-        }
-
-        private void BtnDelete_Click(object sender, EventArgs e)
-        {
-            Camadas.BLL.Veiculo bllVeiculo = new Camadas.BLL.Veiculo();
-
-            if (lblID.Text != string.Empty)
-            {
-                DialogResult resposta;
-                resposta = MessageBox.Show("Deseja remover este item?", "Remover", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-
-                if (resposta == DialogResult.Yes)
-                {
-                    bllVeiculo.Delete(Convert.ToInt32(lblID.Text));
-                }
-            }
-            else MessageBox.Show("Não há registros para remover!");
-
-            this.limparCampos();
         }
     }
 }

@@ -17,9 +17,7 @@ namespace OficinaMecanica
             InitializeComponent();
             lblID.Text = "-1";
             txtLogin.Focus();
-            totSalvar.SetToolTip(btnSalvar, "Salvar");
-            totSair.SetToolTip(btnSair, "Sair");
-            totCancelar.SetToolTip(btnCancelar, "Cancelar");
+            inicializarTooltip();
 
             Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
             cmbFuncionario.DisplayMember = "nome";
@@ -32,6 +30,7 @@ namespace OficinaMecanica
         {
             InitializeComponent();
             this.limparCampos();
+            inicializarTooltip();
             Camadas.MODEL.Usuarios usuario = new Camadas.MODEL.Usuarios();
             Camadas.BLL.Usuario bllUser = new Camadas.BLL.Usuario();
             Camadas.MODEL.Funcionarios funcionario = new Camadas.MODEL.Funcionarios();
@@ -41,18 +40,17 @@ namespace OficinaMecanica
             cmbFuncionario.Visible = false;
             txtFunc.Visible = true;
             txtFunc.Enabled = false;
+            txtLogin.Enabled = false;
             lblID.Text = usuario.idFuncionario.ToString();
             txtLogin.Text = usuario.login.ToString();
             txtSenha.Text = usuario.senha.ToString();
             txtFunc.Text = funcionario.nome.ToString();
         }
-        private void Label1_Click(object sender, EventArgs e)
+        private void inicializarTooltip()
         {
-
-        }
-        private void FrmCadUsuario_Load(object sender, EventArgs e)
-        {
-            
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
         }
 
         private void limparCampos()
@@ -103,7 +101,7 @@ namespace OficinaMecanica
                 {
                     bllUser.Insert(user);
                 }
-                else if (usuario.login != user.login && user.idUsuario > 0)
+                else if (user.idUsuario > 0)
                 {
                     bllUser.Update(user);
                 }
@@ -122,6 +120,7 @@ namespace OficinaMecanica
             }               
 
             limparCampos();
+            lblID.Text = "-1";
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

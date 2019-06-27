@@ -135,8 +135,8 @@ namespace OficinaMecanica.Camadas.DAL
         public void Update(Camadas.MODEL.Funcionarios Funcionario)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Update Funcionario set nome=@nome, cpf=@cpf, cargo=@cargo";
-            sql += "where idFuncionario=@id_funcionario; ";
+            string sql = "Update Funcionario set nome=@nome, cpf=@cpf, cargo=@cargo ";
+            sql += "where id_funcionario=@id_funcionario; ";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_funcionario", Funcionario.idFuncionario);
             cmd.Parameters.AddWithValue("@nome", Funcionario.nome);
@@ -150,27 +150,6 @@ namespace OficinaMecanica.Camadas.DAL
             catch
             {
                 Console.WriteLine("Deu erro na atualização de Funcionario.");
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
-
-        public void Delete(int idFuncionario)
-        {
-            SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Delete from Funcionario where idFuncionario=@id_funcionario;";
-            SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_funcionario", idFuncionario);
-            try
-            {
-                conexao.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                Console.WriteLine("Deu erro na remoção de Funcionario.");
             }
             finally
             {

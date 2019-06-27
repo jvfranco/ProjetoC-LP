@@ -17,10 +17,7 @@ namespace OficinaMecanica
             InitializeComponent();
             lblID.Text = "-1";
             txtDesconto.Text = "0";
-            totSalvar.SetToolTip(btnGravar, "Salvar");
-            totSair.SetToolTip(btnSair, "Sair");
-            totCancelar.SetToolTip(btnCancelar, "Cancelar");
-            totCalcular.SetToolTip(btnCalcular, "Calcular Valor Total");
+            inicializarTooltip();
 
             Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
             cmbCliente.DisplayMember = "nome";
@@ -54,7 +51,7 @@ namespace OficinaMecanica
         public frmCadVenda(int id)
         {
             InitializeComponent();
-
+            inicializarTooltip();
             Camadas.MODEL.Revisao venda = new Camadas.MODEL.Revisao();
             List<Camadas.MODEL.Revisao_Estoque> lstProdutos = new List<Camadas.MODEL.Revisao_Estoque>();
             Camadas.BLL.Revisao bllRev = new Camadas.BLL.Revisao();
@@ -65,9 +62,9 @@ namespace OficinaMecanica
 
             this.limparCampos();
             this.desabilitarCampos();
-            btnGravar.Enabled = false;
-            btnCalcular.Enabled = false;
-            btnCancelar.Enabled = false;
+            btnGravar.Visible = false;
+            btnCalcular.Visible = false;
+            btnCancelar.Visible = false;
             btnAddPecas.Enabled = false;
 
             lblID.Text = venda.idRevisao.ToString();
@@ -92,6 +89,7 @@ namespace OficinaMecanica
             cmbServico.ValueMember = "idServico";
             cmbServico.DataSource = bllServ.SelectById(venda.idServico);
             servicoM = bllServ.SelectById(Convert.ToInt32(cmbServico.SelectedValue.ToString()))[0];
+            txtValServ.Text = "";
             txtValServ.Text = servicoM.valMaoObra.ToString();
 
             dgvVenda.DataSource = "";
@@ -123,6 +121,14 @@ namespace OficinaMecanica
             txtValorFinal.Text = "";
             txtQuantidade.Text = "";
             dgvVenda.DataSource = "";
+        }
+
+        private void inicializarTooltip()
+        {
+            totSalvar.SetToolTip(btnGravar, "Salvar");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
+            totCalcular.SetToolTip(btnCalcular, "Calcular Valor Total");
         }
 
         private void desabilitarCampos()
@@ -239,6 +245,7 @@ namespace OficinaMecanica
             }
 
             this.limparCampos();
+            lblID.Text = "-1";
         }
     }
 }

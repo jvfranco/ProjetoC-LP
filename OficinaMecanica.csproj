@@ -194,6 +194,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OFICINADataSet10.xsd</DependentUpon>
     </Compile>
+    <Compile Include="OFICINADataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OFICINADataSet11.xsd</DependentUpon>
+    </Compile>
     <Compile Include="OFICINADataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -339,6 +344,17 @@
     </None>
     <None Include="OFICINADataSet10.xss">
       <DependentUpon>OFICINADataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet11.xsc">
+      <DependentUpon>OFICINADataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="OFICINADataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OFICINADataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OFICINADataSet11.xss">
+      <DependentUpon>OFICINADataSet11.xsd</DependentUpon>
     </None>
     <None Include="OFICINADataSet2.xsc">
       <DependentUpon>OFICINADataSet2.xsd</DependentUpon>

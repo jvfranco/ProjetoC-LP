@@ -134,12 +134,9 @@ namespace OficinaMecanica.Camadas.DAL
         public void Update(Camadas.MODEL.Usuarios Usuario)
         {
             SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Update Usuarios set idFuncionario=@id_funcionario, login=@login, senha=@senha, ";
-            sql += "where idUsuario=@id_usuario; ";
+            string sql = "Update Usuarios set senha=@senha where id_usuario=@id_usuario;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_usuario", Usuario.idUsuario);
-            cmd.Parameters.AddWithValue("@id_funcionario", Usuario.idFuncionario);
-            cmd.Parameters.AddWithValue("@login", Usuario.login);
             cmd.Parameters.AddWithValue("@senha", Usuario.senha);
             try
             {
@@ -149,27 +146,6 @@ namespace OficinaMecanica.Camadas.DAL
             catch
             {
                 Console.WriteLine("Deu erro na atualização de Usuario.");
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
-
-        public void Delete(int idUsuario)
-        {
-            SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Delete from Usuarios where idUsuario=@id_usuario;";
-            SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_usuario", idUsuario);
-            try
-            {
-                conexao.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                Console.WriteLine("Deu erro na remoção de Usuario.");
             }
             finally
             {

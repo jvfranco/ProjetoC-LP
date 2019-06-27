@@ -20,19 +20,25 @@ namespace OficinaMecanica
             txtCargo.Text = "";
         }
 
-        public frmCadFuncionario()
+        private void inicializarTooltip()
         {
-            InitializeComponent();
-            lblID.Text = "-1";
             totSalvar.SetToolTip(btnSalvar, "Salvar");
             totAddUser.SetToolTip(btnAddUser, "Adicionar Usuário");
             totSair.SetToolTip(btnSair, "Sair");
             totCancelar.SetToolTip(btnCancelar, "Cancelar");
         }
+
+        public frmCadFuncionario()
+        {
+            InitializeComponent();
+            lblID.Text = "-1";
+            inicializarTooltip();
+        }
         public frmCadFuncionario(int id)
         {
             InitializeComponent();
             this.limparCampos();
+            inicializarTooltip();
             Camadas.MODEL.Funcionarios funcionario = new Camadas.MODEL.Funcionarios();
             Camadas.BLL.Funcionario bllFunc = new Camadas.BLL.Funcionario();
             funcionario = bllFunc.SelectById(id)[0];
@@ -96,9 +102,13 @@ namespace OficinaMecanica
                 {
                     bllFun.Update(funcionario);
                 }
-                else limparCampos();
-
+                else
+                {
+                    limparCampos();
+                    lblID.Text = "-1";
+                }
             limparCampos();
+            lblID.Text = "-1";
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

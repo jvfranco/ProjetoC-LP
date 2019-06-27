@@ -39,13 +39,5 @@ namespace OficinaMecanica.Camadas.BLL
             if (veiculo.modelo != "")
                 dalVei.Update(veiculo);
         }
-
-        public void Delete(int idVeiculo)
-        {
-            DAL.Veiculos dalVei = new DAL.Veiculos();
-            if (idVeiculo > 0)
-                dalVei.Delete(idVeiculo);
-
-        }
     }
 }

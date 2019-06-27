@@ -56,7 +56,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtData = new System.Windows.Forms.TextBox();
             this.dtpCadastro = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -327,7 +326,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtData);
             this.groupBox3.Controls.Add(this.dtpCadastro);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtEmail);
@@ -341,15 +339,6 @@
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dados Para Contato";
-            // 
-            // txtData
-            // 
-            this.txtData.Enabled = false;
-            this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtData.Location = new System.Drawing.Point(432, 116);
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(313, 26);
-            this.txtData.TabIndex = 17;
             // 
             // dtpCadastro
             // 
@@ -528,6 +517,5 @@
         private System.Windows.Forms.Button btnCadVeiculo;
         private System.Windows.Forms.ToolTip totCadVeiculo;
         private System.Windows.Forms.DateTimePicker dtpCadastro;
-        private System.Windows.Forms.TextBox txtData;
     }
 }

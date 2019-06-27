@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadUsuario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFunc = new System.Windows.Forms.TextBox();
             this.cmbFuncionario = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
-            this.txtFunc = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Usuários";
+            // 
+            // txtFunc
+            // 
+            this.txtFunc.Location = new System.Drawing.Point(126, 53);
+            this.txtFunc.Name = "txtFunc";
+            this.txtFunc.Size = new System.Drawing.Size(622, 29);
+            this.txtFunc.TabIndex = 8;
             // 
             // cmbFuncionario
             // 
@@ -130,7 +137,6 @@
             this.label1.Size = new System.Drawing.Size(83, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // btnCancelar
             // 
@@ -168,13 +174,6 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
-            // txtFunc
-            // 
-            this.txtFunc.Location = new System.Drawing.Point(126, 53);
-            this.txtFunc.Name = "txtFunc";
-            this.txtFunc.Size = new System.Drawing.Size(622, 29);
-            this.txtFunc.TabIndex = 8;
-            // 
             // frmCadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,7 +189,6 @@
             this.Name = "frmCadUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Usuários - Oficina Mecânica";
-            this.Load += new System.EventHandler(this.FrmCadUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

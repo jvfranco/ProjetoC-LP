@@ -182,7 +182,7 @@ namespace OficinaMecanica.Camadas.DAL
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "Update Clientes set nome=@nome, endereco=@endereco, numero=@numero, bairro=@bairro, cep=@cep, " +
                 "cidade=@cidade, estado=@estado, telefone=@telefone, email=@email, data_cadastro=@data_cadastro, " +
-                "cpf_cnpj=@cpf_cnpj, rg=@rg tipo_pessoa=@tipo_pessoa where id=@id; ";
+                "cpf_cnpj=@cpf_cnpj, rg=@rg, tipo_pessoa=@tipo_pessoa where id=@id;";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id", cliente.idCliente);
             cmd.Parameters.AddWithValue("@nome", cliente.nome);
@@ -212,27 +212,5 @@ namespace OficinaMecanica.Camadas.DAL
                 conexao.Close();
             }
         }
-
-        public void Delete(int idCliente)
-        {
-            SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Delete from Clientes where idCliente=@id;";
-            SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id", idCliente);
-            try
-            {
-                conexao.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                Console.WriteLine("Deu erro na remoção de cliente.");
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
-
     }
 }

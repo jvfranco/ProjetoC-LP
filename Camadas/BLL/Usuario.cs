@@ -38,13 +38,5 @@ namespace OficinaMecanica.Camadas.BLL
             if (usuario.login != "")
                 dalUser.Update(usuario);
         }
-/*
-        public void Delete(int idFuncionario)
-        {
-            DAL.Funcionarios dalFunc = new DAL.Funcionarios();
-            if (idFuncionario > 0)
-                dalFunc.Delete(idFuncionario);
-
-        }*/
     }
 }

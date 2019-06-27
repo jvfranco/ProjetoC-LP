@@ -47,6 +47,7 @@
             this.totAddUser = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
+            this.totDelete = new System.Windows.Forms.ToolTip(this.components);
             this.gpbFuncionarios.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -220,5 +221,6 @@
         private System.Windows.Forms.ToolTip totAddUser;
         private System.Windows.Forms.ToolTip totCancelar;
         private System.Windows.Forms.ToolTip totSair;
+        private System.Windows.Forms.ToolTip totDelete;
     }
 }

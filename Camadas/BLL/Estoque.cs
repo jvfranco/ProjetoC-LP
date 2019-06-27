@@ -39,12 +39,5 @@ namespace OficinaMecanica.Camadas.BLL
             if (produto.descricao != "")
                 dalEst.Update(produto);
         }
-
-        public void Delete(int idProduto)
-        {
-            DAL.Estoque dalEst = new DAL.Estoque();
-            if (idProduto > 0)
-                dalEst.Delete(idProduto);
-        }
     }
 }

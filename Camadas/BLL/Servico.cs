@@ -39,13 +39,5 @@ namespace OficinaMecanica.Camadas.BLL
             if (servico.descricao != "")
                 dalServ.Update(servico);
         }
-
-        public void Delete(int idServico)
-        {
-            DAL.Servicos dalServ = new DAL.Servicos();
-            if (idServico > 0)
-                dalServ.Delete(idServico);
-
-        }
     }
 }

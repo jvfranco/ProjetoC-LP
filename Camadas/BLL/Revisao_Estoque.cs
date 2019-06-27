@@ -11,12 +11,14 @@ namespace OficinaMecanica.Camadas.BLL
         public void Insert(MODEL.Revisao_Estoque prodVenda)
         {
             DAL.Revisao_Estoque dalRevEst = new DAL.Revisao_Estoque();
-            DAL.Estoque dalProd = new DAL.Estoque();
+            BLL.Estoque bllProd = new BLL.Estoque();
             MODEL.Estoque produto = new MODEL.Estoque();
 
-            produto.quantidade -= prodVenda.quantidade;
+            produto = bllProd.SelectById(prodVenda.idProduto)[0];
 
-            dalProd.Update(produto);
+            produto.quantidade = produto.quantidade - prodVenda.quantidade;
+
+            bllProd.Update(produto);
             dalRevEst.Insert(prodVenda);
         }
 

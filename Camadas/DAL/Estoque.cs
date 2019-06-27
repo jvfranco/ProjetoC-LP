@@ -134,7 +134,7 @@ namespace OficinaMecanica.Camadas.DAL
         {
             SqlConnection conexao = new SqlConnection(strCon);
             string sql = "Update Estoque set descricao=@descricao, quantidade=@quantidade, ";
-            sql += "valor=@valor where idProduto=@id_produto; ";
+            sql += "valor=@valor where id_produto=@id_produto; ";
             SqlCommand cmd = new SqlCommand(sql, conexao);
             cmd.Parameters.AddWithValue("@id_produto", Estoque.idProduto);
             cmd.Parameters.AddWithValue("@descricao", Estoque.descricao);
@@ -148,27 +148,6 @@ namespace OficinaMecanica.Camadas.DAL
             catch
             {
                 Console.WriteLine("Deu erro na atualização de Produto.");
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
-
-        public void Delete(int idProduto)
-        {
-            SqlConnection conexao = new SqlConnection(strCon);
-            string sql = "Delete from Estoque where idProduto=@id_produto;";
-            SqlCommand cmd = new SqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@id_produto", idProduto);
-            try
-            {
-                conexao.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                Console.WriteLine("Deu erro na remoção de Produto.");
             }
             finally
             {

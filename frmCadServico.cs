@@ -16,15 +16,14 @@ namespace OficinaMecanica
         {
             InitializeComponent();
             lblID.Text = "-1";
-            totSalvar.SetToolTip(btnSalvar, "Salvar");
-            totSair.SetToolTip(btnSair, "Sair");
-            totCancelar.SetToolTip(btnCancelar, "Cancelar");
+            inicializarTooltip();
         }
 
         public frmCadServico(int id)
         {
             InitializeComponent();
             this.limparCampos();
+            inicializarTooltip();
             Camadas.MODEL.Servicos servico = new Camadas.MODEL.Servicos();
             Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
             servico = bllServ.SelectById(id)[0];
@@ -38,6 +37,12 @@ namespace OficinaMecanica
             
         }
 
+        private void inicializarTooltip()
+        {
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
+        }
         private void limparCampos()
         {
             lblID.Text = "-1";
@@ -85,9 +90,13 @@ namespace OficinaMecanica
                 {
                     bllServ.Update(servico);
                 }
-                else limparCampos();
-
+                else
+                {
+                    limparCampos();
+                    lblID.Text = "-1";
+                }
             limparCampos();
+            lblID.Text = "-1";
         }
 
         private void ToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -100,6 +109,11 @@ namespace OficinaMecanica
             this.limparCampos();
             lblID.Text = "-1";
             txtDescricao.Focus();
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -40,13 +40,5 @@ namespace OficinaMecanica.Camadas.BLL
             if (cliente.nome != "")
                 dalCli.Update(cliente);
         }
-
-        public void Delete(int idCliente)
-        {
-            DAL.Clientes dalCli = new DAL.Clientes();
-            if (idCliente > 0)
-                dalCli.Delete(idCliente);
-
-        }
     }
 }

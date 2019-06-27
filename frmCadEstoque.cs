@@ -16,15 +16,14 @@ namespace OficinaMecanica
         {
             InitializeComponent();
             lblID.Text = "-1";
-            totSalvar.SetToolTip(btnSalvar, "Salvar");
-            totSair.SetToolTip(btnSair, "Sair");
-            totCancelar.SetToolTip(btnCancelar, "Cancelar");
+            inicializarTooltip();
         }
 
         public frmCadEstoque(int id)
         {
             InitializeComponent();
             this.limparCampos();
+            inicializarTooltip();
             Camadas.MODEL.Estoque produto = new Camadas.MODEL.Estoque();
             Camadas.BLL.Estoque bllProd = new Camadas.BLL.Estoque();
             produto = bllProd.SelectById(id)[0];
@@ -45,6 +44,13 @@ namespace OficinaMecanica
             txtDescricao.Text = "";
             txtQuantidade.Text = "";
             txtValor.Text = "";
+        }
+
+        private void inicializarTooltip()
+        {
+            totSalvar.SetToolTip(btnSalvar, "Salvar");
+            totSair.SetToolTip(btnSair, "Sair");
+            totCancelar.SetToolTip(btnCancelar, "Cancelar");
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
@@ -89,15 +95,18 @@ namespace OficinaMecanica
                 if (produto.idProduto == -1)
                 {
                     bllEst.Insert(produto);
-                }                    
+                }
                 else if (produto.idProduto > 0)
                 {
                     bllEst.Update(produto);
                 }
-            else limparCampos();
-
-
+                else
+                {
+                    limparCampos();
+                    lblID.Text = "-1";
+                }
             limparCampos();
+            lblID.Text = "-1";
         }
     }
 }
