@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OficinaMecanica.Relatorios
 {
-    public class relVendas
+    public class Relatorios
     {
         public static void impRelatorioVendas()
         {
@@ -100,7 +100,7 @@ namespace OficinaMecanica.Relatorios
                     servico = bllServico.SelectById(Convert.ToInt32(venda.idServico))[0];
 
                     sw.WriteLine("<tr>");
-                    sw.WriteLine("<td>" + venda.idRevisao + "</td>");
+                    sw.WriteLine("<td>" + venda.id + "</td>");
                     sw.WriteLine("<td>" + cliente.nome + "</td>");
                     sw.WriteLine("<td>" + funcionario.nome + "</td>");
                     sw.WriteLine("<td>" + veiculo.modelo + "</td>");
@@ -111,6 +111,86 @@ namespace OficinaMecanica.Relatorios
                     sw.WriteLine("<td>" + string.Format("{0:C2}", venda.valor_final) + "</td>");
                     sw.WriteLine("</tr>");
                 }
+
+                sw.WriteLine("</tbody>");
+                sw.WriteLine("</table>");
+                sw.WriteLine("</div>");
+                sw.WriteLine("</div>");
+                sw.WriteLine("</div>");
+                sw.WriteLine("</body>");
+                sw.WriteLine("</html>");
+            }
+            System.Diagnostics.Process.Start(arquivo);
+        }
+
+        public static void impRelatorioEstoque()
+        {
+            List<Camadas.MODEL.Estoque> lstEstoque = new List<Camadas.MODEL.Estoque>();
+            Camadas.BLL.Estoque bllEstoque = new Camadas.BLL.Estoque();
+
+            lstEstoque = bllEstoque.Select();
+            float valorTotal = 0;
+
+            foreach (Camadas.MODEL.Estoque produto in lstEstoque)
+            {
+                valorTotal += (produto.quantidade * produto.valor);
+            }
+
+
+            string folder = Funcoes.diretorioPasta();
+            string arquivo = folder + @"\RelatorioVendas.html";
+            StreamWriter sw = new StreamWriter(arquivo);
+
+            using (sw)
+            {
+                sw.WriteLine("<!DOCTYPE html>");
+                sw.WriteLine("<html lang='pt-br'>");
+                sw.WriteLine("<head>");
+                sw.WriteLine("<meta charset='UTF-8'/>");
+                sw.WriteLine("<title>Relatório de Vendas</title>");
+                sw.WriteLine("<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous'/>");
+                sw.WriteLine("</head>");
+                sw.WriteLine("<body>");
+                sw.WriteLine("<div class='container'>");
+                sw.WriteLine("<div class='row'>");
+                sw.WriteLine("<div class='col-sm-12 col-md-12'>");
+                sw.WriteLine("<br>");
+                sw.WriteLine("<h1 class='text-center'>Relatório de Estoque</h1>");
+                sw.WriteLine("</div>");
+                sw.WriteLine("<br>");
+
+                sw.WriteLine("<div class='card text-white bg-info mb-3 col-sm-12 col-md-12'>");
+                sw.WriteLine("<div class='card-header text-center'>VALOR TOTAL DO ESTOQUE</div>");
+                sw.WriteLine("<div class='card-body'>");
+                sw.WriteLine("<h2 class='card-text text-center'> " + string.Format("{0:C2}", valorTotal) + " </h2>");
+                sw.WriteLine("</div>");
+                sw.WriteLine("</div>");
+                sw.WriteLine("</div>");
+
+                sw.WriteLine("<div class='row'>");
+                sw.WriteLine("<div class='col-sm-12 col-md-12'>");
+                sw.WriteLine("<table class='table table-hover table-bordered'>");
+                sw.WriteLine("<thead class='thead-dark'>");
+                sw.WriteLine("<tr>");
+                sw.WriteLine("<th scope='col'>Código</th>");
+                sw.WriteLine("<th scope='col'>Descrição</th>");
+                sw.WriteLine("<th scope='col'>Quantidade</th>");
+                sw.WriteLine("<th scope='col'>Valor do Produto</th>");
+                sw.WriteLine("<th scope='col'>Patrimônio por Produto</th>");
+                sw.WriteLine("</tr>");
+                sw.WriteLine("</thead>");
+                sw.WriteLine("<tbody>");
+
+                foreach(Camadas.MODEL.Estoque produto in lstEstoque)
+                {
+                    sw.WriteLine("<tr>");
+                    sw.WriteLine("<td>" + produto.idProduto + "</td>");
+                    sw.WriteLine("<td>" + produto.descricao + "</td>");
+                    sw.WriteLine("<td>" + produto.quantidade + "</td>");
+                    sw.WriteLine("<td>" + string.Format("{0:C2}", produto.valor) + "</td>");
+                    sw.WriteLine("<td>" + string.Format("{0:C2}", produto.quantidade * produto.valor) + "</td>");
+                    sw.WriteLine("</tr>");
+                }                   
 
                 sw.WriteLine("</tbody>");
                 sw.WriteLine("</table>");

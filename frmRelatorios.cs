@@ -15,19 +15,17 @@ namespace OficinaMecanica
         public frmRelatorios()
         {
             InitializeComponent();
-            lblID.Visible = false;
-            txtID.Visible = false;
         }
 
         private void BtnGerarRelatorio_Click(object sender, EventArgs e)
         {
             if (rdbSimplificado.Checked)
             {
-                Relatorios.relVendas.impRelatorioVendas();
+                Relatorios.Relatorios.impRelatorioVendas();
             }
-            if (rdbCompleto.Checked)
+            if (rdbEstoque.Checked)
             {
-                
+                Relatorios.Relatorios.impRelatorioEstoque();
             }           
 
         }
@@ -35,18 +33,6 @@ namespace OficinaMecanica
         private void BtnSair_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void RdbCompleto_CheckedChanged(object sender, EventArgs e)
-        {
-            lblID.Visible = true;
-            txtID.Visible = true;
-        }
-
-        private void RdbSimplificado_CheckedChanged(object sender, EventArgs e)
-        {
-            lblID.Visible = false;
-            txtID.Visible = false;
         }
     }
 }

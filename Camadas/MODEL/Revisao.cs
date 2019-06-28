@@ -8,7 +8,7 @@ namespace OficinaMecanica.Camadas.MODEL
 {
     public class Revisao
     {
-        public int idRevisao { get; set; }
+        public int id { get; set; }
         public int idCliente { get; set; }
         public int idFuncionario { get; set; }
         public int idServico { get; set; }

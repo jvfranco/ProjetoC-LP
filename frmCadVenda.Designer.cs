@@ -73,8 +73,6 @@
             this.totSalvar = new System.Windows.Forms.ToolTip(this.components);
             this.totCancelar = new System.Windows.Forms.ToolTip(this.components);
             this.totSair = new System.Windows.Forms.ToolTip(this.components);
-            this.btnCalcular = new System.Windows.Forms.Button();
-            this.totCalcular = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
@@ -143,14 +141,15 @@
             this.txtValServ.Location = new System.Drawing.Point(836, 118);
             this.txtValServ.Name = "txtValServ";
             this.txtValServ.Size = new System.Drawing.Size(154, 29);
-            this.txtValServ.TabIndex = 37;
+            this.txtValServ.TabIndex = 7;
             // 
             // txtDesconto
             // 
             this.txtDesconto.Location = new System.Drawing.Point(257, 604);
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(240, 29);
-            this.txtDesconto.TabIndex = 36;
+            this.txtDesconto.TabIndex = 13;
+            this.txtDesconto.Leave += new System.EventHandler(this.TxtDesconto_Leave);
             // 
             // label15
             // 
@@ -173,7 +172,7 @@
             this.txtQuantidade.Location = new System.Drawing.Point(698, 180);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(256, 29);
-            this.txtQuantidade.TabIndex = 30;
+            this.txtQuantidade.TabIndex = 9;
             // 
             // label13
             // 
@@ -188,7 +187,7 @@
             this.txtFormaPagto.Location = new System.Drawing.Point(751, 604);
             this.txtFormaPagto.Name = "txtFormaPagto";
             this.txtFormaPagto.Size = new System.Drawing.Size(240, 29);
-            this.txtFormaPagto.TabIndex = 15;
+            this.txtFormaPagto.TabIndex = 14;
             // 
             // label10
             // 
@@ -228,7 +227,8 @@
             this.txtObservações.Multiline = true;
             this.txtObservações.Name = "txtObservações";
             this.txtObservações.Size = new System.Drawing.Size(983, 93);
-            this.txtObservações.TabIndex = 11;
+            this.txtObservações.TabIndex = 12;
+            this.txtObservações.Leave += new System.EventHandler(this.TxtObservações_Leave);
             // 
             // label8
             // 
@@ -273,7 +273,7 @@
             this.dgvVenda.Location = new System.Drawing.Point(6, 229);
             this.dgvVenda.Name = "dgvVenda";
             this.dgvVenda.Size = new System.Drawing.Size(984, 221);
-            this.dgvVenda.TabIndex = 10;
+            this.dgvVenda.TabIndex = 11;
             // 
             // colCodigo
             // 
@@ -306,7 +306,7 @@
             this.btnAddPecas.Location = new System.Drawing.Point(957, 179);
             this.btnAddPecas.Name = "btnAddPecas";
             this.btnAddPecas.Size = new System.Drawing.Size(33, 32);
-            this.btnAddPecas.TabIndex = 9;
+            this.btnAddPecas.TabIndex = 10;
             this.btnAddPecas.Text = "+";
             this.btnAddPecas.UseVisualStyleBackColor = true;
             this.btnAddPecas.Click += new System.EventHandler(this.BtnAddPecas_Click);
@@ -417,7 +417,7 @@
             this.btnGravar.Location = new System.Drawing.Point(834, 650);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(50, 50);
-            this.btnGravar.TabIndex = 16;
+            this.btnGravar.TabIndex = 15;
             this.btnGravar.UseVisualStyleBackColor = false;
             this.btnGravar.Click += new System.EventHandler(this.BtnGravar_Click);
             // 
@@ -430,7 +430,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(890, 650);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(50, 50);
-            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.TabIndex = 16;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
@@ -443,22 +443,9 @@
             this.btnSair.Location = new System.Drawing.Point(945, 650);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(50, 50);
-            this.btnSair.TabIndex = 18;
+            this.btnSair.TabIndex = 17;
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
-            // 
-            // btnCalcular
-            // 
-            this.btnCalcular.BackColor = System.Drawing.Color.Transparent;
-            this.btnCalcular.FlatAppearance.BorderSize = 0;
-            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalcular.Image = ((System.Drawing.Image)(resources.GetObject("btnCalcular.Image")));
-            this.btnCalcular.Location = new System.Drawing.Point(784, 650);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(50, 50);
-            this.btnCalcular.TabIndex = 19;
-            this.btnCalcular.UseVisualStyleBackColor = false;
-            this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
             // contextMenuStrip1
             // 
@@ -471,7 +458,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1004, 704);
-            this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGravar);
@@ -481,7 +467,6 @@
             this.Name = "frmCadVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendas - Oficina Mecânica";
-            this.Load += new System.EventHandler(this.FrmRevisao_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).EndInit();
@@ -528,8 +513,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtQuantidade;
-        private System.Windows.Forms.Button btnCalcular;
-        private System.Windows.Forms.ToolTip totCalcular;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtFormaPagto;
         private System.Windows.Forms.TextBox txtDesconto;

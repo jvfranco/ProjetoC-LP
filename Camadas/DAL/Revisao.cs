@@ -24,7 +24,7 @@ namespace OficinaMecanica.Camadas.DAL
                 while (dados.Read())
                 {
                     MODEL.Revisao revisao = new MODEL.Revisao();
-                    revisao.idRevisao = Convert.ToInt32(dados["id_revisao"].ToString());
+                    revisao.id = Convert.ToInt32(dados["id_revisao"].ToString());
                     revisao.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
                     revisao.idFuncionario = Convert.ToInt32(dados["id_funcionario"].ToString());
                     revisao.idServico = Convert.ToInt32(dados["id_servico"].ToString());
@@ -66,7 +66,7 @@ namespace OficinaMecanica.Camadas.DAL
                 while (dados.Read())
                 {
                     MODEL.Revisao revisao = new MODEL.Revisao();
-                    revisao.idRevisao = Convert.ToInt32(dados["id_revisao"].ToString());
+                    revisao.id = Convert.ToInt32(dados["id_revisao"].ToString());
                     revisao.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
                     revisao.idFuncionario = Convert.ToInt32(dados["id_funcionario"].ToString());
                     revisao.idServico = Convert.ToInt32(dados["id_servico"].ToString());
@@ -108,7 +108,7 @@ namespace OficinaMecanica.Camadas.DAL
                 while (dados.Read())
                 {
                     MODEL.Revisao revisao = new MODEL.Revisao();
-                    revisao.idRevisao = Convert.ToInt32(dados["id_revisao"].ToString());
+                    revisao.id = Convert.ToInt32(dados["id_revisao"].ToString());
                     revisao.idCliente = Convert.ToInt32(dados["id_cliente"].ToString());
                     revisao.idFuncionario = Convert.ToInt32(dados["id_funcionario"].ToString());
                     revisao.idServico = Convert.ToInt32(dados["id_servico"].ToString());

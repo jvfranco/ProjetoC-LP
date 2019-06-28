@@ -58,16 +58,15 @@ namespace OficinaMecanica
             Camadas.BLL.Revisao_Estoque bllEst = new Camadas.BLL.Revisao_Estoque();
 
             venda = bllRev.SelectById(id)[0];
-            lstProdutos = bllEst.SelectByIdVenda(venda.idRevisao);
+            lstProdutos = bllEst.SelectByIdVenda(venda.id);
 
             this.limparCampos();
             this.desabilitarCampos();
             btnGravar.Visible = false;
-            btnCalcular.Visible = false;
             btnCancelar.Visible = false;
             btnAddPecas.Enabled = false;
 
-            lblID.Text = venda.idRevisao.ToString();
+            lblID.Text = venda.id.ToString();
             Camadas.BLL.Cliente bllCli = new Camadas.BLL.Cliente();
             cmbCliente.DisplayMember = "nome";
             cmbCliente.ValueMember = "idCliente";
@@ -128,7 +127,6 @@ namespace OficinaMecanica
             totSalvar.SetToolTip(btnGravar, "Salvar");
             totSair.SetToolTip(btnSair, "Sair");
             totCancelar.SetToolTip(btnCancelar, "Cancelar");
-            totCalcular.SetToolTip(btnCalcular, "Calcular Valor Total");
         }
 
         private void desabilitarCampos()
@@ -148,11 +146,6 @@ namespace OficinaMecanica
             txtValorFinal.Enabled = false;
             txtQuantidade.Enabled = false;
             dtpData.Enabled = false;
-        }
-
-        private void FrmRevisao_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -185,31 +178,6 @@ namespace OficinaMecanica
                 float valorPeca = Convert.ToSingle(txtQuantidade.Text) * produto.valor;
                 dgvVenda.Rows.Add(produto.idProduto.ToString(), produto.descricao.ToString(), txtQuantidade.Text, valorPeca.ToString());
             }            
-        }
-
-        private void BtnCalcular_Click(object sender, EventArgs e)
-        {
-            int idServ = Convert.ToInt32(cmbServico.SelectedValue.ToString());
-            float valorTotal = 0;
-            Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
-            Camadas.MODEL.Servicos servico = new Camadas.MODEL.Servicos();
-
-            servico = bllServ.SelectById(idServ)[0];
-            valorTotal = Convert.ToSingle(servico.valMaoObra);
-            foreach (DataGridViewRow valor in dgvVenda.Rows)
-            {
-                valorTotal += Convert.ToSingle(valor.Cells["colValor"].Value);
-            }
-
-            txtValorTotal.Text = valorTotal.ToString();
-            if (txtDesconto.Text != "0")
-            {
-                txtValorFinal.Text = (Convert.ToSingle(txtValorTotal.Text) - (Convert.ToSingle(txtValorTotal.Text) * (Convert.ToSingle(txtDesconto.Text) / 100))).ToString();
-            }
-            else
-            {
-                txtValorFinal.Text = txtValorTotal.Text;
-            }
         }
 
         private void BtnGravar_Click(object sender, EventArgs e)
@@ -246,6 +214,56 @@ namespace OficinaMecanica
 
             this.limparCampos();
             lblID.Text = "-1";
+        }
+
+        private void TxtObservações_Leave(object sender, EventArgs e)
+        {
+            int idServ = Convert.ToInt32(cmbServico.SelectedValue.ToString());
+            float valorTotal = 0;
+            Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
+            Camadas.MODEL.Servicos servico = new Camadas.MODEL.Servicos();
+
+            servico = bllServ.SelectById(idServ)[0];
+            valorTotal = Convert.ToSingle(servico.valMaoObra);
+            foreach (DataGridViewRow valor in dgvVenda.Rows)
+            {
+                valorTotal += Convert.ToSingle(valor.Cells["colValor"].Value);
+            }
+
+            txtValorTotal.Text = valorTotal.ToString();
+            if (txtDesconto.Text != "0")
+            {
+                txtValorFinal.Text = (Convert.ToSingle(txtValorTotal.Text) - (Convert.ToSingle(txtValorTotal.Text) * (Convert.ToSingle(txtDesconto.Text) / 100))).ToString();
+            }
+            else
+            {
+                txtValorFinal.Text = txtValorTotal.Text;
+            }
+        }
+
+        private void TxtDesconto_Leave(object sender, EventArgs e)
+        {
+            int idServ = Convert.ToInt32(cmbServico.SelectedValue.ToString());
+            float valorTotal = 0;
+            Camadas.BLL.Servico bllServ = new Camadas.BLL.Servico();
+            Camadas.MODEL.Servicos servico = new Camadas.MODEL.Servicos();
+
+            servico = bllServ.SelectById(idServ)[0];
+            valorTotal = Convert.ToSingle(servico.valMaoObra);
+            foreach (DataGridViewRow valor in dgvVenda.Rows)
+            {
+                valorTotal += Convert.ToSingle(valor.Cells["colValor"].Value);
+            }
+
+            txtValorTotal.Text = valorTotal.ToString();
+            if (txtDesconto.Text != "0")
+            {
+                txtValorFinal.Text = (Convert.ToSingle(txtValorTotal.Text) - (Convert.ToSingle(txtValorTotal.Text) * (Convert.ToSingle(txtDesconto.Text) / 100))).ToString();
+            }
+            else
+            {
+                txtValorFinal.Text = txtValorTotal.Text;
+            }
         }
     }
 }
